@@ -1,0 +1,72 @@
+[
+  {
+    "name": "note_nlp_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "note_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "section_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "snippet",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "offset",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lexical_variant",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "note_nlp_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "note_nlp_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "nlp_system",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "nlp_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "nlp_datetime",
+    "type": "DATETIME",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "term_exists",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "term_temporal",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "term_modifiers",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

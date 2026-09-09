@@ -1,0 +1,27 @@
+[
+  {
+    "name": "domain_concept_id_1",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fact_id_1",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "domain_concept_id_2",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fact_id_2",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "relationship_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

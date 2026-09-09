@@ -1,0 +1,77 @@
+[
+  {
+    "name": "specimen_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "person_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "specimen_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "specimen_type_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "specimen_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "specimen_datetime",
+    "type": "DATETIME",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "quantity",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unit_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "anatomic_site_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "disease_status_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "specimen_source_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "specimen_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unit_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "anatomic_site_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "disease_status_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

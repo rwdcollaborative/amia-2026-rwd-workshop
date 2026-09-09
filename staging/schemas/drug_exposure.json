@@ -1,0 +1,117 @@
+[
+  {
+    "name": "drug_exposure_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "person_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "drug_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "drug_exposure_start_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "drug_exposure_start_datetime",
+    "type": "DATETIME",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "drug_exposure_end_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "drug_exposure_end_datetime",
+    "type": "DATETIME",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "verbatim_end_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "drug_type_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "stop_reason",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "refills",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "quantity",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "days_supply",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sig",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "route_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lot_number",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "provider_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "visit_occurrence_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "visit_detail_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "drug_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "drug_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "route_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dose_unit_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

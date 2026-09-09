@@ -1,0 +1,92 @@
+[
+  {
+    "name": "person_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gender_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "year_of_birth",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "month_of_birth",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "day_of_birth",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "birth_datetime",
+    "type": "DATETIME",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "race_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ethnicity_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "location_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "provider_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "care_site_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "person_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gender_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gender_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "race_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "race_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ethnicity_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ethnicity_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "relationship_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "relationship_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_hierarchical",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "defines_ancestry",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "reverse_relationship_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "relationship_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "metadata_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "metadata_type_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "value_as_string",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "value_as_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "metadata_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "metadata_datetime",
+    "type": "DATETIME",
+    "mode": "NULLABLE"
+  }
+]

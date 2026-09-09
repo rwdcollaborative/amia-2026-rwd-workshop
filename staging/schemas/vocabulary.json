@@ -1,0 +1,27 @@
+[
+  {
+    "name": "vocabulary_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "vocabulary_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "vocabulary_reference",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "vocabulary_version",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "vocabulary_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

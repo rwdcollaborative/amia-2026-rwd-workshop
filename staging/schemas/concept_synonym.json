@@ -1,0 +1,17 @@
+[
+  {
+    "name": "concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "concept_synonym_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "language_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

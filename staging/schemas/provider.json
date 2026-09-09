@@ -1,0 +1,67 @@
+[
+  {
+    "name": "provider_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "provider_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "npi",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dea",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "specialty_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "care_site_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "year_of_birth",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gender_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "provider_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "specialty_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "specialty_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gender_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gender_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

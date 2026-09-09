@@ -1,0 +1,27 @@
+[
+  {
+    "name": "observation_period_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "person_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "observation_period_start_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "observation_period_end_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "period_type_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

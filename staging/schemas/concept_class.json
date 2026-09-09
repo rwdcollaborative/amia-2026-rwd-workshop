@@ -1,0 +1,17 @@
+[
+  {
+    "name": "concept_class_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "concept_class_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "concept_class_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "drug_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ingredient_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amount_value",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amount_unit_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "numerator_value",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "numerator_unit_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "denominator_value",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "denominator_unit_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "box_size",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "valid_start_date",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "valid_end_date",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "invalid_reason",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

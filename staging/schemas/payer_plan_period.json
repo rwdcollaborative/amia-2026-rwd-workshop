@@ -1,0 +1,87 @@
+[
+  {
+    "name": "payer_plan_period_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "person_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payer_plan_period_start_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payer_plan_period_end_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payer_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payer_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payer_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "plan_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "plan_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "plan_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sponsor_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sponsor_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sponsor_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "family_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "stop_reason_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "stop_reason_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "stop_reason_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

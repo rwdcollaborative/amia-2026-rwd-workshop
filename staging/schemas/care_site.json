@@ -1,0 +1,32 @@
+[
+  {
+    "name": "care_site_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "care_site_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "place_of_service_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "location_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "care_site_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "place_of_service_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

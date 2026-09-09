@@ -1,0 +1,17 @@
+[
+  {
+    "name": "domain_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "domain_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "domain_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

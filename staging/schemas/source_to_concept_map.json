@@ -1,0 +1,47 @@
+[
+  {
+    "name": "source_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source_vocabulary_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source_code_description",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "target_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "target_vocabulary_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "valid_start_date",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "valid_end_date",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "invalid_reason",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

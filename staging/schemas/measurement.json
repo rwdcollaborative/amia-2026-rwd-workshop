@@ -1,0 +1,102 @@
+[
+  {
+    "name": "measurement_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "person_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "measurement_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "measurement_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "measurement_datetime",
+    "type": "DATETIME",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "measurement_time",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "measurement_type_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "operator_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "value_as_number",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "value_as_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unit_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "range_low",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "range_high",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "provider_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "visit_occurrence_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "visit_detail_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "measurement_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "measurement_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unit_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "value_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "person_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "death_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "death_datetime",
+    "type": "DATETIME",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "death_type_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cause_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cause_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cause_source_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

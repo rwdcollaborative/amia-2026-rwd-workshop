@@ -1,0 +1,72 @@
+[
+  {
+    "name": "note_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "person_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "note_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "note_datetime",
+    "type": "DATETIME",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "note_type_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "note_class_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "note_title",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "note_text",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "encoding_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "language_concept_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "provider_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "visit_occurrence_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "visit_detail_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "note_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

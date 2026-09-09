@@ -1,0 +1,42 @@
+[
+  {
+    "name": "location_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "address_1",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "address_2",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "city",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "state",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "zip",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "county",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "location_source_value",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]
