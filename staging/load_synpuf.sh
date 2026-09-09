@@ -35,9 +35,39 @@ BQ_LOCATION=${BQ_LOCATION:-US}
 LOCAL_CLINICAL_DIR=${LOCAL_CLINICAL_DIR:-$HOME/workspace/resources/cmsdesynpuf100k}
 LOCAL_VOCAB_DIR=${LOCAL_VOCAB_DIR:-$HOME/workspace/resources/cmsdesynpuf100k/vocab}
 
-# Persistent GCS staging prefixes (load phase reads these).
-GCS_CLINICAL=${GCS_CLINICAL:-${WORKSPACE_BUCKET:?set WORKSPACE_BUCKET or GCS_CLINICAL}/synpuf/clinical}
-GCS_VOCAB=${GCS_VOCAB:-${WORKSPACE_BUCKET:?set WORKSPACE_BUCKET or GCS_VOCAB}/synpuf/vocab}
+# Resolve the gs:// URI that *backs* a local path, when that path lives on a
+# gcsfuse mount. On the Verily Workbench the "resources" bucket is fuse-mounted
+# (e.g. resources-wb-glossy-cherry-7026 -> ~/workspace/resources), so the CSVs
+# are ALREADY in GCS -- we can point `bq load` straight at them and skip the
+# upload entirely. The bucket name differs per workspace, so we read it from the
+# mount rather than hardcode it. Prints the gs:// URI and returns 0 on success;
+# prints nothing / returns 1 when the path is a plain local disk (-> upload).
+gcsfuse_uri() {  # gcsfuse_uri <local_dir>  ->  gs://bucket[/subpath]
+  local dir="$1" abs src target fstype rel
+  command -v findmnt >/dev/null 2>&1 || return 1
+  abs=$(readlink -f "$dir" 2>/dev/null) && [ -d "$abs" ] || return 1
+  fstype=$(findmnt -T "$abs" -no FSTYPE 2>/dev/null) || return 1
+  case "$fstype" in fuse|fuse.*|gcsfuse) : ;; *) return 1 ;; esac
+  src=$(findmnt -T "$abs" -no SOURCE 2>/dev/null) || return 1
+  target=$(findmnt -T "$abs" -no TARGET 2>/dev/null) || return 1
+  # A gcsfuse SOURCE is a bare bucket name, never a device path.
+  [ -n "$src" ] && [ "${src#/}" = "$src" ] || return 1
+  rel=${abs#"$target"}; rel=${rel#/}
+  if [ -n "$rel" ]; then printf 'gs://%s/%s\n' "$src" "$rel"; else printf 'gs://%s\n' "$src"; fi
+}
+
+# GCS prefixes the load phase reads from. Default, in order:
+#   1. the bucket mount backing the local dir  (nothing to upload), else
+#   2. a staging prefix under $WORKSPACE_BUCKET (populated by `upload`).
+# Export GCS_CLINICAL / GCS_VOCAB to override either directly.
+default_gcs() {  # default_gcs <local_dir> <workspace_bucket_subpath>
+  local uri
+  if uri=$(gcsfuse_uri "$1"); then printf '%s\n' "$uri"
+  elif [ -n "${WORKSPACE_BUCKET:-}" ]; then printf '%s/%s\n' "$WORKSPACE_BUCKET" "$2"
+  fi
+}
+GCS_CLINICAL=${GCS_CLINICAL:-$(default_gcs "$LOCAL_CLINICAL_DIR" synpuf/clinical || true)}
+GCS_VOCAB=${GCS_VOCAB:-$(default_gcs "$LOCAL_VOCAB_DIR" synpuf/vocab || true)}
 
 # CSV format knobs. Clinical (SynPUF) and vocabulary (Athena) differ:
 #   - SynPUF clinical CSVs: comma-delimited. Header row? Depends on the export.
@@ -65,8 +95,25 @@ SCHEMA_DIR="$HERE/schemas"
 # ---------------------------------------------------------------------------
 log() { printf '\033[1;34m[%s]\033[0m %s\n' "$(date +%H:%M:%S)" "$*" >&2; }
 
+# Fail early (before ensure_dataset creates anything) if we have nowhere to read.
+require_gcs() {
+  if [ -z "$GCS_CLINICAL" ] && [ -z "$GCS_VOCAB" ]; then
+    log "ERROR: no GCS source. Run where the CSVs are on a bucket mount, or set"
+    log "       WORKSPACE_BUCKET (or GCS_CLINICAL / GCS_VOCAB) explicitly."
+    exit 1
+  fi
+}
+
 upload() {  # upload <local_dir> <gcs_prefix>
-  local src="$1" dst="$2"
+  local src="$1" dst="$2" src_uri
+  if [ -z "$dst" ]; then
+    log "SKIP upload: no GCS destination for $src (WORKSPACE_BUCKET unset)"; return 0
+  fi
+  # If the source dir IS the bucket (gcsfuse mount) and already lives at $dst,
+  # copying would just write the bucket onto itself -- nothing to do.
+  if src_uri=$(gcsfuse_uri "$src") && [ "$src_uri" = "$dst" ]; then
+    log "SKIP upload: $src is already in GCS at $dst (bucket mount)"; return 0
+  fi
   if [ ! -d "$src" ] || ! ls "$src"/*.csv >/dev/null 2>&1; then
     log "SKIP upload: no *.csv in $src"; return 0
   fi
@@ -129,15 +176,21 @@ case "${1:-help}" in
     upload "$LOCAL_VOCAB_DIR"    "$GCS_VOCAB"
     ;;
   load)
+    require_gcs
     ensure_dataset
+    log "Clinical <- ${GCS_CLINICAL:-(none)}"
     load_group "$GCS_CLINICAL" "$CLINICAL_DELIM" "$CLINICAL_SKIP"
+    log "Vocab    <- ${GCS_VOCAB:-(none)}"
     load_group "$GCS_VOCAB"    "$VOCAB_DELIM"    "$VOCAB_SKIP"
     ;;
   all)
+    require_gcs
     upload "$LOCAL_CLINICAL_DIR" "$GCS_CLINICAL"
     upload "$LOCAL_VOCAB_DIR"    "$GCS_VOCAB"
     ensure_dataset
+    log "Clinical <- ${GCS_CLINICAL:-(none)}"
     load_group "$GCS_CLINICAL" "$CLINICAL_DELIM" "$CLINICAL_SKIP"
+    log "Vocab    <- ${GCS_VOCAB:-(none)}"
     load_group "$GCS_VOCAB"    "$VOCAB_DELIM"    "$VOCAB_SKIP"
     ;;
   verify)
