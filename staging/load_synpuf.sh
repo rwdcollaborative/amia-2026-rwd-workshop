@@ -87,6 +87,15 @@ VOCAB_SKIP=${VOCAB_SKIP:-1}
 # unexpected date format, so keep it 0 while bringing the data up.
 MAX_BAD=${MAX_BAD:-0}
 
+# The SynPUF export follows a CDM revision that drops a few v5.3 *trailing*
+# columns (e.g. condition_occurrence omits condition_status_concept_id), so rows
+# have fewer columns than the v5.3.1 schema. --allow_jagged_rows fills those
+# missing trailing (NULLABLE) columns with NULL. It tolerates ONLY missing
+# trailing columns -- reordered or extra columns still fail, which is correct:
+# that would be real misalignment, not a version skew. Set ALLOW_JAGGED=0 to
+# restore strict column-count matching.
+ALLOW_JAGGED=${ALLOW_JAGGED:-1}
+
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCHEMA_DIR="$HERE/schemas"
 
@@ -173,6 +182,8 @@ load_group() {
       log "WARN: no schema for '$table' ($uri) -- skipping"; continue
     fi
     log "Loading $table  <-  $uri"
+    local extra=()
+    [ "$ALLOW_JAGGED" = "1" ] && extra+=(--allow_jagged_rows)
     bq --project_id="$BQ_PROJECT" --location="$BQ_LOCATION" load \
       --source_format=CSV \
       --field_delimiter="$delim" \
@@ -180,6 +191,7 @@ load_group() {
       --allow_quoted_newlines \
       --max_bad_records="$MAX_BAD" \
       --replace \
+      ${extra[@]+"${extra[@]}"} \
       "$BQ_DATASET.$table" "$uri" "$schema"
   done <<< "$uris"
 }
