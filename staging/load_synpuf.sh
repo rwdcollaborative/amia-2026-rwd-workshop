@@ -121,11 +121,37 @@ upload() {  # upload <local_dir> <gcs_prefix>
   gsutil -m cp "$src"/*.csv "$dst/"
 }
 
-ensure_dataset() {
-  if ! bq --project_id="$BQ_PROJECT" show --dataset "$BQ_DATASET" >/dev/null 2>&1; then
-    log "Creating dataset $BQ_PROJECT:$BQ_DATASET ($BQ_LOCATION)"
-    bq --project_id="$BQ_PROJECT" --location="$BQ_LOCATION" mk --dataset "$BQ_DATASET"
+# If the dataset already exists, adopt its ACTUAL location. A dataset created in
+# the Workbench UI may land in a region other than $BQ_LOCATION (US); a load or
+# query job pinned to the wrong region reports the dataset as "Not found".
+adopt_dataset_location() {
+  local loc
+  loc=$(bq --project_id="$BQ_PROJECT" --format=prettyjson show --dataset "$BQ_DATASET" 2>/dev/null \
+        | sed -n 's/.*"location"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -1 || true)
+  if [ -n "$loc" ] && [ "$loc" != "$BQ_LOCATION" ]; then
+    log "Dataset $BQ_DATASET is in '$loc' -- using it (was BQ_LOCATION=$BQ_LOCATION)"
+    BQ_LOCATION="$loc"
   fi
+}
+
+ensure_dataset() {
+  if bq --project_id="$BQ_PROJECT" show --dataset "$BQ_DATASET" >/dev/null 2>&1; then
+    adopt_dataset_location   # created here before, or via the Workbench UI
+    return 0
+  fi
+  log "Dataset $BQ_PROJECT:$BQ_DATASET not found -- trying to create it ($BQ_LOCATION)"
+  if bq --project_id="$BQ_PROJECT" --location="$BQ_LOCATION" mk --dataset "$BQ_DATASET"; then
+    return 0
+  fi
+  # Common on the Workbench: users can write tables but lack datasets.create.
+  log "Could not create the dataset -- you likely lack bigquery.datasets.create"
+  log "in project $BQ_PROJECT. Create it ONCE (any of these), then re-run 'load':"
+  log "  - Verily Workbench UI: Resources -> add a BigQuery dataset named '$BQ_DATASET'"
+  log "  - CLI:                 wb resource create bq-dataset"
+  log "  - bq (if you have it):  bq --location=$BQ_LOCATION mk --dataset $BQ_PROJECT:$BQ_DATASET"
+  log "If the UI puts it in a different project/id/location, pass BQ_PROJECT /"
+  log "BQ_DATASET / BQ_LOCATION to match."
+  exit 1
 }
 
 # load_group <gcs_prefix> <delimiter> <skip_leading_rows>
@@ -159,6 +185,7 @@ load_group() {
 }
 
 verify() {
+  adopt_dataset_location
   log "Row counts in $BQ_PROJECT:$BQ_DATASET"
   bq --project_id="$BQ_PROJECT" --location="$BQ_LOCATION" query --use_legacy_sql=false --format=pretty "
     SELECT table_id AS table, row_count
