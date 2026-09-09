@@ -82,6 +82,15 @@ CLINICAL_SKIP=${CLINICAL_SKIP:-0}
 VOCAB_DELIM=${VOCAB_DELIM:-$'\t'}
 VOCAB_SKIP=${VOCAB_SKIP:-1}
 
+# Quote character per group. The Athena vocabulary CSVs are tab-delimited and do
+# NOT quote fields, yet some concept_name values contain a literal " -- with the
+# default quote char (") bq raises "Data between close quote and field
+# separator". Empty string disables quote handling, which is correct for these
+# unquoted files. Clinical CSVs keep the default " in case a text field is
+# legitimately quoted.
+CLINICAL_QUOTE=${CLINICAL_QUOTE-'"'}
+VOCAB_QUOTE=${VOCAB_QUOTE-}
+
 # max_bad_records=0 => strict: any type mismatch aborts the load and shows you
 # the offending row. That is what surfaces a wrong CLINICAL_SKIP or an
 # unexpected date format, so keep it 0 while bringing the data up.
@@ -169,7 +178,7 @@ ensure_dataset() {
 # load_group <gcs_prefix> <delimiter> <skip_leading_rows>
 # Loads every gs://.../<name>.csv for which schemas/<name>.json exists.
 load_group() {
-  local prefix="$1" delim="$2" skip="$3"
+  local prefix="$1" delim="$2" skip="$3" quote="${4-\"}"
   local uri table schema
   # List CSVs actually present under the prefix (robust to session-ephemeral
   # local disk -- we drive off GCS, the persistent copy).
@@ -192,6 +201,7 @@ load_group() {
     if bq --project_id="$BQ_PROJECT" --location="$BQ_LOCATION" load \
          --source_format=CSV \
          --field_delimiter="$delim" \
+         --quote="$quote" \
          --skip_leading_rows="$skip" \
          --allow_quoted_newlines \
          --max_bad_records="$MAX_BAD" \
@@ -238,9 +248,9 @@ case "${1:-help}" in
     require_gcs
     ensure_dataset
     log "Clinical <- ${GCS_CLINICAL:-(none)}"
-    load_group "$GCS_CLINICAL" "$CLINICAL_DELIM" "$CLINICAL_SKIP"
+    load_group "$GCS_CLINICAL" "$CLINICAL_DELIM" "$CLINICAL_SKIP" "$CLINICAL_QUOTE"
     log "Vocab    <- ${GCS_VOCAB:-(none)}"
-    load_group "$GCS_VOCAB"    "$VOCAB_DELIM"    "$VOCAB_SKIP"
+    load_group "$GCS_VOCAB"    "$VOCAB_DELIM"    "$VOCAB_SKIP"    "$VOCAB_QUOTE"
     report_failures
     ;;
   all)
@@ -249,9 +259,9 @@ case "${1:-help}" in
     upload "$LOCAL_VOCAB_DIR"    "$GCS_VOCAB"
     ensure_dataset
     log "Clinical <- ${GCS_CLINICAL:-(none)}"
-    load_group "$GCS_CLINICAL" "$CLINICAL_DELIM" "$CLINICAL_SKIP"
+    load_group "$GCS_CLINICAL" "$CLINICAL_DELIM" "$CLINICAL_SKIP" "$CLINICAL_QUOTE"
     log "Vocab    <- ${GCS_VOCAB:-(none)}"
-    load_group "$GCS_VOCAB"    "$VOCAB_DELIM"    "$VOCAB_SKIP"
+    load_group "$GCS_VOCAB"    "$VOCAB_DELIM"    "$VOCAB_SKIP"    "$VOCAB_QUOTE"
     report_failures
     ;;
   verify)
