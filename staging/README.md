@@ -117,7 +117,26 @@ LIMIT 20;
   column. `PARSE_DATE('%Y%m%d', valid_start_date)` in a query if you ever need
   the real date.
 
-Regenerate the schemas after editing the DDL or the overrides:
+- **Clinical schemas are generated from the CSV *headers*, not the DDL.** The
+  CMS DE-SynPUF export is a **CDM 5.2-shaped** layout — it has no
+  `visit_detail_id`, no `*_datetime`, and no `condition_status_*` columns — so
+  its columns do **not** line up with the v5.3.1 DDL. Because `bq load` maps CSV
+  columns **by position**, a v5.3 schema would drop every value into the wrong
+  field (e.g. an ICD-9 source value landing in `visit_detail_id INT64`). Header
+  mode reads each file's real column order and looks the type up by name, so the
+  schema always matches the data on hand. Vocabulary tables are left on their
+  DDL schemas (the Athena CSVs already match v5.3).
+
+## Regenerating schemas
+
+Clinical tables — from the actual CSV headers (needs a header row, i.e. you'll
+load with `CLINICAL_SKIP=1`):
+
+```bash
+python3 generate_schemas.py --from-csv ~/workspace/resources/cmsdesynpuf100k
+```
+
+Vocabulary tables (and a from-scratch v5.3.1 set) — from the DDL:
 
 ```bash
 python3 generate_schemas.py

@@ -99,6 +99,9 @@ ALLOW_JAGGED=${ALLOW_JAGGED:-1}
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCHEMA_DIR="$HERE/schemas"
 
+# Tables that failed to load, collected across load_group calls (see below).
+FAILED=()
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -184,16 +187,33 @@ load_group() {
     log "Loading $table  <-  $uri"
     local extra=()
     [ "$ALLOW_JAGGED" = "1" ] && extra+=(--allow_jagged_rows)
-    bq --project_id="$BQ_PROJECT" --location="$BQ_LOCATION" load \
-      --source_format=CSV \
-      --field_delimiter="$delim" \
-      --skip_leading_rows="$skip" \
-      --allow_quoted_newlines \
-      --max_bad_records="$MAX_BAD" \
-      --replace \
-      ${extra[@]+"${extra[@]}"} \
-      "$BQ_DATASET.$table" "$uri" "$schema"
+    # Don't let one bad table abort the whole run (set -e) -- record it and go
+    # on, so a single schema/data snag doesn't block the other ~30 tables.
+    if bq --project_id="$BQ_PROJECT" --location="$BQ_LOCATION" load \
+         --source_format=CSV \
+         --field_delimiter="$delim" \
+         --skip_leading_rows="$skip" \
+         --allow_quoted_newlines \
+         --max_bad_records="$MAX_BAD" \
+         --replace \
+         ${extra[@]+"${extra[@]}"} \
+         "$BQ_DATASET.$table" "$uri" "$schema"; then
+      :
+    else
+      log "FAILED: $table (see bq error above) -- continuing"
+      FAILED+=("$table")
+    fi
   done <<< "$uris"
+}
+
+# Summarize any per-table failures and exit non-zero if there were any.
+report_failures() {
+  if [ "${#FAILED[@]}" -gt 0 ]; then
+    log "Done, but ${#FAILED[@]} table(s) FAILED: ${FAILED[*]}"
+    log "Re-run just those after fixing, or inspect the bq errors above."
+    exit 1
+  fi
+  log "Done -- all tables loaded into $BQ_PROJECT:$BQ_DATASET."
 }
 
 verify() {
@@ -221,6 +241,7 @@ case "${1:-help}" in
     load_group "$GCS_CLINICAL" "$CLINICAL_DELIM" "$CLINICAL_SKIP"
     log "Vocab    <- ${GCS_VOCAB:-(none)}"
     load_group "$GCS_VOCAB"    "$VOCAB_DELIM"    "$VOCAB_SKIP"
+    report_failures
     ;;
   all)
     require_gcs
@@ -231,6 +252,7 @@ case "${1:-help}" in
     load_group "$GCS_CLINICAL" "$CLINICAL_DELIM" "$CLINICAL_SKIP"
     log "Vocab    <- ${GCS_VOCAB:-(none)}"
     load_group "$GCS_VOCAB"    "$VOCAB_DELIM"    "$VOCAB_SKIP"
+    report_failures
     ;;
   verify)
     verify
