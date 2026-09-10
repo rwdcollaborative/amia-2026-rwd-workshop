@@ -74,13 +74,18 @@ the dataset is created for you and `upload` is skipped automatically:
 ```bash
 cd staging
 
-# Builds the BigQuery dataset from GCS. Creates the dataset if missing.
-#   add CLINICAL_SKIP=1 if head -2 showed a header row
-./load_synpuf.sh load
+# Builds the BigQuery dataset from GCS. Creates the dataset if missing, and
+# (with CLINICAL_SKIP=1) rebuilds the clinical schemas from the CSV headers
+# first, so a fresh clone needs no separate generate step.
+CLINICAL_SKIP=1 ./load_synpuf.sh load
 
 # Sanity check: row counts per table
 ./load_synpuf.sh verify
 ```
+
+> `load` regenerates the clinical schemas from the local CSV headers each run
+> (when `CLINICAL_SKIP=1` and the CSVs are on hand) — see the schemas note
+> below. Set `REGEN_SCHEMAS=0` to load against the committed schemas as-is.
 
 If instead your CSVs are on a plain local disk, run the one-time `upload` first
 (needs `WORKSPACE_BUCKET`), then `load`:
@@ -128,6 +133,10 @@ LIMIT 20;
   DDL schemas (the Athena CSVs already match v5.3).
 
 ## Regenerating schemas
+
+**`load` does this for you** (`CLINICAL_SKIP=1`, `REGEN_SCHEMAS=1` by default), so
+the committed clinical schemas don't need to be kept in sync with the data — they
+are rebuilt from the CSV headers on each load. To run it by hand:
 
 Clinical tables — from the actual CSV headers (needs a header row, i.e. you'll
 load with `CLINICAL_SKIP=1`):

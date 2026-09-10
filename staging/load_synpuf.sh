@@ -105,6 +105,13 @@ MAX_BAD=${MAX_BAD:-0}
 # restore strict column-count matching.
 ALLOW_JAGGED=${ALLOW_JAGGED:-1}
 
+# Before loading, rebuild the clinical schemas from the local CSV headers, so a
+# fresh clone never needs a manual `generate_schemas.py` step (the SynPUF export
+# is CDM 5.2-shaped and doesn't match the committed v5.3 schemas). Runs only when
+# headers are present (CLINICAL_SKIP=1) and the CSVs are on hand; otherwise the
+# existing schemas/ are used as-is. Set REGEN_SCHEMAS=0 to skip regeneration.
+REGEN_SCHEMAS=${REGEN_SCHEMAS:-1}
+
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCHEMA_DIR="$HERE/schemas"
 
@@ -140,6 +147,29 @@ upload() {  # upload <local_dir> <gcs_prefix>
   fi
   log "Uploading $src/*.csv -> $dst/  (this is the slow, one-time step)"
   gsutil -m cp "$src"/*.csv "$dst/"
+}
+
+# Rebuild clinical schemas from the local CSV headers (see REGEN_SCHEMAS above).
+# Deterministic and idempotent; skips gracefully when it can't apply.
+maybe_regen_schemas() {
+  [ "$REGEN_SCHEMAS" = "1" ] || { log "REGEN_SCHEMAS=0 -- using existing schemas/"; return 0; }
+  local gen="$HERE/generate_schemas.py"
+  if [ "$CLINICAL_SKIP" != "1" ]; then
+    log "Schema regen skipped (needs headers; CLINICAL_SKIP=$CLINICAL_SKIP, not 1)"; return 0
+  fi
+  if [ ! -f "$gen" ]; then
+    log "Schema regen skipped (no $gen)"; return 0
+  fi
+  if [ ! -d "$LOCAL_CLINICAL_DIR" ] || ! ls "$LOCAL_CLINICAL_DIR"/*.csv >/dev/null 2>&1; then
+    log "Schema regen skipped (no local CSVs at $LOCAL_CLINICAL_DIR)"; return 0
+  fi
+  if ! command -v python3 >/dev/null 2>&1; then
+    log "Schema regen skipped (python3 not found)"; return 0
+  fi
+  log "Regenerating clinical schemas from CSV headers in $LOCAL_CLINICAL_DIR"
+  if ! python3 "$gen" --from-csv "$LOCAL_CLINICAL_DIR" >&2; then
+    log "WARN: schema regen failed -- proceeding with existing schemas/"
+  fi
 }
 
 # If the dataset already exists, adopt its ACTUAL location. A dataset created in
@@ -246,6 +276,7 @@ case "${1:-help}" in
     ;;
   load)
     require_gcs
+    maybe_regen_schemas
     ensure_dataset
     log "Clinical <- ${GCS_CLINICAL:-(none)}"
     load_group "$GCS_CLINICAL" "$CLINICAL_DELIM" "$CLINICAL_SKIP" "$CLINICAL_QUOTE"
@@ -257,6 +288,7 @@ case "${1:-help}" in
     require_gcs
     upload "$LOCAL_CLINICAL_DIR" "$GCS_CLINICAL"
     upload "$LOCAL_VOCAB_DIR"    "$GCS_VOCAB"
+    maybe_regen_schemas
     ensure_dataset
     log "Clinical <- ${GCS_CLINICAL:-(none)}"
     load_group "$GCS_CLINICAL" "$CLINICAL_DELIM" "$CLINICAL_SKIP" "$CLINICAL_QUOTE"
