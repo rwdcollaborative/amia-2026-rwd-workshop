@@ -57,10 +57,11 @@ The script uses whichever already exists and only creates it when missing.
 head -2 ~/workspace/resources/cmsdesynpuf100k/condition_occurrence.csv
 ```
 
-- If the first line is **column names** → the export has a header:
-  run with `CLINICAL_SKIP=1`.
-- If the first line is already **data** (starts with numbers) → headerless
-  (the default, `CLINICAL_SKIP=0`).
+- If the first line is **column names** → the export has a header. This is the
+  case for the workshop data, and `CLINICAL_SKIP=1` is now the **default**, so
+  there's nothing to set.
+- If the first line is already **data** (starts with numbers) → headerless:
+  run with `CLINICAL_SKIP=0` (which also disables the header-based schema regen).
 
 Also glance at the date columns in that output. The schemas expect ISO
 `YYYY-MM-DD` for clinical dates. If they're some other format the load will fail
@@ -75,17 +76,18 @@ the dataset is created for you and `upload` is skipped automatically:
 cd staging
 
 # Builds the BigQuery dataset from GCS. Creates the dataset if missing, and
-# (with CLINICAL_SKIP=1) rebuilds the clinical schemas from the CSV headers
-# first, so a fresh clone needs no separate generate step.
-CLINICAL_SKIP=1 ./load_synpuf.sh load
+# rebuilds the clinical schemas from the CSV headers first, so a fresh clone
+# needs no separate generate step. (Run with no args to print help + paths.)
+./load_synpuf.sh load
 
 # Sanity check: row counts per table
 ./load_synpuf.sh verify
 ```
 
-> `load` regenerates the clinical schemas from the local CSV headers each run
-> (when `CLINICAL_SKIP=1` and the CSVs are on hand) — see the schemas note
-> below. Set `REGEN_SCHEMAS=0` to load against the committed schemas as-is.
+> `CLINICAL_SKIP=1` (header row present) is the default. `load` regenerates the
+> clinical schemas from the local CSV headers each run (when `CLINICAL_SKIP=1`
+> and the CSVs are on hand) — see the schemas note below. `REGEN_SCHEMAS=0` loads
+> against the committed schemas as-is; `CLINICAL_SKIP=0` is for headerless CSVs.
 
 If instead your CSVs are on a plain local disk, run the one-time `upload` first
 (needs `WORKSPACE_BUCKET`), then `load`:

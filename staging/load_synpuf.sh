@@ -70,15 +70,16 @@ GCS_CLINICAL=${GCS_CLINICAL:-$(default_gcs "$LOCAL_CLINICAL_DIR" synpuf/clinical
 GCS_VOCAB=${GCS_VOCAB:-$(default_gcs "$LOCAL_VOCAB_DIR" synpuf/vocab || true)}
 
 # CSV format knobs. Clinical (SynPUF) and vocabulary (Athena) differ:
-#   - SynPUF clinical CSVs: comma-delimited. Header row? Depends on the export.
-#     VERIFY with `head -2 condition_occurrence.csv`. If the first line is column
-#     NAMES, set CLINICAL_SKIP=1. Default 0 assumes headerless (OHDSI ETL-CMS
-#     output is headerless); a wrong 0 fails LOUDLY (header row won't parse as
-#     INTEGER), a wrong 1 silently drops one data row -- so 0 is the safe default.
-#   - Athena vocabulary CSVs: TAB-delimited, WITH a header row. Hence the
-#     different defaults below.
+#   - SynPUF clinical CSVs: comma-delimited, WITH a header row in this export --
+#     so CLINICAL_SKIP defaults to 1 (skip that header). It also gates the
+#     header-based schema regeneration (see REGEN_SCHEMAS above). If your export
+#     is headerless (first line is data, not column names -- check with
+#     `head -2 condition_occurrence.csv`), set CLINICAL_SKIP=0; a wrong 1 then
+#     silently drops one data row and skips regen, while a wrong 0 fails LOUDLY
+#     (a header row won't parse as INTEGER).
+#   - Athena vocabulary CSVs: TAB-delimited, WITH a header row.
 CLINICAL_DELIM=${CLINICAL_DELIM:-,}
-CLINICAL_SKIP=${CLINICAL_SKIP:-0}
+CLINICAL_SKIP=${CLINICAL_SKIP:-1}
 VOCAB_DELIM=${VOCAB_DELIM:-$'\t'}
 VOCAB_SKIP=${VOCAB_SKIP:-1}
 
@@ -122,6 +123,37 @@ FAILED=()
 # Helpers
 # ---------------------------------------------------------------------------
 log() { printf '\033[1;34m[%s]\033[0m %s\n' "$(date +%H:%M:%S)" "$*" >&2; }
+
+# Printed when run with no command (or an unknown one). Shows the resolved paths
+# so it's obvious where the script expects the data and where it will load it.
+usage() {
+  cat >&2 <<USAGE
+load_synpuf.sh -- stage CMS DE-SynPUF (OMOP CDM) + the OMOP vocabulary into BigQuery.
+
+Usage:
+  ./load_synpuf.sh load       (re)build the BigQuery dataset from GCS   [most common]
+  ./load_synpuf.sh upload     copy local CSVs -> GCS   (only if NOT on a bucket mount)
+  ./load_synpuf.sh all        upload, then load
+  ./load_synpuf.sh verify     print row counts per table
+
+Resolved paths (override any via the environment):
+  BigQuery target    : ${BQ_PROJECT}:${BQ_DATASET}   (location auto-detected; default ${BQ_LOCATION})
+  Local clinical CSVs: ${LOCAL_CLINICAL_DIR}
+  Local vocab CSVs   : ${LOCAL_VOCAB_DIR}
+  GCS clinical prefix: ${GCS_CLINICAL:-<unset: run on a bucket mount or set WORKSPACE_BUCKET>}
+  GCS vocab prefix   : ${GCS_VOCAB:-<unset: run on a bucket mount or set WORKSPACE_BUCKET>}
+  Schemas dir        : ${SCHEMA_DIR}
+
+Common knobs (shown = current value):
+  CLINICAL_SKIP=${CLINICAL_SKIP}    clinical CSVs have a header row? 1=yes (skip it), 0=headerless
+  REGEN_SCHEMAS=${REGEN_SCHEMAS}    rebuild clinical schemas from CSV headers before loading
+  ALLOW_JAGGED=${ALLOW_JAGGED}    tolerate rows missing trailing columns
+  BQ_DATASET, BQ_PROJECT, BQ_LOCATION, WORKSPACE_BUCKET, GCS_CLINICAL, GCS_VOCAB
+
+Example:
+  BQ_DATASET=synpuf_omop ./load_synpuf.sh load
+USAGE
+}
 
 # Fail early (before ensure_dataset creates anything) if we have nowhere to read.
 require_gcs() {
@@ -299,7 +331,12 @@ case "${1:-help}" in
   verify)
     verify
     ;;
+  help|-h|--help)
+    usage
+    ;;
   *)
-    grep '^#' "$0" | sed 's/^# \{0,1\}//' | head -40
+    log "Unknown command: ${1:-}"
+    usage
+    exit 1
     ;;
 esac
