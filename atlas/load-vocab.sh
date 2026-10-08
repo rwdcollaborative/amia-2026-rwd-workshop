@@ -38,6 +38,28 @@ wait_webapi() {
 
 solr_running() { dc ps --status running --services | grep -qx solr; }
 
+build_solr_index() {
+  local solr="http://localhost:${SOLR_PORT:-8983}/solr" version core status
+  version=$(dc exec -T db psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -tAc \
+    "select vocabulary_version from vocab.vocabulary where vocabulary_id = 'None'")
+  [[ -n "$version" ]] || die "no 'None' row in vocab.vocabulary; cannot name the Solr core"
+  # WebAPI looks cores up by this exact transformation of the version string.
+  core="${version// /_}"
+  echo "    core: $core"
+
+  if ! curl -fsS "$solr/admin/cores?action=STATUS&core=$core&wt=json" | grep -q "\"name\":\"$core\""; then
+    curl -fsS -o /dev/null "$solr/admin/cores?action=CREATE&name=$core&configSet=omop_vocab"
+  fi
+  curl -fsS -o /dev/null \
+    "$solr/$core/dataimport?command=full-import&entity=concept&clean=true&commit=true&vocab_database_schema=vocab"
+  sleep 2
+  while status=$(curl -fsS "$solr/$core/dataimport?command=status&wt=json"); \
+        grep -q '"status":"busy"' <<<"$status"; do
+    sleep 5
+  done
+  grep -q 'Indexing completed' <<<"$status" || die "Solr import failed: $status"
+}
+
 # Validate before touching anything, so a bad bundle leaves the current vocab intact.
 [[ -n "${VOCAB_DIR:-}" ]] || die "no vocabulary directory: pass one or set VOCAB_DIR in $ENV_FILE"
 [[ -d "$VOCAB_DIR" ]] || die "vocabulary directory not found: $VOCAB_DIR"
@@ -49,5 +71,13 @@ done
 
 step "Starting stack" dc up -d --wait
 step "Loading vocabulary from $VOCAB_DIR" dc --profile load run --rm vocab-loader
-step "Refreshing WebAPI source cache" curl -fsS -o /dev/null "$WEBAPI/source/refresh"
+if solr_running; then
+  step "Building Solr index" build_solr_index
+  # WebAPI reads the Solr core list only at startup.
+  step "Restarting WebAPI" dc restart webapi
+  step "Waiting for WebAPI" wait_webapi
+else
+  echo "==> Solr not running; skipping index (search uses SQL)"
+  step "Refreshing WebAPI source cache" curl -fsS -o /dev/null "$WEBAPI/source/refresh"
+fi
 echo "Vocabulary loaded. ATLAS: http://localhost:${ATLAS_PORT:-8081}/atlas/"

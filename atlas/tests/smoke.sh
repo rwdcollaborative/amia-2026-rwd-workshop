@@ -82,10 +82,33 @@ layer_vocab() {
   rm -rf "$tmp"
 }
 
+layer_solr() {
+  echo "== solr"
+  local core="v5.0_FIXTURE-01-JAN-26" solr="http://localhost:${SOLR_PORT}/solr"
+  if ./load-vocab.sh "$FIXTURE"; then pass "loader succeeds with solr"; else fail "loader succeeds with solr"; return; fi
+
+  assert_contains "core named from vocab version exists" \
+    "$(curl -fsS "$solr/admin/cores?action=STATUS&core=$core&wt=json")" "\"name\":\"$core\""
+  assert_eq "core is populated" \
+    "$(curl -fsS "$solr/$core/select?q=query:diabetes&rows=0&wt=json" | json 'd["response"]["numFound"] >= 4')" "True"
+  assert_contains "WebAPI search returns results" \
+    "$(curl -fsS "$WEBAPI/vocabulary/VOCAB/search?query=diabetes")" '"CONCEPT_ID":201826'
+
+  # WebAPI has no SQL fallback once a Solr core matches: if Solr is down,
+  # search is empty. That proves WebAPI is really using Solr.
+  dc stop solr >/dev/null 2>&1
+  assert_eq "WebAPI search is empty with Solr stopped (uses Solr)" \
+    "$(curl -fsS "$WEBAPI/vocabulary/VOCAB/search?query=diabetes")" "[]"
+  dc up -d --wait solr >/dev/null 2>&1
+  assert_contains "WebAPI search recovers when Solr returns" \
+    "$(curl -fsS "$WEBAPI/vocabulary/VOCAB/search?query=diabetes")" '"CONCEPT_ID":201826'
+}
+
 case "${1:-}" in
   base)  layer_base ;;
   vocab) layer_base && layer_vocab ;;
-  all)   layer_base && layer_vocab ;;
+  solr)  layer_base && layer_solr ;;
+  all)   layer_base && layer_vocab && layer_solr ;;
   down)  dc --profile load down -v; exit 0 ;;
   *)     echo "usage: $0 base|vocab|solr|all|down" >&2; exit 2 ;;
 esac
