@@ -35,11 +35,59 @@ layer_base() {
     "$(curl -fsS "http://localhost:${ATLAS_PORT}/atlas/js/config-local.js")" "$WEBAPI_PUBLIC_URL"
 }
 
+layer_vocab() {
+  echo "== vocab"
+  if ./load-vocab.sh "$FIXTURE"; then pass "loader succeeds on fixture"; else fail "loader succeeds on fixture"; return; fi
+
+  assert_contains "VOCAB source registered" \
+    "$(curl -fsS "$WEBAPI/source/sources")" '"sourceKey":"VOCAB"'
+  assert_contains "search finds T2DM (201826)" \
+    "$(curl -fsS "$WEBAPI/vocabulary/VOCAB/search?query=diabetes")" '"CONCEPT_ID":201826'
+  # JSON-escaped form of: Fixture "quoted" name with \backslash
+  assert_contains "quote and backslash survive loading" \
+    "$(curl -fsS "$WEBAPI/vocabulary/VOCAB/concept/9000001")" 'Fixture \"quoted\" name with \\backslash'
+  assert_contains "descendants resolve via concept_ancestor" \
+    "$(curl -fsS -X POST -H 'Content-Type: application/json' \
+        -d '{"items":[{"concept":{"CONCEPT_ID":201820},"isExcluded":false,"includeDescendants":true,"includeMapped":false}]}' \
+        "$WEBAPI/vocabulary/VOCAB/resolveConceptSetExpression")" '4193704'
+
+  local cs_id
+  cs_id=$(curl -fsS -X POST -H 'Content-Type: application/json' \
+            -d "{\"name\":\"smoke-$(date +%s)\"}" "$WEBAPI/conceptset/" | json 'd["id"]')
+  if [[ "$cs_id" =~ ^[0-9]+$ ]]; then pass "concept set created (id $cs_id)"; else fail "concept set created"; return; fi
+  assert_eq "concept set items saved" \
+    "$(curl -fsS -X PUT -H 'Content-Type: application/json' \
+        -d '[{"conceptId":201820,"isExcluded":0,"includeDescendants":1,"includeMapped":0}]' \
+        "$WEBAPI/conceptset/$cs_id/items")" "true"
+  assert_eq "concept set expression reads back" \
+    "$(curl -fsS "$WEBAPI/conceptset/$cs_id/expression" \
+        | json '(d["items"][0]["concept"]["CONCEPT_ID"], d["items"][0]["includeDescendants"])')" \
+    "(201820, True)"
+
+  if ./load-vocab.sh "$FIXTURE" >/dev/null; then pass "loader rerun succeeds"; else fail "loader rerun succeeds"; fi
+  assert_eq "rerun leaves exactly one VOCAB source" \
+    "$(psql_q "select count(*) from webapi.source where source_key = 'VOCAB'")" "1"
+  assert_eq "rerun leaves one vocabulary daimon" \
+    "$(psql_q "select count(*) from webapi.source_daimon d join webapi.source s using (source_id) where s.source_key = 'VOCAB'")" "1"
+  if curl -fsS "$WEBAPI/conceptset/$cs_id" >/dev/null; then pass "concept set survives reload"; else fail "concept set survives reload"; fi
+
+  local tmp out
+  tmp=$(mktemp -d)
+  cp "$FIXTURE"/*.csv "$tmp"/
+  rm "$tmp/CONCEPT_ANCESTOR.csv" "$tmp/DOMAIN.csv"
+  if out=$(./load-vocab.sh "$tmp" 2>&1); then fail "incomplete bundle is rejected"; else pass "incomplete bundle is rejected"; fi
+  assert_contains "error names CONCEPT_ANCESTOR.csv" "$out" "CONCEPT_ANCESTOR.csv"
+  assert_contains "error names DOMAIN.csv" "$out" "DOMAIN.csv"
+  assert_eq "existing vocab untouched" "$(psql_q "select count(*) from vocab.concept")" "6"
+  rm -rf "$tmp"
+}
+
 case "${1:-}" in
-  base) layer_base ;;
-  all)  layer_base ;;
-  down) dc --profile load down -v; exit 0 ;;
-  *)    echo "usage: $0 base|vocab|solr|all|down" >&2; exit 2 ;;
+  base)  layer_base ;;
+  vocab) layer_base && layer_vocab ;;
+  all)   layer_base && layer_vocab ;;
+  down)  dc --profile load down -v; exit 0 ;;
+  *)     echo "usage: $0 base|vocab|solr|all|down" >&2; exit 2 ;;
 esac
 
 echo

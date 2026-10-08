@@ -82,5 +82,28 @@ services:
     ports:
       - "${ATLAS_PORT:-8081}:8080"
 
+  # One-shot loader; never starts with a plain `up`. Run via ./load-vocab.sh.
+  vocab-loader:
+    image: postgres:16
+    profiles: [load]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGHOST: db
+      PGDATABASE: ${POSTGRES_DB:-ohdsi}
+      PGUSER: ${POSTGRES_USER:-ohdsi}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - type: bind
+        source: ${VOCAB_DIR:-./.vocab-dir-not-set}
+        target: /vocab
+        read_only: true
+        bind:
+          create_host_path: false
+      - ./sql:/sql:ro
+      - ./scripts:/scripts:ro
+    entrypoint: ["bash", "/scripts/load-vocab-db.sh"]
+
 volumes:
   pgdata:
