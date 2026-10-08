@@ -81,7 +81,7 @@ services:
       SECURITY_ORIGIN: "*"
       SOLR_ENDPOINT: http://solr:8983/solr
     ports:
-      - "${WEBAPI_PORT:-8080}:8080"
+      - "${BIND_ADDR:-0.0.0.0}:${WEBAPI_PORT:-8080}:8080"
     healthcheck:
       test: ["CMD-SHELL", "curl -fs http://localhost:8080/WebAPI/info >/dev/null"]
       interval: 10s
@@ -102,7 +102,7 @@ services:
       ATLAS_ENABLE_PERSONCOUNT: "false"
       ATLAS_DISABLE_BROWSER_CHECK: "true"
     ports:
-      - "${ATLAS_PORT:-8081}:8080"
+      - "${BIND_ADDR:-0.0.0.0}:${ATLAS_PORT:-8081}:8080"
 
   # One-shot loader; never starts with a plain `up`. Run via ./load-vocab.sh.
   vocab-loader:

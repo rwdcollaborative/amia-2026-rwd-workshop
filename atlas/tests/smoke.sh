@@ -8,7 +8,8 @@ set -uo pipefail
 cd "$(dirname "$0")/.."
 
 export ENV_FILE=tests/test.env
-set -a; . "./$ENV_FILE"; set +a
+case "$ENV_FILE" in /*) env_path=$ENV_FILE ;; *) env_path="./$ENV_FILE" ;; esac
+set -a; . "$env_path"; set +a
 
 WEBAPI="http://localhost:${WEBAPI_PORT}/WebAPI"
 FIXTURE=./tests/fixtures/vocab-mini

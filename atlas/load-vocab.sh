@@ -2,17 +2,25 @@
 # Load an Athena vocabulary bundle into the stack and register it with WebAPI.
 #
 # Usage (from anywhere):  atlas/load-vocab.sh [/path/to/athena/bundle]
-# The path defaults to VOCAB_DIR from the env file. ENV_FILE selects the env
-# file (default .env, relative to this directory).
+# A relative bundle path is taken relative to where you run the script. It
+# defaults to VOCAB_DIR from the env file (relative paths there are relative
+# to this directory). ENV_FILE selects the env file (default .env, relative
+# to this directory, or absolute).
 set -euo pipefail
+# Resolve the bundle argument against the caller's directory before the cd.
+ARG_DIR=
+if [[ $# -ge 1 ]]; then
+  case "$1" in /*) ARG_DIR=$1 ;; *) ARG_DIR="$PWD/$1" ;; esac
+fi
 cd "$(dirname "$0")"
 
 die() { echo "ERROR: $*" >&2; exit 1; }
 
 ENV_FILE="${ENV_FILE:-.env}"
 [[ -f "$ENV_FILE" ]] || die "$ENV_FILE not found (copy .env.example to .env)"
-set -a; . "./$ENV_FILE"; set +a
-[[ $# -ge 1 ]] && VOCAB_DIR="$1"
+case "$ENV_FILE" in /*) env_path=$ENV_FILE ;; *) env_path="./$ENV_FILE" ;; esac
+set -a; . "$env_path"; set +a
+[[ -n "$ARG_DIR" ]] && VOCAB_DIR="$ARG_DIR"
 export VOCAB_DIR
 
 WEBAPI="http://localhost:${WEBAPI_PORT:-8080}/WebAPI"
@@ -40,7 +48,7 @@ solr_running() { dc ps --status running --services | grep -qx solr; }
 
 build_solr_index() {
   local solr="http://localhost:${SOLR_PORT:-8983}/solr" version core status
-  version=$(dc exec -T db psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -tAc \
+  version=$(dc exec -T db psql -U "${POSTGRES_USER:-ohdsi}" -d "${POSTGRES_DB:-ohdsi}" -tAc \
     "select vocabulary_version from vocab.vocabulary where vocabulary_id = 'None'")
   [[ -n "$version" ]] || die "no 'None' row in vocab.vocabulary; cannot name the Solr core"
   # WebAPI looks cores up by this exact transformation of the version string.
