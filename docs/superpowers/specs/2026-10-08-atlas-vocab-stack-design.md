@@ -39,14 +39,22 @@ Solr must stay on 8.x: the vocab core is populated by the DataImportHandler
 ```
 atlas/
   docker-compose.yml
-  .env.example          # copy to .env (gitignored)
-  webapi/Dockerfile     # builds WebAPI v2.15.2 with webapi-solr profile
-  atlas/config-local.js # WebAPI URL, auth disabled
-  solr/                 # core conf + data-config.xml (adapted from Broadsea)
-  sql/                  # vocab DDL, indexes/constraints, source registration
-  scripts/load-vocab.sh # loader entrypoint (runs inside vocab-loader container)
+  .env.example              # copy to .env (gitignored)
+  load-vocab.sh             # host-side loader entrypoint (orchestrates the steps below)
+  scripts/load-vocab-db.sh  # runs inside the vocab-loader container: DDL, \copy, indexes, source
+  sql/                      # vocab DDL, indexes/constraints, source registration
+  solr/Dockerfile           # solr:8.11.4 + Postgres JDBC driver + omop_vocab configset
+  solr/conf/                # configset (vendored from Broadsea @ 7ca896a, DIH datasource tuned)
+  tests/smoke.sh            # layered smoke tests (base | vocab | solr)
+  tests/test.env            # isolated test project: own name, ports, volumes
+  tests/fixtures/vocab-mini/  # tiny synthetic Athena-format bundle
   README.md
 ```
+
+WebAPI is built by compose directly from `https://github.com/OHDSI/WebAPI.git#v2.15.2`
+with build arg `MAVEN_PROFILE=webapi-docker,webapi-solr` (no Dockerfile in this
+repo). ATLAS needs no config file: the `ohdsi/atlas` image renders
+`config-local.js` from env vars (`WEBAPI_URL`, `ATLAS_*`) at container start.
 
 `.gitignore` gains `atlas/.env`.
 
@@ -59,56 +67,54 @@ All on one compose network.
   - `vocab` — Athena tables, created by the loader.
   Data in a named volume by default. `PGDATA_HOST_PATH` in `.env`, if set,
   switches to a bind mount (e.g. an external drive) for large vocab loads.
-  Healthcheck: `pg_isready`.
-- **`webapi`** — built from `webapi/Dockerfile`. Env-configured datasource
+  Healthcheck: `pg_isready`. Port bound to 127.0.0.1 only.
+- **`webapi`** — built from the WebAPI git tag (see Layout). Env-configured datasource
   pointing at `db` / schema `webapi`, `SECURITY_PROVIDER=DisabledSecurity`,
   CORS enabled, `SOLR_ENDPOINT=http://solr:8983/solr`. Exposed on
   `${WEBAPI_PORT:-8080}`. Depends on `db` healthy.
-- **`atlas`** — `ohdsi/atlas:2.15.0`, static nginx. `config-local.js` is
-  produced from env at container start (via the image's own templating if it
-  supports `WEBAPI_URL`, otherwise our own envsubst entrypoint), with the
-  browser-side WebAPI URL from `WEBAPI_PUBLIC_URL` (default
-  `http://localhost:8080/WebAPI/`) so a later public host is a `.env` change.
-  User auth disabled.
-  Exposed on `${ATLAS_PORT:-8081}`.
-- **`solr`** — `solr:8.11`, Postgres JDBC driver available on its classpath,
-  core config mounted read-only, index data in a named volume. Exposed on
-  `${SOLR_PORT:-8983}` for debugging.
+- **`atlas`** — `ohdsi/atlas:2.15.0`, static nginx. Configured purely by env:
+  `WEBAPI_URL=${WEBAPI_PUBLIC_URL}` (browser-side URL, default
+  `http://localhost:8080/WebAPI/`, so a later public host is a `.env` change),
+  security provider/permissions/T&Cs/person-count off.
+  Exposed on `${ATLAS_PORT:-8081}`, app at `/atlas/`.
+- **`solr`** — built from `solr/Dockerfile` (`solr:8.11.4` + Postgres JDBC
+  driver + `omop_vocab` configset). Index data in a named volume. Port bound to
+  127.0.0.1 for debugging only. WebAPI `depends_on` Solr healthy so its startup
+  core scan can reach Solr.
 - **`vocab-loader`** — one-shot, compose profile `load` (never starts with a
   plain `up`). `postgres:16` image for `psql`; mounts `${VOCAB_DIR}:/vocab:ro`
   plus `sql/` and `scripts/`. Run with
   `docker compose --profile load run --rm vocab-loader`.
 
-## Loader flow (`scripts/load-vocab.sh`)
+## Loader flow
 
-Fails fast (`set -euo pipefail`) and prints elapsed time per step.
+Host-side `atlas/load-vocab.sh` (needs only docker + curl on the host). Fails
+fast and prints elapsed time per step. `ENV_FILE` selects the env file
+(default `.env`; tests use `tests/test.env`).
 
-1. **Validate** `/vocab` contains the Athena files: `CONCEPT`, `CONCEPT_ANCESTOR`,
-   `CONCEPT_CLASS`, `CONCEPT_RELATIONSHIP`, `CONCEPT_SYNONYM`, `DOMAIN`,
-   `DRUG_STRENGTH`, `RELATIONSHIP`, `VOCABULARY` (`.csv`). Missing file →
-   clear error naming it.
-2. **Recreate schema**: `DROP SCHEMA IF EXISTS vocab CASCADE`, then OMOP CDM
-   v5.4 vocabulary-table DDL (no constraints/indexes yet). Idempotent; a new
-   vocab version = new `VOCAB_DIR` + rerun.
-3. **Bulk load** each table with
-   `\copy vocab.<t> FROM '/vocab/<T>.csv' WITH (FORMAT csv, DELIMITER E'\t', QUOTE E'\b', HEADER)`.
-   Date columns are `YYYYMMDD`, which Postgres parses as dates directly.
-4. **Constraints & indexes** from the OMOP v5.4 Postgres scripts (PKs + the
-   standard concept/relationship/ancestor indexes), then `ANALYZE`.
-5. **Register source** (requires WebAPI to have completed Flyway migration;
-   loader waits for `webapi.source` to exist, with timeout): upsert one row in
-   `webapi.source` (key `VOCAB`, name "OMOP Vocabulary", JDBC URL to `db`,
-   dialect `postgresql`) and one `webapi.source_daimon` row (daimon type 1 =
-   Vocabulary, table qualifier `vocab`, priority 1). Then call
-   `GET /WebAPI/source/refresh` so no restart is needed.
-6. **Solr index** (skipped with a notice if Solr is unreachable): read
-   `vocabulary_version` from `vocab.vocabulary WHERE vocabulary_id = 'None'`,
-   create a core named with that string (spaces → underscores, matching
-   WebAPI's lookup), run DataImportHandler `full-import` for entity `concept`,
-   poll status until complete.
-
-The ordering requirement (WebAPI up before step 5) is satisfied by running the
-loader against an already `up` stack; the README states this.
+1. **Validate** (host side, before anything is touched) that `VOCAB_DIR`
+   contains `CONCEPT`, `CONCEPT_ANCESTOR`, `CONCEPT_CLASS`,
+   `CONCEPT_RELATIONSHIP`, `CONCEPT_SYNONYM`, `DOMAIN`, `DRUG_STRENGTH`,
+   `RELATIONSHIP`, `VOCABULARY` (`.csv`). Missing → error naming each file;
+   existing vocab left intact.
+2. **Ensure stack is up**: `docker compose up -d --wait` (WebAPI healthcheck
+   implies its Flyway migration has created `webapi.source`).
+3. **Load into Postgres** via the `vocab-loader` container
+   (`scripts/load-vocab-db.sh`):
+   a. `DROP SCHEMA IF EXISTS vocab CASCADE`, OMOP CDM v5.4 vocab DDL.
+   b. `\copy vocab.<t> FROM '/vocab/<T>.csv' WITH (FORMAT csv, DELIMITER E'\t', QUOTE E'\b', HEADER)`.
+   c. PKs + standard OMOP v5.4 indexes (no `CLUSTER`: it doubles disk use), `ANALYZE`.
+   d. Upsert source `VOCAB` in `webapi.source` and one `webapi.source_daimon`
+      row (daimon type 1 = Vocabulary, qualifier `vocab`, priority 1), using
+      the `source_key_unique` and `un_source_daimon` constraints.
+4. **Solr index** (skipped with a notice if the `solr` service is not
+   running): read `vocabulary_version` where `vocabulary_id = 'None'`, spaces →
+   underscores = core name (exactly how WebAPI derives its lookup key). Create
+   the core from the `omop_vocab` configset if absent, run DIH `full-import`,
+   poll until done; fail on "Indexing failed".
+5. **Restart WebAPI** and wait for healthy. Required: WebAPI's Solr provider
+   reads the core list only once, at startup. Restart also clears source and
+   vocabulary-info caches.
 
 ## Dev vocab subset
 
@@ -118,25 +124,36 @@ automatically). Covers hierarchy browsing, source→standard mapping, and drug
 concept sets. Full vocab (~15–25 GB loaded) is for the server or an external
 `PGDATA_HOST_PATH`.
 
-## Verification (manual, in order)
+## Verification
 
-Each layer is checked before the next is built.
+**Automated smoke tests** (`atlas/tests/smoke.sh`) run against an isolated
+compose project (`tests/test.env`: own project name, ports, volumes) loaded
+with a tiny synthetic Athena-format fixture, so they never touch the dev
+stack's data and need no Athena download. Layers:
 
-1. **Base stack, no vocab**: `docker compose up -d`; `curl :8080/WebAPI/info`
-   returns version JSON; ATLAS loads at `:8081` with no config errors in the
-   browser console.
-2. **Vocab + source, Solr off**: loader completes; `/WebAPI/source/sources`
-   lists `VOCAB`; in ATLAS, concept search for "type 2 diabetes" returns SNOMED
-   201826; concept detail shows hierarchy and related concepts; create a
-   concept set with descendants, save it, reload page, it persists; export
-   works.
-3. **Solr on**: WebAPI log shows Solr search provider active for the core;
-   same search returns results via Solr; compare response time vs. step 2.
+1. `base`: WebAPI `/info` responds; ATLAS serves `config-local.js` containing
+   the configured WebAPI URL.
+2. `vocab`: source `VOCAB` registered; DB-backed search finds 201826; a name
+   containing `"` and `\` round-trips intact; descendants resolve through
+   `concept_ancestor`; a concept set can be created, given items, and read
+   back; loader rerun is idempotent (one source row, concept set survives);
+   missing file → non-zero exit naming it, existing vocab untouched.
+3. `solr`: core named from the vocab version exists and is populated; WebAPI
+   search returns results; stopping Solr makes WebAPI search return empty
+   (proves WebAPI is actually using Solr), restarting restores it.
 
-Open question resolved during step 2: whether ATLAS is fully happy with a
-source that has only a Vocabulary daimon (record-count columns should simply
-be empty). If not, fallback is adding an empty results schema + Results
-daimon — still no patient data.
+**Manual check with a real Athena dev subset** in the ATLAS UI: search "type 2
+diabetes", open 201826, browse hierarchy, build/save/reload/export a concept
+set with descendants.
+
+Open question resolved by the `vocab` layer: whether WebAPI/ATLAS accept a
+source with only a Vocabulary daimon. If not, fallback is an empty results
+schema + Results daimon — still no patient data.
+
+**Known behavior to document:** if Solr goes down while WebAPI is running,
+WebAPI search silently returns no results (it catches the error) rather than
+falling back to SQL. `restart: unless-stopped` on Solr; README troubleshooting
+notes the symptom.
 
 ## Out of scope (for now)
 
@@ -145,4 +162,4 @@ daimon — still no patient data.
 - Server provisioning and deployment (later task; this design keeps everything
   in `.env` + one folder so it ports by copy)
 - Patient data, CDM, Achilles/results, cohort generation
-- Automated tests beyond the manual verification above
+- CI
