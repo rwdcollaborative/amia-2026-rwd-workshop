@@ -49,8 +49,11 @@ not rebuild the image.
 
 | Bundle | Disk (Postgres) | Load | Solr index |
 |---|---|---|---|
-| Dev subset (SNOMED, ICD10CM, RxNorm) - not yet measured | TBD (run ./load-vocab.sh and record) | TBD (run ./load-vocab.sh and record) | TBD (run ./load-vocab.sh and record) |
-| Full Athena download | ~15-25 GB (estimate) | - | - |
+| SNOMED, ICD10CM, RxNorm (1.7M concepts, 11.5M relationships, 9.6M ancestor rows) | 2.1 GB | ~1 min of table loads, plus index build | not measured |
+| Full Athena download | ~15-25 GB (estimate, not measured) | - | - |
+
+The workshop droplet (SNOMED, ICD10CM, RxNorm) ran comfortably on 8 vCPU /
+16 GB. 4 vCPU / 8 GB should also be enough for that subset.
 
 For a full bundle on a small laptop disk, set `PGDATA_HOST_PATH` in `.env`
 to a folder on an external drive, and raise `SOLR_HEAP` to `2g`.
