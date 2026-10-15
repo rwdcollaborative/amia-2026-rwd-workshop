@@ -105,13 +105,61 @@ layer_solr() {
     "$(curl -fsS "$WEBAPI/vocabulary/VOCAB/search?query=diabetes")" '"CONCEPT_ID":201826'
 }
 
+layer_proxy() {
+  echo "== proxy"
+  local proxy="http://localhost:${PROXY_HTTP_PORT}" auth="workshop:${WORKSHOP_PASSWORD}"
+  # Server config: ATLAS reaches WebAPI through the proxy by a relative URL.
+  if WEBAPI_PUBLIC_URL=/WebAPI/ dc --profile proxy up -d --wait; then
+    pass "stack starts with proxy"
+  else
+    fail "stack starts with proxy"; return
+  fi
+  code() { curl -s -o /dev/null -w '%{http_code}' "$@"; }
+
+  assert_eq "no password is rejected" "$(code "$proxy/atlas/")" "401"
+  assert_eq "wrong password is rejected" "$(code -u workshop:nope "$proxy/atlas/")" "401"
+  assert_eq "WebAPI needs the password too" "$(code "$proxy/WebAPI/info")" "401"
+  assert_eq "/ redirects to ATLAS" "$(code -u "$auth" "$proxy/")" "302"
+  assert_eq "ATLAS served" "$(code -u "$auth" "$proxy/atlas/")" "200"
+  assert_contains "ATLAS config uses relative WebAPI URL" \
+    "$(curl -fsS -u "$auth" "$proxy/atlas/js/config-local.js")" 'var webapi_url = "/WebAPI/"'
+  assert_contains "WebAPI proxied" "$(curl -fsS -u "$auth" "$proxy/WebAPI/info")" '"version"'
+  assert_eq "source list readable" "$(code -u "$auth" "$proxy/WebAPI/source/sources")" "200"
+
+  # ATLAS sends "Authorization: null" on some calls; the session cookie covers them.
+  local cookie
+  cookie=$(curl -fsS -o /dev/null -D - -u "$auth" "$proxy/atlas/" | tr -d '\r' \
+             | sed -n 's/^[Ss]et-[Cc]ookie: \(atlas_session=[^;]*\).*/\1/p')
+  assert_contains "login sets session cookie" "$cookie" "atlas_session="
+  assert_eq "no session cookie on a 401" \
+    "$(curl -s -o /dev/null -D - "$proxy/atlas/" | grep -ci '^set-cookie')" "0"
+  assert_eq "cookie admits 'Authorization: null' calls" \
+    "$(code -H 'Authorization: null' -b "$cookie" "$proxy/WebAPI/info")" "200"
+  assert_eq "bogus cookie is rejected" "$(code -b atlas_session=nope "$proxy/WebAPI/info")" "401"
+  assert_eq "cookie does not bypass source block" \
+    "$(code -b "$cookie" -X DELETE "$proxy/WebAPI/source/1")" "403"
+
+  local json='Content-Type: application/json'
+  assert_eq "source create blocked" "$(code -u "$auth" -X POST -H "$json" -d '{}' "$proxy/WebAPI/source/")" "403"
+  assert_eq "source delete blocked" "$(code -u "$auth" -X DELETE "$proxy/WebAPI/source/1")" "403"
+  assert_eq "source update blocked" "$(code -u "$auth" -X PUT -H "$json" -d '{}' "$proxy/WebAPI/source/1")" "403"
+  assert_eq "source details blocked" "$(code -u "$auth" "$proxy/WebAPI/source/details/VOCAB")" "403"
+  assert_eq "blocked regardless of case" "$(code -u "$auth" -X DELETE "$proxy/WebAPI/SOURCE/1")" "403"
+  assert_eq "blocked with doubled slash" "$(code -u "$auth" -X DELETE --path-as-is "$proxy/WebAPI//source/1")" "403"
+  assert_eq "blocked with encoded path" "$(code -u "$auth" -X DELETE --path-as-is "$proxy/WebAPI/%73ource/1")" "403"
+  assert_eq "path params rejected" "$(code -u "$auth" -X DELETE --path-as-is "$proxy/WebAPI;x/source/1")" "400"
+  assert_contains "concept set create still allowed" \
+    "$(curl -fsS -u "$auth" -X POST -H "$json" -d "{\"name\":\"proxy-$(date +%s)\"}" "$proxy/WebAPI/conceptset/")" '"id"'
+}
+
 case "${1:-}" in
   base)  layer_base ;;
   vocab) layer_base && layer_vocab ;;
   solr)  layer_base && layer_solr ;;
-  all)   layer_base && layer_vocab && layer_solr ;;
-  down)  dc --profile load down -v; exit 0 ;;
-  *)     echo "usage: $0 base|vocab|solr|all|down" >&2; exit 2 ;;
+  proxy) layer_base && layer_proxy ;;
+  all)   layer_base && layer_vocab && layer_solr && layer_proxy ;;
+  down)  dc --profile load --profile proxy down -v; exit 0 ;;
+  *)     echo "usage: $0 base|vocab|solr|proxy|all|down" >&2; exit 2 ;;
 esac
 
 echo

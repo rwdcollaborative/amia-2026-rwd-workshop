@@ -53,24 +53,135 @@ not rebuild the image.
 For a full bundle on a small laptop disk, set `PGDATA_HOST_PATH` in `.env`
 to a folder on an external drive, and raise `SOLR_HEAP` to `2g`.
 
-## Deploying to a server
+## Deploying to DigitalOcean
 
-Copy this folder, create `.env` with `WEBAPI_PUBLIC_URL=http://<host>:8080/WebAPI/`,
-put the vocabulary on the server, and run `./load-vocab.sh`. Ports 8080
-(WebAPI) and 8081 (ATLAS) must be reachable; Postgres and Solr stay on
-localhost. HTTPS is not set up yet. Set `BIND_ADDR` in `.env` to restrict
-which host interface WebAPI and ATLAS listen on (default all).
+The plan: build and load everything on a droplet once, snapshot it, destroy
+the droplet, and recreate it from the snapshot for the workshop. DigitalOcean
+bills powered-off droplets at the full rate, but a snapshot only costs about
+$0.06/GB-month of used disk (roughly $1-2/month here). The droplet itself is
+billed hourly only while it exists.
 
-**Public exposure.** Security is disabled, so every WebAPI endpoint is
-anonymous, including source administration (`POST/PUT/DELETE /WebAPI/source/`):
-anyone who can reach port 8080 can delete or repoint the vocabulary source, or
-create one with an arbitrary JDBC URL that makes the server connect outbound.
-The source, the WebAPI datasource and the Solr import all use the Postgres
-superuser. Restrict the cloud firewall / security group to the workshop
-network where possible, and stop the stack outside sessions. If the source is
-deleted, rerun `./load-vocab.sh` to restore it (a full reload, so do it before
-a session). A read-only database role for the source is a possible future
-hardening; it is not implemented.
+On the server, Caddy (compose profile `proxy`) is the only public entry point
+on port 80 (and 443 with HTTPS). It puts one shared password in front of
+ATLAS and WebAPI and blocks WebAPI source administration. WebAPI and ATLAS
+listen on localhost only.
+
+### 1. Cloud Firewall (once)
+
+Use a DigitalOcean Cloud Firewall, not `ufw`: Docker's published ports bypass
+`ufw`, while the Cloud Firewall filters traffic before it reaches the droplet.
+
+1. **Networking → Firewalls → Create Firewall**, name it `atlas-workshop`.
+2. **Inbound rules:**
+   - SSH (TCP 22): replace the default "All IPv4 / All IPv6" sources with your
+     own IP address (a search for "what is my IP" shows it). If your IP
+     changes, edit this rule; the droplet's web **Console** works regardless.
+   - Add **HTTP** (TCP 80) and **HTTPS** (TCP 443) from All IPv4 and All IPv6.
+3. **Outbound rules:** leave the defaults (all allowed; needed for apt,
+   Docker Hub, GitHub and Let's Encrypt).
+4. **Apply to Droplets:** enter the tag `atlas-workshop`. Any droplet with
+   that tag gets the firewall automatically, including ones recreated from
+   the snapshot.
+
+### 2. Create and set up the droplet
+
+1. **Create → Droplets:** Ubuntu 24.04 LTS, Basic, 4 vCPU / 8 GB / 160 GB
+   (see [Sizing](#sizing)), your SSH key, and the tag `atlas-workshop`.
+2. From this folder, copy it up and run the setup script (Docker, swap, log rotation,
+   key-only SSH, automatic security updates):
+
+   ```bash
+   rsync -a --exclude .env --exclude tests ./ root@<ip>:/opt/atlas/
+   ssh root@<ip> bash /opt/atlas/deploy/setup-droplet.sh
+   ```
+
+3. Get the vocabulary onto the droplet. Fastest is to copy the download link
+   from Athena's "your vocabulary is ready" email and fetch it on the droplet:
+
+   ```bash
+   ssh root@<ip>
+   mkdir -p /root/vocab && cd /root/vocab
+   curl -fL -o vocab.zip '<link from the Athena email>' && unzip vocab.zip
+   ```
+
+4. Create `/opt/atlas/.env` from `.env.example`, with these settings:
+
+   ```bash
+   VOCAB_DIR=/root/vocab
+   POSTGRES_PASSWORD=<openssl rand -hex 16>
+   BIND_ADDR=127.0.0.1
+   WEBAPI_PUBLIC_URL=/WebAPI/
+   COMPOSE_PROFILES=proxy
+   WORKSHOP_PASSWORD=<shared password you give attendees>
+   ```
+
+5. `cd /opt/atlas && ./load-vocab.sh` (WebAPI builds from source first,
+   10-20 min). Then open `http://<ip>/` and log in as `workshop` with the
+   password.
+6. Shrink the snapshot: `rm -rf /root/vocab && docker builder prune -af`.
+
+### 3. Snapshot and destroy
+
+1. `poweroff` on the droplet (or **Power → Turn off**).
+2. **Snapshots → Take Snapshot**. Wait for it to finish.
+3. **Destroy → Destroy this Droplet**. The snapshot stays under
+   **Backups & Snapshots → Snapshots**.
+
+### 4. Workshop day
+
+1. **Backups & Snapshots → Snapshots → (your snapshot) → More → Create
+   Droplet.** Pick the same size or larger, and add the tag `atlas-workshop`
+   (tags are not stored in the snapshot, and the firewall depends on it).
+2. The stack starts on boot. Then:
+
+   ```bash
+   ssh root@<new-ip>
+   apt-get update && apt-get upgrade -y   # the snapshot may be months old
+   cd /opt/atlas && docker compose restart webapi   # see "Search is slow" below
+   ```
+
+3. Share `http://<new-ip>/` (e.g. through a short link) and the password. No
+   config changes are needed for a new IP: ATLAS reaches WebAPI by a
+   relative URL.
+4. Afterwards, destroy the droplet. Snapshot again first if attendees' saved
+   concept sets should be kept.
+
+### HTTPS without a domain (optional)
+
+Plain HTTP sends the shared password unencrypted, which is a modest risk for
+a throwaway workshop password. For HTTPS, use the free
+[sslip.io](https://sslip.io) wildcard DNS, which maps `203-0-113-7.sslip.io`
+to `203.0.113.7`. On the day, set `SITE_ADDRESS=<ip-with-dashes>.sslip.io` in
+`.env` and run `docker compose up -d caddy`. Caddy gets a Let's Encrypt
+certificate within a minute (`docker compose logs caddy`), and attendees use
+`https://<ip-with-dashes>.sslip.io/`. If the certificate fails, set
+`SITE_ADDRESS=:80` again and use plain HTTP.
+
+### What the proxy does and doesn't protect
+
+WebAPI runs with security disabled, so every endpoint is anonymous to anyone
+who reaches it. Caddy adds the following protections:
+
+- **Shared password.** It keeps out scanners and drive-by visitors.
+  - After the first login, Caddy sets an `HttpOnly` cookie derived from the
+    password.
+  - ATLAS sends `Authorization: null` on some requests, which replaces the
+    browser's saved basic-auth login. The cookie keeps those requests
+    working.
+- **Source administration blocked.** Requests that would delete or repoint
+  the vocabulary source, or add a source with an arbitrary JDBC URL (which
+  makes the server connect outbound), get 403. That covers
+  `POST/PUT/DELETE /WebAPI/source*` and `/WebAPI/source/details*`.
+
+Anyone with the password can still do anything else ATLAS can do, such as
+editing or deleting other attendees' concept sets. If the source is somehow
+deleted, run `./load-vocab.sh` again to restore it (this is a full reload). A
+read-only database role for the source is a possible further hardening; it
+is not implemented.
+
+Without the proxy (e.g. on a private network), set
+`WEBAPI_PUBLIC_URL=http://<host>:8080/WebAPI/` and leave `BIND_ADDR` at its
+default. Ports 8080 and 8081 are then exposed with no protection at all.
 
 ## Troubleshooting
 
@@ -98,10 +209,11 @@ hardening; it is not implemented.
 
 ## Tests
 
-`tests/smoke.sh all` runs layered checks (base stack, vocab loading, Solr)
-against a separate compose project (`tests/test.env`, ports 18080/18081)
-loaded with a tiny synthetic vocabulary in `tests/fixtures/vocab-mini`. It
-never touches your dev data. `tests/smoke.sh down` removes it.
+`tests/smoke.sh all` runs layered checks (base stack, vocab loading, Solr,
+proxy) against a separate compose project (`tests/test.env`, ports
+18080/18081, proxy on 18088) loaded with a tiny synthetic vocabulary in
+`tests/fixtures/vocab-mini`. It never touches your dev data.
+`tests/smoke.sh down` removes it.
 
 ## Credits
 

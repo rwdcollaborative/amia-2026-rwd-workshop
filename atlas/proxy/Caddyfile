@@ -1,0 +1,42 @@
+# Public entry point for a server deploy (compose profile "proxy").
+# One shared password in front of everything, and WebAPI source
+# administration blocked, since WebAPI itself runs with security disabled.
+{
+	# Nothing should reconfigure Caddy at runtime.
+	admin off
+}
+
+# :80 serves plain HTTP on any IP. A hostname (e.g. 203-0-113-7.sslip.io)
+# makes Caddy fetch a Let's Encrypt certificate and serve HTTPS on 443.
+{$SITE_ADDRESS::80} {
+	# ATLAS sends "Authorization: null" on some WebAPI calls, which replaces
+	# the browser's basic-auth credentials. So after a successful login we set
+	# a cookie (derived from the password) that stands in for basic auth.
+	@noSession not header Cookie *atlas_session={$WORKSHOP_SESSION}*
+
+	# Tomcat strips ;params from path segments (/WebAPI;x/source), which would
+	# slip past the path matchers below. ATLAS never sends them.
+	@pathParams path_regexp ;
+	# Delete, repoint, or add a source (an arbitrary JDBC URL makes the server
+	# connect outbound). Attendees only need to read the source list.
+	@sourceWrites {
+		path /WebAPI/source*
+		not method GET HEAD
+	}
+	# Returns the stored connection details.
+	@sourceDetails path /WebAPI/source/details*
+
+	route {
+		basic_auth @noSession {
+			{$WORKSHOP_USER:workshop} {$WORKSHOP_PASSWORD_HASH}
+		}
+		# Only reached once authenticated.
+		header Set-Cookie "atlas_session={$WORKSHOP_SESSION}; Path=/; HttpOnly; SameSite=Strict"
+		respond @pathParams 400
+		respond @sourceWrites 403
+		respond @sourceDetails 403
+		redir / /atlas/
+		reverse_proxy /WebAPI* webapi:8080
+		reverse_proxy atlas:8080
+	}
+}

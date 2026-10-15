@@ -104,6 +104,40 @@ services:
     ports:
       - "${BIND_ADDR:-0.0.0.0}:${ATLAS_PORT:-8081}:8080"
 
+  # Server front door: password + blocks WebAPI source admin. Enable with
+  # COMPOSE_PROFILES=proxy and set BIND_ADDR=127.0.0.1 so it's the only way in.
+  caddy:
+    image: caddy:2.10.2-alpine
+    profiles: [proxy]
+    restart: unless-stopped
+    depends_on: [atlas, webapi]
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+      WORKSHOP_USER: ${WORKSHOP_USER:-workshop}
+      WORKSHOP_PASSWORD: ${WORKSHOP_PASSWORD:-}
+    # Hash at startup so .env holds a plain password (bcrypt's $ signs would
+    # need escaping for compose).
+    command:
+      - sh
+      - -c
+      - |
+        [ -n "$$WORKSHOP_PASSWORD" ] || { echo "set WORKSHOP_PASSWORD in .env" >&2; exit 1; }
+        export WORKSHOP_PASSWORD_HASH="$$(caddy hash-password --plaintext "$$WORKSHOP_PASSWORD")"
+        export WORKSHOP_SESSION="$$(printf 'atlas-session:%s' "$$WORKSHOP_PASSWORD" | sha256sum | cut -c1-64)"
+        exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+    volumes:
+      - ./proxy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddydata:/data
+      - caddyconfig:/config
+    ports:
+      - "${PROXY_HTTP_PORT:-80}:80"
+      - "${PROXY_HTTPS_PORT:-443}:443"
+    healthcheck:
+      test: ["CMD", "nc", "-z", "127.0.0.1", "80"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
   # One-shot loader; never starts with a plain `up`. Run via ./load-vocab.sh.
   vocab-loader:
     image: postgres:16
@@ -130,3 +164,5 @@ services:
 volumes:
   pgdata:
   solrdata:
+  caddydata:
+  caddyconfig:
