@@ -88,4 +88,8 @@ else
   echo "==> Solr not running; skipping index (search uses SQL)"
   step "Refreshing WebAPI source cache" curl -fsS -o /dev/null "$WEBAPI/source/refresh"
 fi
-echo "Vocabulary loaded. ATLAS: http://localhost:${ATLAS_PORT:-8081}/atlas/"
+if [[ ",${COMPOSE_PROFILES:-}," == *,proxy,* ]]; then
+  echo "Vocabulary loaded. ATLAS: http://localhost:${PROXY_HTTP_PORT:-80}/"
+else
+  echo "Vocabulary loaded. ATLAS: http://localhost:${ATLAS_PORT:-8081}/atlas/"
+fi

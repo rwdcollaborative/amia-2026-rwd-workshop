@@ -7,8 +7,9 @@ anonymous workspace (no logins).
 
 | Service | Purpose | URL |
 |---|---|---|
-| atlas | ATLAS UI | http://localhost:8081/atlas/ |
-| webapi | OHDSI WebAPI 2.15.2 (built with Solr support) | http://localhost:8080/WebAPI/info |
+| caddy | Front door: optional password, blocks source admin | http://localhost/ |
+| atlas | ATLAS UI (reached through caddy) | 127.0.0.1:8081 |
+| webapi | OHDSI WebAPI 2.15.2 (built with Solr support) | http://127.0.0.1:8080/WebAPI/info |
 | solr | Fast concept search | http://127.0.0.1:8983/solr/ |
 | db | Postgres 16: `webapi` + `vocab` schemas | 127.0.0.1:5432 |
 
@@ -27,7 +28,8 @@ Docker with Compose v2 (`docker compose`, needs `--wait` support) and `curl`.
    unzipped folder.
 3. `./load-vocab.sh`. The first run builds WebAPI from source (10-20 min),
    then loads the vocabulary, builds the Solr index and restarts WebAPI.
-4. Open http://localhost:8081/atlas/.
+4. Open http://localhost/. If port 80 is taken on your machine, set
+   `PROXY_HTTP_PORT` in `.env` (e.g. `8000`, then http://localhost:8000/).
 
 To load a different bundle later: `./load-vocab.sh /path/to/other/bundle`.
 The vocab schema is replaced, and saved concept sets are kept.
@@ -117,15 +119,12 @@ Use a DigitalOcean Cloud Firewall, not `ufw`: Docker's published ports bypass
    The CSVs (`CONCEPT.csv`, ...) should be directly in `/root/vocab`. If they
    are in a subfolder, use that for `VOCAB_DIR`.
 4. Create `.env` from `.env.example`
-   (`cd /root/amia-2026-rwd-workshop/atlas && cp .env.example .env`), with
-   these settings:
+   (`cd /root/amia-2026-rwd-workshop/atlas && cp .env.example .env`). Its
+   defaults are already set up for the proxy. Set:
 
    ```bash
    VOCAB_DIR=/root/vocab
-   POSTGRES_PASSWORD=<openssl rand -hex 16>
-   BIND_ADDR=127.0.0.1
-   WEBAPI_PUBLIC_URL=/WebAPI/
-   COMPOSE_PROFILES=proxy
+   POSTGRES_PASSWORD=<openssl rand -hex 16>   # before the first start
    WORKSHOP_PASSWORD=<shared password you give attendees>   # optional
    ```
 
@@ -199,9 +198,10 @@ deleted, run `./load-vocab.sh` again to restore it (this is a full reload). A
 read-only database role for the source is a possible further hardening; it
 is not implemented.
 
-Without the proxy (e.g. on a private network), set
-`WEBAPI_PUBLIC_URL=http://<host>:8080/WebAPI/` and leave `BIND_ADDR` at its
-default. Ports 8080 and 8081 are then exposed with no protection at all.
+Without the proxy (e.g. on a private network), remove `COMPOSE_PROFILES`
+and set `BIND_ADDR=0.0.0.0` and `WEBAPI_PUBLIC_URL=http://<host>:8080/WebAPI/`.
+ATLAS is then at `http://<host>:8081/atlas/`, and ports 8080 and 8081 are
+exposed with no protection at all.
 
 ## Troubleshooting
 
