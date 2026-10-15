@@ -104,7 +104,7 @@ services:
     ports:
       - "${BIND_ADDR:-0.0.0.0}:${ATLAS_PORT:-8081}:8080"
 
-  # Server front door: password + blocks WebAPI source admin. Enable with
+  # Server front door: optional password + blocks WebAPI source admin. Enable with
   # COMPOSE_PROFILES=proxy and set BIND_ADDR=127.0.0.1 so it's the only way in.
   caddy:
     image: caddy:2.10.2-alpine
@@ -121,9 +121,14 @@ services:
       - sh
       - -c
       - |
-        [ -n "$$WORKSHOP_PASSWORD" ] || { echo "set WORKSHOP_PASSWORD in .env" >&2; exit 1; }
-        export WORKSHOP_PASSWORD_HASH="$$(caddy hash-password --plaintext "$$WORKSHOP_PASSWORD")"
-        export WORKSHOP_SESSION="$$(printf 'atlas-session:%s' "$$WORKSHOP_PASSWORD" | sha256sum | cut -c1-64)"
+        if [ -n "$$WORKSHOP_PASSWORD" ]; then
+          export AUTH_MODE=on
+          export WORKSHOP_PASSWORD_HASH="$$(caddy hash-password --plaintext "$$WORKSHOP_PASSWORD")"
+          export WORKSHOP_SESSION="$$(printf 'atlas-session:%s' "$$WORKSHOP_PASSWORD" | sha256sum | cut -c1-64)"
+        else
+          export AUTH_MODE=off
+          echo "WARNING: no WORKSHOP_PASSWORD; ATLAS is open to anyone who can reach it" >&2
+        fi
         exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
     volumes:
       - ./proxy/Caddyfile:/etc/caddy/Caddyfile:ro

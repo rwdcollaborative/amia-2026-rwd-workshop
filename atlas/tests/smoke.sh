@@ -150,6 +150,16 @@ layer_proxy() {
   assert_eq "path params rejected" "$(code -u "$auth" -X DELETE --path-as-is "$proxy/WebAPI;x/source/1")" "400"
   assert_contains "concept set create still allowed" \
     "$(curl -fsS -u "$auth" -X POST -H "$json" -d "{\"name\":\"proxy-$(date +%s)\"}" "$proxy/WebAPI/conceptset/")" '"id"'
+
+  # Password is optional; the source block is not.
+  if WORKSHOP_PASSWORD= WEBAPI_PUBLIC_URL=/WebAPI/ dc --profile proxy up -d --wait caddy >/dev/null 2>&1; then
+    pass "proxy starts without a password"
+    assert_eq "no password needed" "$(code "$proxy/atlas/")" "200"
+    assert_eq "source delete still blocked" "$(code -X DELETE "$proxy/WebAPI/source/1")" "403"
+  else
+    fail "proxy starts without a password"
+  fi
+  WEBAPI_PUBLIC_URL=/WebAPI/ dc --profile proxy up -d --wait caddy >/dev/null 2>&1
 }
 
 case "${1:-}" in

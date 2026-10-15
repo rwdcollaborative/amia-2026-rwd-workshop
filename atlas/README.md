@@ -62,8 +62,8 @@ $0.06/GB-month of used disk (roughly $1-2/month here). The droplet itself is
 billed hourly only while it exists.
 
 On the server, Caddy (compose profile `proxy`) is the only public entry point
-on port 80 (and 443 with HTTPS). It puts one shared password in front of
-ATLAS and WebAPI and blocks WebAPI source administration. WebAPI and ATLAS
+on port 80 (and 443 with HTTPS). It blocks WebAPI source administration
+and can put one shared password in front of ATLAS and WebAPI. WebAPI and ATLAS
 listen on localhost only.
 
 ### 1. Cloud Firewall (once)
@@ -87,24 +87,38 @@ Use a DigitalOcean Cloud Firewall, not `ufw`: Docker's published ports bypass
 
 1. **Create → Droplets:** Ubuntu 24.04 LTS, Basic, 4 vCPU / 8 GB / 160 GB
    (see [Sizing](#sizing)), your SSH key, and the tag `atlas-workshop`.
-2. From this folder, copy it up and run the setup script (Docker, swap, log rotation,
+2. On the droplet (SSH, or the droplet's web **Console**), clone the repo
+   into `/root` and run the setup script (Docker, swap, log rotation,
    key-only SSH, automatic security updates):
 
    ```bash
-   rsync -a --exclude .env --exclude tests ./ root@<ip>:/opt/atlas/
-   ssh root@<ip> bash /opt/atlas/deploy/setup-droplet.sh
+   cd /root
+   git clone -b atlas https://github.com/rwdcollaborative/amia-2026-rwd-workshop.git
+   bash /root/amia-2026-rwd-workshop/atlas/deploy/setup-droplet.sh
    ```
 
-3. Get the vocabulary onto the droplet. Fastest is to copy the download link
-   from Athena's "your vocabulary is ready" email and fetch it on the droplet:
+   Everything below runs in `/root/amia-2026-rwd-workshop/atlas`.
+3. Upload the Athena zip **from your laptop**. Athena names it
+   `vocabulary_download_v5_{<uuid>}_<number>.zip`. Keep the `~/` outside the
+   quotes so it expands, and don't backslash-escape the braces inside them:
 
    ```bash
-   ssh root@<ip>
-   mkdir -p /root/vocab && cd /root/vocab
-   curl -fL -o vocab.zip '<link from the Athena email>' && unzip vocab.zip
+   rsync -avP ~/"Downloads/vocabulary_download_v5_{<uuid>}_<number>.zip" root@<ip>:/root/vocab.zip
    ```
 
-4. Create `/opt/atlas/.env` from `.env.example`, with these settings:
+   `-P` shows progress and resumes an interrupted upload if you rerun it.
+   Uploading needs SSH to the droplet: the firewall must allow your IP, and
+   the droplet must have your laptop's key. Then unzip on the droplet:
+
+   ```bash
+   mkdir -p /root/vocab && unzip /root/vocab.zip -d /root/vocab && ls /root/vocab
+   ```
+
+   The CSVs (`CONCEPT.csv`, ...) should be directly in `/root/vocab`. If they
+   are in a subfolder, use that for `VOCAB_DIR`.
+4. Create `.env` from `.env.example`
+   (`cd /root/amia-2026-rwd-workshop/atlas && cp .env.example .env`), with
+   these settings:
 
    ```bash
    VOCAB_DIR=/root/vocab
@@ -112,13 +126,16 @@ Use a DigitalOcean Cloud Firewall, not `ufw`: Docker's published ports bypass
    BIND_ADDR=127.0.0.1
    WEBAPI_PUBLIC_URL=/WebAPI/
    COMPOSE_PROFILES=proxy
-   WORKSHOP_PASSWORD=<shared password you give attendees>
+   WORKSHOP_PASSWORD=<shared password you give attendees>   # optional
    ```
 
-5. `cd /opt/atlas && ./load-vocab.sh` (WebAPI builds from source first,
-   10-20 min). Then open `http://<ip>/` and log in as `workshop` with the
-   password.
-6. Shrink the snapshot: `rm -rf /root/vocab && docker builder prune -af`.
+   Without `WORKSHOP_PASSWORD` there is no login prompt and anyone who finds
+   the IP can use ATLAS (see [below](#what-the-proxy-does-and-doesnt-protect)).
+
+5. `./load-vocab.sh` (WebAPI builds from source first, 10-20 min). Then
+   open `http://<ip>/` (log in as `workshop` if you set a password).
+6. Shrink the snapshot:
+   `rm -rf /root/vocab.zip /root/vocab && docker builder prune -af`.
 
 ### 3. Snapshot and destroy
 
@@ -137,10 +154,11 @@ Use a DigitalOcean Cloud Firewall, not `ufw`: Docker's published ports bypass
    ```bash
    ssh root@<new-ip>
    apt-get update && apt-get upgrade -y   # the snapshot may be months old
-   cd /opt/atlas && docker compose restart webapi   # see "Search is slow" below
+   cd /root/amia-2026-rwd-workshop/atlas && docker compose restart webapi   # see "Search is slow" below
    ```
 
-3. Share `http://<new-ip>/` (e.g. through a short link) and the password. No
+3. Share `http://<new-ip>/` (e.g. through a short link) and the password,
+   if any. No
    config changes are needed for a new IP: ATLAS reaches WebAPI by a
    relative URL.
 4. Afterwards, destroy the droplet. Snapshot again first if attendees' saved
@@ -162,7 +180,9 @@ certificate within a minute (`docker compose logs caddy`), and attendees use
 WebAPI runs with security disabled, so every endpoint is anonymous to anyone
 who reaches it. Caddy adds the following protections:
 
-- **Shared password.** It keeps out scanners and drive-by visitors.
+- **Shared password (if `WORKSHOP_PASSWORD` is set).** It keeps out scanners
+  and drive-by visitors. Without it, anyone who reaches the IP can do what
+  attendees can.
   - After the first login, Caddy sets an `HttpOnly` cookie derived from the
     password.
   - ATLAS sends `Authorization: null` on some requests, which replaces the
