@@ -219,6 +219,21 @@ exposed with no protection at all.
   `vocab` schema in place, so until `./load-vocab.sh` completes with a good
   bundle, search and concept browsing are broken. Load vocabularies before a
   session, not during one.
+- **ATLAS says "You do not have access to this feature" on Search.** ATLAS
+  didn't find a vocabulary source when the page loaded. If WebAPI was still
+  starting, hard-refresh once it is `(healthy)`. If
+  `curl -s localhost:8080/WebAPI/source/daimon/priority` returns `{}`, the
+  source can't connect to the database, usually because `POSTGRES_PASSWORD`
+  changed after loading (the source stores the password from load time).
+  Re-register it with the current password, no reload needed:
+
+  ```bash
+  docker compose exec -T db psql -U ohdsi -d ohdsi \
+    -v jdbc_url=jdbc:postgresql://db:5432/ohdsi -v db_user=ohdsi -v db_password=<current password> \
+    < sql/register_source.sql
+  docker compose restart webapi
+  ```
+
 - **Changed something under `solr/`.** Run
   `docker compose build solr && docker compose up -d solr`; plain `up` won't
   rebuild the image.
