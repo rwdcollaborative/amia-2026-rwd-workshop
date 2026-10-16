@@ -190,10 +190,12 @@ def a1c_recode_map():
     """{source CPT concept: standard target} via 'Maps to', checked against the A1C set."""
     ids = ", ".join(map(str, A1C_SOURCE_CONCEPTS))
     rows = run(f"""
+WITH a1c_set AS {expand_sql(A1C_CONCEPT_SET)}
 SELECT cr.concept_id_1 AS source_id, cr.concept_id_2 AS target_id, c.concept_name,
-       cr.concept_id_2 IN (SELECT concept_id FROM {expand_sql(A1C_CONCEPT_SET)}) AS in_a1c_set
+       s.concept_id IS NOT NULL AS in_a1c_set
 FROM {src('concept_relationship')} cr
 JOIN {src('concept')} c ON c.concept_id = cr.concept_id_2
+LEFT JOIN a1c_set s ON s.concept_id = cr.concept_id_2
 WHERE cr.concept_id_1 IN ({ids}) AND cr.relationship_id = 'Maps to'
   AND cr.invalid_reason IS NULL""", "A1C: look up 'Maps to' targets")
     if PRINT_ONLY:
