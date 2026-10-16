@@ -56,14 +56,41 @@ What it checks, and why:
   whether the original `+16,000,000` offset on A1C `measurement_id` values would
   collide with existing IDs.
 
-## 2. Planned shape (to be confirmed by the diagnostics)
+## 2. Build the workshop dataset (once per workspace)
 
-- **Augmentation runs once per workspace and stays out of sight.** A staging
-  step builds a separate dataset (e.g. `synpuf_workshop`). The modified tables
-  (`person`, `condition_occurrence`, `measurement`, `death`) are materialized
-  there. Every other table, vocabulary included, is a view onto `synpuf_omop`.
-  Random draws are seeded, so re-running the step reproduces the same data.
-- **Analysis notebooks see one ordinary OMOP dataset.** They name it the way an
-  All of Us notebook does, through a single `CDR` variable resolved from
-  `WORKSPACE_CDR` when it is set. That way the code reads like AoU code, and
-  participants never see that some of the rows are synthetic.
+The original exercises ran on an OMOP-converted Synthea dataset. SynPUF's
+deaths are unrelated to diagnoses and its lab rows have no values, so
+`augment.py` adds the signal the exercises need:
+
+- **Pancreatic cancer.** About 10% of decedents get a *Primary adenocarcinoma of
+  pancreas* diagnosis, dated an exponential number of days (mean 300) before
+  their death. A further ~10% of the pancreatic-cancer group is drawn from
+  living people, with the diagnosis dated before their last recorded activity,
+  so they come out censored. The death table is unchanged.
+- **A1C values.** SynPUF already has A1C test rows (CPT 83036/83037) without
+  values. Those rows are recoded to the standard concept their CPT code "Maps
+  to" (the CPT code is kept as the source concept) and given a value. The value
+  is drawn around 7.5 if the person had diabetes on or before the test date,
+  and around 5.0 otherwise.
+
+The output is a separate dataset in which `condition_occurrence` and
+`measurement` are real tables and every other table is a view onto
+`synpuf_omop`. Notebooks query it like any OMOP dataset. Two tables starting
+with `_` record what was added, for instructors.
+
+```bash
+# once: create the target dataset as a Workbench resource (UI or `wb resource create bq-dataset`),
+# named synpuf_workshop, in the same location as synpuf_omop (us-central1)
+cd exercises
+python3 augment.py              # idempotent and deterministic; re-running rebuilds the same data
+python3 augment.py --print-sql  # see exactly what it runs
+```
+
+`bq_env.py` works around a bug in the Workbench image: the image's `dsub`
+pins `google-api-core` too low for the bundled BigQuery client, so the client
+won't import. It reinstalls the image's intended `google-api-core` only when
+the import fails. Both `augment.py` and the notebooks use it.
+
+**Provisional:** the diabetes definition (`DIABETES_SEEDS` in `augment.py`) is
+still pending the original "complicated" and "uncomplicated" concept sets. The
+script warns if it finds far fewer diabetics than the ICD-9 250.x codes do.

@@ -31,7 +31,12 @@ import subprocess
 import sys
 import time
 import traceback
+import warnings
 from importlib import metadata
+
+# google-api-core warns (once per package) that grpcio < 1.83 lacks post-quantum
+# crypto support. Harmless here, and it buries the report.
+warnings.filterwarnings("ignore", message=".*Post-Quantum Cryptography.*", category=FutureWarning)
 
 import pandas as pd
 
