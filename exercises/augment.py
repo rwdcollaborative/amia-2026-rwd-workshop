@@ -205,10 +205,15 @@ WHERE cr.concept_id_1 IN ({ids}) AND cr.relationship_id = 'Maps to'
         print(f"   {r.source_id} -> {r.target_id} {r.concept_name!r} (in A1C set: {r.in_a1c_set})")
         if r.in_a1c_set:
             mapping.setdefault(r.source_id, r.target_id)
-    missing = set(A1C_SOURCE_CONCEPTS) - set(mapping)
-    if missing:
-        sys.exit(f"No 'Maps to' target inside the A1C concept set for {sorted(missing)}; "
-                 f"pick a target by hand and extend a1c_recode_map().")
+    # A code whose own target is outside the set (CPT 83037, the home-device test,
+    # is standard and maps to itself -- a concept the original set excludes) is
+    # recoded to the other A1C codes' in-set target, so every A1C row gets a value.
+    targets = sorted(set(mapping.values()))
+    if not targets:
+        sys.exit("No A1C code maps into the A1C concept set; pick a target by hand.")
+    for cid in sorted(set(A1C_SOURCE_CONCEPTS) - set(mapping)):
+        mapping[cid] = targets[0]
+        print(f"   {cid} has no in-set target; recoding it to {targets[0]} as well")
     return mapping
 
 
