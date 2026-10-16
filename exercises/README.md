@@ -94,3 +94,21 @@ the import fails. Both `augment.py` and the notebooks use it.
 **Provisional:** the diabetes definition (`DIABETES_SEEDS` in `augment.py`) is
 still pending the original "complicated" and "uncomplicated" concept sets. The
 script warns if it finds far fewer diabetics than the ICD-9 250.x codes do.
+
+## 3. The exercise notebook
+
+`survival_and_a1c.ipynb` runs both analyses against `synpuf_workshop`:
+
+1. **Survival.** Pancreatic-cancer-only vs. type-2-diabetes-only cohorts built
+   from concept sets, sign-of-life dates, censoring, Kaplan–Meier curves, and a
+   log-rank test.
+2. **A1C.** Concept sets with descendants and exclusions, per-person A1C
+   summaries, and a box plot by diabetes status.
+
+Every query goes through a single `query(sql)` helper (`pandas_gbq.read_gbq`)
+and a `CDR` dataset variable, mirroring the All of Us convention
+(`os.environ["WORKSPACE_CDR"]`). The first cell applies the `bq_env.py` fix and
+installs `lifelines` if it's missing.
+
+The diabetes concept sets in section 2.2 must match `DIABETES_SEEDS` in
+`augment.py`, because the A1C values were generated from that definition.
