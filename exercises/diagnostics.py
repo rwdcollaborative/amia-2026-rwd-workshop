@@ -34,7 +34,16 @@ import traceback
 from importlib import metadata
 
 import pandas as pd
-from google.cloud import bigquery
+
+# Imported defensively: a pip install that upgrades google-cloud-bigquery without
+# its google-api-core dependency breaks this import, and we still want the
+# environment report (section 1) to show which versions are out of step.
+try:
+    from google.cloud import bigquery
+    BQ_IMPORT_ERROR = None
+except Exception as e:  # noqa: BLE001
+    bigquery = None
+    BQ_IMPORT_ERROR = f"{type(e).__name__}: {e}"
 
 # ---------------------------------------------------------------------------
 # Concepts the original (Foundry) exercises used
@@ -143,7 +152,8 @@ def env_vars():
 
 
 def packages():
-    dists = ["google-cloud-bigquery", "google-cloud-bigquery-storage", "pandas",
+    dists = ["google-cloud-bigquery", "google-api-core", "google-cloud-core", "google-auth",
+             "google-cloud-bigquery-storage", "pandas",
              "pandas-gbq", "db-dtypes", "bigquery-magics", "pyarrow", "numpy",
              "scipy", "matplotlib", "seaborn", "lifelines", "google-cloud-storage"]
     print(f"  python {sys.version.split()[0]} ({sys.executable})")
@@ -557,12 +567,23 @@ def main():
     if not args.project:
         sys.exit("No project: set GOOGLE_CLOUD_PROJECT or pass --project.")
     P, D = args.project, args.dataset
-    client = bigquery.Client(project=P)
 
     sections = [
         ("1a. Environment variables", env_vars),
         ("1b. Python packages", packages),
         ("1c. Command-line tools (+ wb resources)", clis),
+    ]
+    if BQ_IMPORT_ERROR:
+        run_sections(sections)
+        print(f"\n{'=' * 78}")
+        print(f"STOPPED: `from google.cloud import bigquery` failed:\n  {BQ_IMPORT_ERROR}")
+        print("Usually google-cloud-bigquery is newer than google-api-core (compare the versions\n"
+              "in 1b). Check where they're installed with:\n"
+              "  python3 -m pip show google-cloud-bigquery google-api-core | grep -E 'Name|Version|Location'")
+        sys.exit(1)
+    client = bigquery.Client(project=P)
+
+    sections += [
         ("2a. Datasets visible in the project", datasets),
         ("2b. Query -> DataFrame access paths", access_paths),
     ]
@@ -581,6 +602,14 @@ def main():
         ("4g. Primary-key ranges", ids),
     ]
 
+    failed = run_sections(sections)
+    print(f"\n{'=' * 78}")
+    print(f"Done. BigQuery bytes processed: {BYTES / 1e9:.2f} GB")
+    if failed:
+        print(f"Sections that failed: {failed}")
+
+
+def run_sections(sections):
     print(f"diagnostics.py  project={P}  dataset={D}  {time.strftime('%Y-%m-%d %H:%M:%S')}")
     failed = []
     for title, fn in sections:
@@ -591,11 +620,7 @@ def main():
             failed.append(title)
             print(f"  SECTION FAILED: {type(e).__name__}: {e}")
             traceback.print_exc(limit=2, file=sys.stdout)
-
-    print(f"\n{'=' * 78}")
-    print(f"Done. BigQuery bytes processed: {BYTES / 1e9:.2f} GB")
-    if failed:
-        print(f"Sections that failed: {failed}")
+    return failed
 
 
 if __name__ == "__main__":
