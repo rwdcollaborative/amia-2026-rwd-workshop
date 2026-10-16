@@ -1,0 +1,7 @@
+concept_id	concept_name	domain_id	vocabulary_id	concept_class_id	standard_concept	concept_code	valid_start_date	valid_end_date	invalid_reason
+201820	Diabetes mellitus	Condition	SNOMED	Clinical Finding	S	73211009	19700101	20991231	
+201826	Type 2 diabetes mellitus	Condition	SNOMED	Clinical Finding	S	44054006	19700101	20991231	
+4193704	Type 2 diabetes mellitus without complication	Condition	SNOMED	Clinical Finding	S	313436004	19700101	20991231	
+1567956	Type 2 diabetes mellitus	Condition	ICD10CM	3-char nonbill code		E11	19700101	20991231	
+9000001	Fixture "quoted" name with \backslash	Observation	SNOMED	Clinical Finding	S	FIXTURE1	19700101	20991231	
+4180186	English language	Language	SNOMED	Qualifier Value	S	297496009	19700101	20991231	

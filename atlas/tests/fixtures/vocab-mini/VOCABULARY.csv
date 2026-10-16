@@ -1,0 +1,4 @@
+vocabulary_id	vocabulary_name	vocabulary_reference	vocabulary_version	vocabulary_concept_id
+None	OMOP Standardized Vocabularies	OMOP generated	v5.0 FIXTURE-01-JAN-26	44819096
+SNOMED	Systematic Nomenclature of Medicine - Clinical Terms (IHTSDO)	http://www.snomed.org/	FIXTURE	44819097
+ICD10CM	International Classification of Diseases, Tenth Revision, Clinical Modification (NCHS)	http://www.cdc.gov/nchs/icd/icd10cm.htm	FIXTURE	44819098

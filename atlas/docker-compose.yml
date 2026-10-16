@@ -1,0 +1,173 @@
+# Vocabulary-only OHDSI ATLAS stack: no patient data. See README.md.
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-ohdsi}
+      POSTGRES_USER: ${POSTGRES_USER:-ohdsi}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    # Bulk-load friendly, but modest enough for an 8 GB Docker VM.
+    command: >-
+      postgres -c shared_buffers=512MB -c maintenance_work_mem=512MB
+      -c max_wal_size=4GB -c work_mem=32MB
+    shm_size: 1g
+    volumes:
+      - ${PGDATA_HOST_PATH:-pgdata}:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:${DB_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  solr:
+    build: ./solr
+    image: atlas-workshop/solr:8.11.4-omop
+    restart: unless-stopped
+    environment:
+      SOLR_HEAP: ${SOLR_HEAP:-1g}
+      SOLR_OPTS: >-
+        -DVOCAB_JDBC_URL=jdbc:postgresql://db:5432/${POSTGRES_DB:-ohdsi}
+        -DVOCAB_JDBC_USER=${POSTGRES_USER:-ohdsi}
+        -DVOCAB_JDBC_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - solrdata:/var/solr
+    ports:
+      - "127.0.0.1:${SOLR_PORT:-8983}:8983"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:8983/solr/admin/info/system >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  webapi:
+    # The published ohdsi/webapi image is built without the webapi-solr
+    # profile, so Solr search silently does nothing. Build it ourselves.
+    build:
+      context: https://github.com/OHDSI/WebAPI.git#v2.15.2
+      args:
+        MAVEN_PROFILE: webapi-docker,webapi-solr
+        # The unit tests need a live database; they fail inside the build.
+        MAVEN_PARAMS: -DskipTests=true -DskipUnitTests=true
+    image: atlas-workshop/webapi:2.15.2-solr
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      solr:
+        condition: service_healthy
+    environment:
+      DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      DATASOURCE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB:-ohdsi}
+      DATASOURCE_USERNAME: ${POSTGRES_USER:-ohdsi}
+      DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      DATASOURCE_OHDSI_SCHEMA: webapi
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: webapi
+      SPRING_BATCH_REPOSITORY_TABLEPREFIX: webapi.BATCH_
+      FLYWAY_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      FLYWAY_DATASOURCE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB:-ohdsi}
+      FLYWAY_DATASOURCE_USERNAME: ${POSTGRES_USER:-ohdsi}
+      FLYWAY_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      FLYWAY_LOCATIONS: classpath:db/migration/postgresql
+      FLYWAY_PLACEHOLDERS_OHDSISCHEMA: webapi
+      FLYWAY_SCHEMAS: webapi
+      FLYWAY_TABLE: schema_history
+      SECURITY_PROVIDER: DisabledSecurity
+      SECURITY_CORS_ENABLED: "true"
+      SECURITY_ORIGIN: "*"
+      SOLR_ENDPOINT: http://solr:8983/solr
+    ports:
+      - "${BIND_ADDR:-0.0.0.0}:${WEBAPI_PORT:-8080}:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:8080/WebAPI/info >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      start_period: 300s
+      retries: 30
+
+  atlas:
+    image: ohdsi/atlas:2.15.0
+    restart: unless-stopped
+    # The image renders config-local.js from these at startup.
+    environment:
+      WEBAPI_URL: ${WEBAPI_PUBLIC_URL:-http://localhost:8080/WebAPI/}
+      ATLAS_INSTANCE_NAME: ${ATLAS_INSTANCE_NAME:-Workshop ATLAS}
+      ATLAS_SECURITY_PROVIDER_ENABLED: "false"
+      ATLAS_ENABLE_PERMISSIONS_MGMT: "false"
+      ATLAS_ENABLE_TANDCS: "false"
+      ATLAS_ENABLE_PERSONCOUNT: "false"
+      ATLAS_DISABLE_BROWSER_CHECK: "true"
+    ports:
+      - "${BIND_ADDR:-0.0.0.0}:${ATLAS_PORT:-8081}:8080"
+
+  # Server front door: optional password + blocks WebAPI source admin. Enable with
+  # COMPOSE_PROFILES=proxy and set BIND_ADDR=127.0.0.1 so it's the only way in.
+  caddy:
+    image: caddy:2.10.2-alpine
+    profiles: [proxy]
+    restart: unless-stopped
+    depends_on: [atlas, webapi]
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+      WORKSHOP_USER: ${WORKSHOP_USER:-workshop}
+      WORKSHOP_PASSWORD: ${WORKSHOP_PASSWORD:-}
+    # Hash at startup so .env holds a plain password (bcrypt's $ signs would
+    # need escaping for compose).
+    command:
+      - sh
+      - -c
+      - |
+        if [ -n "$$WORKSHOP_PASSWORD" ]; then
+          export AUTH_MODE=on
+          export WORKSHOP_PASSWORD_HASH="$$(caddy hash-password --plaintext "$$WORKSHOP_PASSWORD")"
+          export WORKSHOP_SESSION="$$(printf 'atlas-session:%s' "$$WORKSHOP_PASSWORD" | sha256sum | cut -c1-64)"
+        else
+          export AUTH_MODE=off
+          echo "WARNING: no WORKSHOP_PASSWORD; ATLAS is open to anyone who can reach it" >&2
+        fi
+        exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+    volumes:
+      - ./proxy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddydata:/data
+      - caddyconfig:/config
+    ports:
+      - "${PROXY_HTTP_PORT:-80}:80"
+      - "${PROXY_HTTPS_PORT:-443}:443"
+    healthcheck:
+      test: ["CMD", "nc", "-z", "127.0.0.1", "80"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+  # One-shot loader; never starts with a plain `up`. Run via ./load-vocab.sh.
+  vocab-loader:
+    image: postgres:16
+    profiles: [load]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGHOST: db
+      PGDATABASE: ${POSTGRES_DB:-ohdsi}
+      PGUSER: ${POSTGRES_USER:-ohdsi}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - type: bind
+        source: ${VOCAB_DIR:-./.vocab-dir-not-set}
+        target: /vocab
+        read_only: true
+        bind:
+          create_host_path: false
+      - ./sql:/sql:ro
+      - ./scripts:/scripts:ro
+    entrypoint: ["bash", "/scripts/load-vocab-db.sh"]
+
+volumes:
+  pgdata:
+  solrdata:
+  caddydata:
+  caddyconfig:
