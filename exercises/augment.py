@@ -80,6 +80,10 @@ A1C_CONCEPT_SET = [
 DIABETES_SEEDS = [
     442793,    # Complication due to diabetes mellitus
     4008576,   # Diabetes mellitus without complication
+    # Added for SynPUF, which maps ICD-9 250.x to these broader concepts rather
+    # than to anything under the two seeds above (they'd find ~65% of diabetics).
+    201826,    # Type 2 diabetes mellitus
+    201254,    # Type 1 diabetes mellitus
 ]
 
 # Tables materialized here; everything else becomes a view.
