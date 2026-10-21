@@ -1,16 +1,15 @@
 # Notebooks
 
-Open these in JupyterLab on the Workbench. Both read from BigQuery.
+Open these in JupyterLab on the Workbench. They read from BigQuery.
 
 | Notebook | Dataset | What it shows |
 |----------|---------|---------------|
-| `omop_synpuf_demo.ipynb` | `synpuf_omop` | Guided tour: the vocabulary, concept-set expansion with `concept_ancestor`, building and describing a cohort. |
 | `survival_and_a1c.ipynb` | `synpuf_workshop` | The workshop exercises: survival analysis and A1C by diabetes status. |
 
 `synpuf_workshop` is built once per workspace by `staging/augment.py`; see
 `staging/README.md`.
 
-`bq_env.py` is imported by both notebooks (and by `staging/augment.py`). It
+`bq_env.py` is imported by the notebooks (and by `staging/augment.py`). It
 works around a Workbench image bug that can stop the BigQuery client from
 importing.
 
