@@ -44,7 +44,9 @@ import json
 import os
 import sys
 
-from bq_env import ensure_bigquery
+# bq_env.py lives with the notebooks, which use it too.
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "notebooks"))
+from bq_env import ensure_bigquery  # noqa: E402
 
 bigquery = ensure_bigquery()
 
