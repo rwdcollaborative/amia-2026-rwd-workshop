@@ -15,6 +15,7 @@ google-api-core's (harmless) grpcio post-quantum-crypto FutureWarning.
     bigquery = ensure_bigquery()
 """
 import importlib
+import os
 import subprocess
 import sys
 import warnings
@@ -37,11 +38,22 @@ def ensure_bigquery():
         return _import()
     except (ImportError, AttributeError) as e:
         print(f"BigQuery client failed to import ({type(e).__name__}: {e}).\n"
-              f"Applying the known Workbench image fix: pip install {API_CORE_PIN}", flush=True)
+              f"Applying the known Workbench image fix: pip install {API_CORE_PIN}\n"
+              f"(pip will report dependency conflicts for dsub and others; that's expected.)",
+              flush=True)
+    if os.environ.get("BQ_ENV_FIXED"):
+        raise RuntimeError("The google-api-core fix is installed but the BigQuery client still "
+                           "fails to import; see the error above.")
 
     subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", API_CORE_PIN])
 
-    # Drop the half-imported google.* modules so the retry loads the new version.
+    # A script restarts itself so the fixed packages load cleanly from scratch.
+    if "ipykernel" not in sys.modules and sys.argv and sys.argv[0]:
+        print("Fix installed; restarting the script.", flush=True)
+        os.environ["BQ_ENV_FIXED"] = "1"
+        os.execv(sys.executable, [sys.executable] + sys.argv)
+
+    # In a notebook: drop the half-imported google.* modules and retry in place.
     for name in [m for m in sys.modules if m == "google" or m.startswith("google.")]:
         del sys.modules[name]
     importlib.invalidate_caches()
@@ -49,7 +61,7 @@ def ensure_bigquery():
     try:
         bigquery = _import()
     except Exception as e:  # noqa: BLE001
-        raise RuntimeError("Fix installed but the import still fails in this process. "
-                           "Restart the kernel (or re-run the script) and try again.") from e
+        raise RuntimeError("Fix installed, but this kernel still has the old version loaded. "
+                           "Restart the kernel (Kernel > Restart) and run again.") from e
     print("BigQuery client OK.", flush=True)
     return bigquery
