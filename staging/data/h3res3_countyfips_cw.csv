@@ -1,0 +1,3496 @@
+h3_id,county,statefp,state,county_name
+832b8efffffffff,36089,36,NY,St. Lawrence County
+832b8cfffffffff,36033,36,NY,Franklin County
+832b8cfffffffff,36031,36,NY,Essex County
+832b8cfffffffff,36019,36,NY,Clinton County
+832b8cfffffffff,50013,50,VT,Grand Isle County
+832b8afffffffff,36067,36,NY,Onondaga County
+832b8afffffffff,36075,36,NY,Oswego County
+832b8afffffffff,36045,36,NY,Jefferson County
+832b88fffffffff,36035,36,NY,Fulton County
+832b88fffffffff,36043,36,NY,Herkimer County
+832b88fffffffff,36041,36,NY,Hamilton County
+832b88fffffffff,36049,36,NY,Lewis County
+832aa6fffffffff,36009,36,NY,Cattaraugus County
+832aa6fffffffff,36003,36,NY,Allegany County
+832aa6fffffffff,36121,36,NY,Wyoming County
+832aa6fffffffff,36051,36,NY,Livingston County
+832aa6fffffffff,36029,36,NY,Erie County
+832aa6fffffffff,36037,36,NY,Genesee County
+832aa4fffffffff,36015,36,NY,Chemung County
+832aa4fffffffff,36101,36,NY,Steuben County
+832aa4fffffffff,36097,36,NY,Schuyler County
+832aa4fffffffff,36109,36,NY,Tompkins County
+832aa4fffffffff,36123,36,NY,Yates County
+832aa4fffffffff,36099,36,NY,Seneca County
+832aa4fffffffff,36069,36,NY,Ontario County
+832aa4fffffffff,36011,36,NY,Cayuga County
+832aa0fffffffff,42035,42,PA,Clinton County
+832aa0fffffffff,42081,42,PA,Lycoming County
+832aa0fffffffff,42117,42,PA,Tioga County
+832aa0fffffffff,42023,42,PA,Cameron County
+832aa0fffffffff,42105,42,PA,Potter County
+832a16fffffffff,42103,42,PA,Pike County
+832a16fffffffff,36071,36,NY,Orange County
+832a16fffffffff,42127,42,PA,Wayne County
+832a16fffffffff,36105,36,NY,Sullivan County
+832a16fffffffff,36111,36,NY,Ulster County
+832a14fffffffff,09170,09,CT,South Central Connecticut Planning Region
+832a14fffffffff,09130,09,CT,Lower Connecticut River Valley Planning Region
+832a14fffffffff,09140,09,CT,Naugatuck Valley Planning Region
+832a14fffffffff,36027,36,NY,Dutchess County
+832a14fffffffff,09110,09,CT,Capitol Planning Region
+832a14fffffffff,09160,09,CT,Northwest Hills Planning Region
+832a14fffffffff,25013,25,MA,Hampden County
+832a10fffffffff,36047,36,NY,Kings County
+832a10fffffffff,36081,36,NY,Queens County
+832a10fffffffff,34017,34,NJ,Hudson County
+832a10fffffffff,36059,36,NY,Nassau County
+832a10fffffffff,36085,36,NY,Richmond County
+832a10fffffffff,34039,34,NJ,Union County
+832a10fffffffff,34013,34,NJ,Essex County
+832a10fffffffff,36061,36,NY,New York County
+832a10fffffffff,36005,36,NY,Bronx County
+832a10fffffffff,34003,34,NJ,Bergen County
+832a10fffffffff,36119,36,NY,Westchester County
+832a10fffffffff,36087,36,NY,Rockland County
+832a10fffffffff,09120,09,CT,Greater Bridgeport Planning Region
+832a10fffffffff,09190,09,CT,Western Connecticut Planning Region
+832a10fffffffff,34031,34,NJ,Passaic County
+832a10fffffffff,36079,36,NY,Putnam County
+832b9bfffffffff,36063,36,NY,Niagara County
+832b99fffffffff,36055,36,NY,Monroe County
+832b99fffffffff,36073,36,NY,Orleans County
+832b99fffffffff,36117,36,NY,Wayne County
+832b8dfffffffff,50003,50,VT,Bennington County
+832b8dfffffffff,36115,36,NY,Washington County
+832b8dfffffffff,36113,36,NY,Warren County
+832b8dfffffffff,50027,50,VT,Windsor County
+832b8dfffffffff,50021,50,VT,Rutland County
+832b8dfffffffff,50001,50,VT,Addison County
+832b8bfffffffff,36025,36,NY,Delaware County
+832b8bfffffffff,36017,36,NY,Chenango County
+832b8bfffffffff,36023,36,NY,Cortland County
+832b8bfffffffff,36077,36,NY,Otsego County
+832b8bfffffffff,36053,36,NY,Madison County
+832b8bfffffffff,36065,36,NY,Oneida County
+832b89fffffffff,36021,36,NY,Columbia County
+832b89fffffffff,36039,36,NY,Greene County
+832b89fffffffff,25003,25,MA,Berkshire County
+832b89fffffffff,36001,36,NY,Albany County
+832b89fffffffff,36083,36,NY,Rensselaer County
+832b89fffffffff,36093,36,NY,Schenectady County
+832b89fffffffff,36095,36,NY,Schoharie County
+832b89fffffffff,36057,36,NY,Montgomery County
+832b89fffffffff,36091,36,NY,Saratoga County
+832ab5fffffffff,42049,42,PA,Erie County
+832ab5fffffffff,36013,36,NY,Chautauqua County
+832aa5fffffffff,42079,42,PA,Luzerne County
+832aa5fffffffff,42069,42,PA,Lackawanna County
+832aa5fffffffff,42113,42,PA,Sullivan County
+832aa5fffffffff,42131,42,PA,Wyoming County
+832aa5fffffffff,42015,42,PA,Bradford County
+832aa5fffffffff,42115,42,PA,Susquehanna County
+832aa5fffffffff,36007,36,NY,Broome County
+832aa5fffffffff,36107,36,NY,Tioga County
+832a15fffffffff,36103,36,NY,Suffolk County
+83298dfffffffff,06109,06,CA,Tuolumne County
+83298dfffffffff,06003,06,CA,Alpine County
+83298bfffffffff,32001,32,NV,Churchill County
+83298bfffffffff,32027,32,NV,Pershing County
+832989fffffffff,32005,32,NV,Douglas County
+832989fffffffff,32510,32,NV,Carson City
+832989fffffffff,32029,32,NV,Storey County
+832983fffffffff,32023,32,NV,Nye County
+832981fffffffff,32009,32,NV,Esmeralda County
+83299cfffffffff,,,,
+8328a6fffffffff,32007,32,NV,Elko County
+832998fffffffff,32033,32,NV,White Pine County
+8328a4fffffffff,,,,
+8328a2fffffffff,16073,16,ID,Owyhee County
+8328a0fffffffff,,,,
+8329b1fffffffff,,,,
+83298efffffffff,,,,
+83298cfffffffff,06051,06,CA,Mono County
+83298afffffffff,32015,32,NV,Lander County
+8328b5fffffffff,,,,
+832988fffffffff,32021,32,NV,Mineral County
+832988fffffffff,32019,32,NV,Lyon County
+832986fffffffff,32003,32,NV,Clark County
+832984fffffffff,,,,
+832816fffffffff,32031,32,NV,Washoe County
+832982fffffffff,32017,32,NV,Lincoln County
+832980fffffffff,,,,
+83299dfffffffff,,,,
+832812fffffffff,,,,
+83299bfffffffff,,,,
+832999fffffffff,32011,32,NV,Eureka County
+8328a5fffffffff,32013,32,NV,Humboldt County
+8328a1fffffffff,,,,
+831659fffffffff,,,,
+831658fffffffff,,,,
+83165efffffffff,,,,
+831650fffffffff,,,,
+831653fffffffff,,,,
+830c1dfffffffff,,,,
+830d58fffffffff,02090,02,AK,Fairbanks North Star Borough
+830c61fffffffff,,,,
+830ce9fffffffff,02150,02,AK,Kodiak Island Borough
+830d0bfffffffff,,,,
+830c14fffffffff,02180,02,AK,Nome Census Area
+830d71fffffffff,,,,
+830ce0fffffffff,02070,02,AK,Dillingham Census Area
+830c0bfffffffff,,,,
+830d46fffffffff,,,,
+830c2dfffffffff,,,,
+830c71fffffffff,,,,
+830d1bfffffffff,,,,
+830c02fffffffff,,,,
+830c24fffffffff,,,,
+830c46fffffffff,02020,02,AK,Anchorage Municipality
+830c68fffffffff,,,,
+8312b1fffffffff,02130,02,AK,Ketchikan Gateway Borough
+830ccefffffffff,,,,
+830c1bfffffffff,,,,
+830d56fffffffff,,,,
+8322d2fffffffff,,,,
+830cc5fffffffff,,,,
+830d09fffffffff,,,,
+830c34fffffffff,,,,
+830c56fffffffff,,,,
+831396fffffffff,,,,
+830cdefffffffff,,,,
+83225afffffffff,,,,
+830c09fffffffff,,,,
+830c2bfffffffff,,,,
+8322c0fffffffff,,,,
+830d19fffffffff,,,,
+830c00fffffffff,,,,
+830c22fffffffff,,,,
+830d5dfffffffff,,,,
+830c44fffffffff,,,,
+830c66fffffffff,,,,
+830cccfffffffff,,,,
+830ceefffffffff,02164,02,AK,Lake and Peninsula Borough
+830ceefffffffff,02060,02,AK,Bristol Bay Borough
+830c19fffffffff,02050,02,AK,Bethel Census Area
+830d54fffffffff,,,,
+830d76fffffffff,,,,
+8322d0fffffffff,,,,
+830cc3fffffffff,,,,
+830ce5fffffffff,,,,
+830c32fffffffff,,,,
+830c54fffffffff,,,,
+8322e9fffffffff,,,,
+830c76fffffffff,,,,
+830cdcfffffffff,,,,
+830d42fffffffff,,,,
+830c29fffffffff,02068,02,AK,Denali Borough
+830c6dfffffffff,02282,02,AK,Yakutat City and Borough
+8312b6fffffffff,02198,02,AK,Prince of Wales-Hyder Census Area
+830cf5fffffffff,,,,
+830c20fffffffff,,,,
+830d5bfffffffff,,,,
+830c42fffffffff,,,,
+830c64fffffffff,,,,
+830ccafffffffff,,,,
+830cecfffffffff,,,,
+830d0efffffffff,,,,
+830d52fffffffff,,,,
+830d74fffffffff,,,,
+83139bfffffffff,,,,
+830cc1fffffffff,,,,
+830ce3fffffffff,,,,
+830c0efffffffff,,,,
+830c30fffffffff,,,,
+8322c5fffffffff,,,,
+830c52fffffffff,,,,
+830c74fffffffff,,,,
+831392fffffffff,,,,
+831d26fffffffff,,,,
+830cdafffffffff,,,,
+830d1efffffffff,,,,
+830c05fffffffff,,,,
+830d40fffffffff,,,,
+8312b4fffffffff,02275,02,AK,Wrangell City and Borough
+830c1efffffffff,02158,02,AK,Kusilvak Census Area
+830d59fffffffff,02240,02,AK,Southeast Fairbanks Census Area
+830c40fffffffff,,,,
+8322d5fffffffff,,,,
+8312b3fffffffff,,,,
+830c62fffffffff,,,,
+830ceafffffffff,,,,
+830d0cfffffffff,,,,
+830c15fffffffff,,,,
+830d50fffffffff,,,,
+830d72fffffffff,,,,
+8322eefffffffff,,,,
+830ce1fffffffff,,,,
+830d03fffffffff,,,,
+830c0cfffffffff,,,,
+830c2efffffffff,,,,
+830c50fffffffff,02122,02,AK,Kenai Peninsula Borough
+830c72fffffffff,,,,
+831390fffffffff,,,,
+830dadfffffffff,,,,
+831d24fffffffff,02220,02,AK,Sitka City and Borough
+830cd8fffffffff,02013,02,AK,Aleutians East Borough
+830d1cfffffffff,,,,
+830c03fffffffff,,,,
+830c25fffffffff,,,,
+830c69fffffffff,,,,
+830cadfffffffff,,,,
+8312b2fffffffff,,,,
+830cf1fffffffff,,,,
+830c1cfffffffff,,,,
+830c60fffffffff,02066,02,AK,Copper River Census Area
+830ce8fffffffff,,,,
+830d0afffffffff,02185,02,AK,North Slope Borough
+830c13fffffffff,,,,
+830d4efffffffff,,,,
+830c35fffffffff,02188,02,AK,Northwest Arctic Borough
+830d70fffffffff,,,,
+830d01fffffffff,,,,
+83225bfffffffff,,,,
+830c0afffffffff,,,,
+830c2cfffffffff,02290,02,AK,Yukon-Koyukuk Census Area
+830d89fffffffff,,,,
+830c70fffffffff,02170,02,AK,Matanuska-Susitna Borough
+830d1afffffffff,,,,
+830c01fffffffff,,,,
+830c23fffffffff,,,,
+830d5efffffffff,,,,
+830c45fffffffff,02063,02,AK,Chugach Census Area
+830cabfffffffff,,,,
+8312b0fffffffff,,,,
+830ccdfffffffff,,,,
+830c1afffffffff,,,,
+830d55fffffffff,,,,
+830c5efffffffff,,,,
+83139efffffffff,02110,02,AK,Juneau City and Borough
+830cc4fffffffff,,,,
+830ce6fffffffff,,,,
+830d08fffffffff,,,,
+830c11fffffffff,,,,
+830c33fffffffff,,,,
+830c55fffffffff,,,,
+830cddfffffffff,,,,
+830c08fffffffff,,,,
+830d43fffffffff,,,,
+830c2afffffffff,,,,
+830c6efffffffff,,,,
+830da9fffffffff,,,,
+830c6afffffffff,,,,
+831d20fffffffff,,,,
+830cf6fffffffff,,,,
+830d18fffffffff,,,,
+830c21fffffffff,,,,
+830d5cfffffffff,,,,
+830c65fffffffff,,,,
+830ca9fffffffff,,,,
+830cedfffffffff,,,,
+830c18fffffffff,,,,
+830d53fffffffff,,,,
+830d75fffffffff,,,,
+830ce4fffffffff,,,,
+830d4afffffffff,,,,
+830c31fffffffff,,,,
+8322c6fffffffff,,,,
+830c53fffffffff,,,,
+8322e8fffffffff,,,,
+830c75fffffffff,,,,
+831393fffffffff,02105,02,AK,Hoonah-Angoon Census Area
+830c06fffffffff,,,,
+830c28fffffffff,,,,
+830c6cfffffffff,,,,
+8312b5fffffffff,,,,
+830cf4fffffffff,,,,
+830d5afffffffff,,,,
+830c41fffffffff,,,,
+8322d6fffffffff,,,,
+830c63fffffffff,,,,
+830d0dfffffffff,,,,
+830d51fffffffff,,,,
+830d73fffffffff,,,,
+830c5afffffffff,,,,
+83139afffffffff,02195,02,AK,Petersburg Borough
+830ce2fffffffff,,,,
+831db6fffffffff,,,,
+830c0dfffffffff,,,,
+830c51fffffffff,,,,
+830c73fffffffff,,,,
+831391fffffffff,02100,02,AK,Haines Borough
+831391fffffffff,02230,02,AK,Skagway Municipality
+831d25fffffffff,,,,
+830d1dfffffffff,,,,
+830c04fffffffff,,,,
+830c26fffffffff,,,,
+830ca0fffffffff,,,,
+830ca5fffffffff,,,,
+830ca4fffffffff,,,,
+830ca1fffffffff,,,,
+8322dbfffffffff,,,,
+830c80fffffffff,,,,
+839b8afffffffff,60030,60,AS,Rose Island
+839a14fffffffff,60050,60,AS,Western District
+839a14fffffffff,60010,60,AS,Eastern District
+839a16fffffffff,,,,
+839aadfffffffff,60040,60,AS,Swains Island
+832a32fffffffff,25015,25,MA,Hampshire County
+832a32fffffffff,25027,25,MA,Worcester County
+832a32fffffffff,25011,25,MA,Franklin County
+832a32fffffffff,33011,33,NH,Hillsborough County
+832a32fffffffff,33005,33,NH,Cheshire County
+832a32fffffffff,50025,50,VT,Windham County
+832babfffffffff,50017,50,VT,Orange County
+832babfffffffff,50023,50,VT,Washington County
+832babfffffffff,50007,50,VT,Chittenden County
+832babfffffffff,50005,50,VT,Caledonia County
+832babfffffffff,50015,50,VT,Lamoille County
+832babfffffffff,50009,50,VT,Essex County
+832babfffffffff,50019,50,VT,Orleans County
+832babfffffffff,50011,50,VT,Franklin County
+832a33fffffffff,44009,44,RI,Washington County
+832a33fffffffff,09180,09,CT,Southeastern Connecticut Planning Region
+832a33fffffffff,44005,44,RI,Newport County
+832a33fffffffff,44003,44,RI,Kent County
+832a33fffffffff,44001,44,RI,Bristol County
+832a33fffffffff,25005,25,MA,Bristol County
+832a33fffffffff,09150,09,CT,Northeastern Connecticut Planning Region
+832a33fffffffff,44007,44,RI,Providence County
+832a33fffffffff,25021,25,MA,Norfolk County
+832aa9fffffffff,51001,51,VA,Accomack County
+832aa9fffffffff,51133,51,VA,Northumberland County
+832aa9fffffffff,24039,24,MD,Somerset County
+832aa9fffffffff,24047,24,MD,Worcester County
+832aa9fffffffff,24045,24,MD,Wicomico County
+832aa9fffffffff,24019,24,MD,Dorchester County
+832aacfffffffff,24025,24,MD,Harford County
+832aacfffffffff,24015,24,MD,Cecil County
+832aacfffffffff,34033,34,NJ,Salem County
+832aacfffffffff,10003,10,DE,New Castle County
+832aacfffffffff,42045,42,PA,Delaware County
+832aacfffffffff,42029,42,PA,Chester County
+832aacfffffffff,42071,42,PA,Lancaster County
+832aacfffffffff,42091,42,PA,Montgomery County
+832aacfffffffff,42011,42,PA,Berks County
+832aadfffffffff,10005,10,DE,Sussex County
+832aadfffffffff,24011,24,MD,Caroline County
+832aadfffffffff,34009,34,NJ,Cape May County
+832aadfffffffff,10001,10,DE,Kent County
+832aadfffffffff,34011,34,NJ,Cumberland County
+8348cefffffffff,35003,35,NM,Catron County
+8348d8fffffffff,35001,35,NM,Bernalillo County
+8348d8fffffffff,35043,35,NM,Sandoval County
+8348d8fffffffff,35049,35,NM,Santa Fe County
+8348d8fffffffff,35028,35,NM,Los Alamos County
+8348c5fffffffff,35023,35,NM,Hidalgo County
+8348d9fffffffff,,,,
+8348c6fffffffff,48141,48,TX,El Paso County
+8348c6fffffffff,35013,35,NM,Doña Ana County
+8326d2fffffffff,35037,35,NM,Quay County
+8326d2fffffffff,35021,35,NM,Harding County
+8348e3fffffffff,,,,
+8348d0fffffffff,35015,35,NM,Eddy County
+8348d0fffffffff,35025,35,NM,Lea County
+8348d0fffffffff,35005,35,NM,Chaves County
+8348dafffffffff,35047,35,NM,San Miguel County
+8348dafffffffff,35033,35,NM,Mora County
+832699fffffffff,08007,08,CO,Archuleta County
+832699fffffffff,08067,08,CO,La Plata County
+832699fffffffff,08079,08,CO,Mineral County
+832699fffffffff,08111,08,CO,San Juan County
+8326d3fffffffff,48279,48,TX,Lamb County
+8326d3fffffffff,48069,48,TX,Castro County
+8326d3fffffffff,48369,48,TX,Parmer County
+8326d3fffffffff,35009,35,NM,Curry County
+8326d3fffffffff,48117,48,TX,Deaf Smith County
+8348d1fffffffff,35027,35,NM,Lincoln County
+8348dbfffffffff,35039,35,NM,Rio Arriba County
+8348dbfffffffff,35055,35,NM,Taos County
+8348d2fffffffff,48501,48,TX,Yoakum County
+8348d2fffffffff,48445,48,TX,Terry County
+8348d2fffffffff,48079,48,TX,Cochran County
+8348d2fffffffff,48219,48,TX,Hockley County
+8348d2fffffffff,48017,48,TX,Bailey County
+8348dcfffffffff,35057,35,NM,Torrance County
+8348dcfffffffff,35061,35,NM,Valencia County
+83269bfffffffff,35045,35,NM,San Juan County
+8348d3fffffffff,35041,35,NM,Roosevelt County
+8348d3fffffffff,35011,35,NM,De Baca County
+8348c0fffffffff,35029,35,NM,Luna County
+8348c0fffffffff,35017,35,NM,Grant County
+8348c0fffffffff,35051,35,NM,Sierra County
+8348ddfffffffff,35006,35,NM,Cibola County
+8348cafffffffff,35031,35,NM,McKinley County
+8326d6fffffffff,35059,35,NM,Union County
+8348d4fffffffff,48109,48,TX,Culberson County
+8348d4fffffffff,48301,48,TX,Loving County
+8348c1fffffffff,04011,04,AZ,Greenlee County
+8348defffffffff,35019,35,NM,Guadalupe County
+8348d5fffffffff,35035,35,NM,Otero County
+8348c2fffffffff,,,,
+83268bfffffffff,35007,35,NM,Colfax County
+83268bfffffffff,08023,08,CO,Costilla County
+8348d6fffffffff,48495,48,TX,Winkler County
+8348d6fffffffff,48135,48,TX,Ector County
+8348d6fffffffff,48003,48,TX,Andrews County
+8348d6fffffffff,48165,48,TX,Gaines County
+8348c3fffffffff,35053,35,NM,Socorro County
+8348c4fffffffff,,,,
+8344dafffffffff,37179,37,NC,Union County
+8344dafffffffff,37025,37,NC,Cabarrus County
+8344dafffffffff,37159,37,NC,Rowan County
+8344dafffffffff,37007,37,NC,Anson County
+8344dafffffffff,37153,37,NC,Richmond County
+8344dafffffffff,37167,37,NC,Stanly County
+8344dafffffffff,37123,37,NC,Montgomery County
+8344dafffffffff,37057,37,NC,Davidson County
+832ad6fffffffff,37093,37,NC,Hoke County
+832ad6fffffffff,37051,37,NC,Cumberland County
+832ad6fffffffff,37125,37,NC,Moore County
+832ad6fffffffff,37085,37,NC,Harnett County
+832ad6fffffffff,37105,37,NC,Lee County
+832ad6fffffffff,37101,37,NC,Johnston County
+832ad6fffffffff,37037,37,NC,Chatham County
+832ad6fffffffff,37183,37,NC,Wake County
+8344d8fffffffff,45087,45,SC,Union County
+8344d8fffffffff,45023,45,SC,Chester County
+8344d8fffffffff,45083,45,SC,Spartanburg County
+8344d8fffffffff,45091,45,SC,York County
+8344d8fffffffff,45021,45,SC,Cherokee County
+8344d8fffffffff,37119,37,NC,Mecklenburg County
+8344d8fffffffff,37071,37,NC,Gaston County
+8344d8fffffffff,37045,37,NC,Cleveland County
+8344d8fffffffff,37161,37,NC,Rutherford County
+8344d8fffffffff,37109,37,NC,Lincoln County
+832af3fffffffff,37137,37,NC,Pamlico County
+832af3fffffffff,37095,37,NC,Hyde County
+832af3fffffffff,37013,37,NC,Beaufort County
+832af3fffffffff,37055,37,NC,Dare County
+832af3fffffffff,37187,37,NC,Washington County
+832af3fffffffff,37177,37,NC,Tyrrell County
+832ad4fffffffff,37107,37,NC,Lenoir County
+832ad4fffffffff,37103,37,NC,Jones County
+832ad4fffffffff,37049,37,NC,Craven County
+832ad4fffffffff,37147,37,NC,Pitt County
+832ad4fffffffff,37191,37,NC,Wayne County
+832ad4fffffffff,37079,37,NC,Greene County
+832ad4fffffffff,37195,37,NC,Wilson County
+832ad4fffffffff,37065,37,NC,Edgecombe County
+832a8bfffffffff,37151,37,NC,Randolph County
+832a8bfffffffff,37001,37,NC,Alamance County
+832a8bfffffffff,37135,37,NC,Orange County
+832a8bfffffffff,37081,37,NC,Guilford County
+832a8bfffffffff,37067,37,NC,Forsyth County
+832a8bfffffffff,37033,37,NC,Caswell County
+832a8bfffffffff,37157,37,NC,Rockingham County
+832a8bfffffffff,37169,37,NC,Stokes County
+832a8bfffffffff,51590,51,VA,Danville city
+832ad2fffffffff,45067,45,SC,Marion County
+832ad2fffffffff,45031,45,SC,Darlington County
+832ad2fffffffff,45033,45,SC,Dillon County
+832ad2fffffffff,45069,45,SC,Marlboro County
+832ad2fffffffff,37155,37,NC,Robeson County
+832ad2fffffffff,37165,37,NC,Scotland County
+832a89fffffffff,37127,37,NC,Nash County
+832a89fffffffff,37063,37,NC,Durham County
+832a89fffffffff,37069,37,NC,Franklin County
+832a89fffffffff,37083,37,NC,Halifax County
+832a89fffffffff,37077,37,NC,Granville County
+832a89fffffffff,37181,37,NC,Vance County
+832a89fffffffff,37145,37,NC,Person County
+832a89fffffffff,37185,37,NC,Warren County
+832a89fffffffff,51117,51,VA,Mecklenburg County
+8344ddfffffffff,45007,45,SC,Anderson County
+8344ddfffffffff,45073,45,SC,Oconee County
+8344ddfffffffff,45077,45,SC,Pickens County
+8344ddfffffffff,45045,45,SC,Greenville County
+8344ddfffffffff,37175,37,NC,Transylvania County
+8344ddfffffffff,37149,37,NC,Polk County
+8344ddfffffffff,37089,37,NC,Henderson County
+832ad0fffffffff,37129,37,NC,New Hanover County
+832ad0fffffffff,37047,37,NC,Columbus County
+832ad0fffffffff,37141,37,NC,Pender County
+832ad0fffffffff,37017,37,NC,Bladen County
+832ad0fffffffff,37061,37,NC,Duplin County
+832ad0fffffffff,37163,37,NC,Sampson County
+8344dbfffffffff,37035,37,NC,Catawba County
+8344dbfffffffff,37097,37,NC,Iredell County
+8344dbfffffffff,37003,37,NC,Alexander County
+8344dbfffffffff,37059,37,NC,Davie County
+8344dbfffffffff,37027,37,NC,Caldwell County
+8344dbfffffffff,37197,37,NC,Yadkin County
+8344dbfffffffff,37193,37,NC,Wilkes County
+8344dbfffffffff,37171,37,NC,Surry County
+8344dbfffffffff,37005,37,NC,Alleghany County
+832a99fffffffff,37009,37,NC,Ashe County
+832a99fffffffff,47091,47,TN,Johnson County
+832a99fffffffff,47163,47,TN,Sullivan County
+832a99fffffffff,51520,51,VA,Bristol city
+832a99fffffffff,51077,51,VA,Grayson County
+832a99fffffffff,51191,51,VA,Washington County
+832a99fffffffff,51173,51,VA,Smyth County
+832a99fffffffff,51167,51,VA,Russell County
+832a99fffffffff,51051,51,VA,Dickenson County
+832a99fffffffff,51185,51,VA,Tazewell County
+832a99fffffffff,51027,51,VA,Buchanan County
+8344d9fffffffff,37111,37,NC,McDowell County
+8344d9fffffffff,37023,37,NC,Burke County
+8344d9fffffffff,37021,37,NC,Buncombe County
+8344d9fffffffff,37115,37,NC,Madison County
+8344d9fffffffff,37199,37,NC,Yancey County
+8344d9fffffffff,37121,37,NC,Mitchell County
+8344d9fffffffff,47171,47,TN,Unicoi County
+8344d9fffffffff,47059,47,TN,Greene County
+8344d9fffffffff,37011,37,NC,Avery County
+8344d9fffffffff,37189,37,NC,Watauga County
+8344d9fffffffff,47019,47,TN,Carter County
+8344d9fffffffff,47179,47,TN,Washington County
+8344cefffffffff,13117,13,GA,Forsyth County
+8344cefffffffff,13139,13,GA,Hall County
+8344cefffffffff,13157,13,GA,Jackson County
+8344cefffffffff,13011,13,GA,Banks County
+8344cefffffffff,13257,13,GA,Stephens County
+8344cefffffffff,13137,13,GA,Habersham County
+8344cefffffffff,13085,13,GA,Dawson County
+8344cefffffffff,13187,13,GA,Lumpkin County
+8344cefffffffff,13311,13,GA,White County
+8344cefffffffff,13291,13,GA,Union County
+8344cefffffffff,13111,13,GA,Fannin County
+8344cefffffffff,13281,13,GA,Towns County
+8344cefffffffff,37043,37,NC,Clay County
+8344cefffffffff,13241,13,GA,Rabun County
+8344cefffffffff,37039,37,NC,Cherokee County
+832ad5fffffffff,37133,37,NC,Onslow County
+832ad5fffffffff,37031,37,NC,Carteret County
+832af2fffffffff,37117,37,NC,Martin County
+832af2fffffffff,37015,37,NC,Bertie County
+832af2fffffffff,37041,37,NC,Chowan County
+832af2fffffffff,37143,37,NC,Perquimans County
+832af2fffffffff,37091,37,NC,Hertford County
+832af2fffffffff,37131,37,NC,Northampton County
+832af2fffffffff,37073,37,NC,Gates County
+832af2fffffffff,51620,51,VA,Franklin city
+832af2fffffffff,51800,51,VA,Suffolk city
+832af2fffffffff,51175,51,VA,Southampton County
+832ad3fffffffff,45051,45,SC,Horry County
+832ad3fffffffff,37019,37,NC,Brunswick County
+832a8afffffffff,51690,51,VA,Martinsville city
+832a8afffffffff,51089,51,VA,Henry County
+832a8afffffffff,51067,51,VA,Franklin County
+832a8afffffffff,51640,51,VA,Galax city
+832a8afffffffff,51141,51,VA,Patrick County
+832a8afffffffff,51035,51,VA,Carroll County
+832a8afffffffff,51197,51,VA,Wythe County
+832a8afffffffff,51063,51,VA,Floyd County
+832a8afffffffff,51155,51,VA,Pulaski County
+832a8afffffffff,51750,51,VA,Radford city
+832a8afffffffff,51021,51,VA,Bland County
+832a8afffffffff,51121,51,VA,Montgomery County
+832a8afffffffff,51071,51,VA,Giles County
+832a8afffffffff,51161,51,VA,Roanoke County
+832a8afffffffff,51770,51,VA,Roanoke city
+832a8afffffffff,51775,51,VA,Salem city
+8344cafffffffff,37113,37,NC,Macon County
+8344cafffffffff,37099,37,NC,Jackson County
+8344cafffffffff,37173,37,NC,Swain County
+8344cafffffffff,37075,37,NC,Graham County
+8344cafffffffff,47009,47,TN,Blount County
+8344cafffffffff,47093,47,TN,Knox County
+8344cafffffffff,37087,37,NC,Haywood County
+8344cafffffffff,47155,47,TN,Sevier County
+8344cafffffffff,47029,47,TN,Cocke County
+8344cafffffffff,47089,47,TN,Jefferson County
+832af0fffffffff,37139,37,NC,Pasquotank County
+832af0fffffffff,37029,37,NC,Camden County
+832af0fffffffff,37053,37,NC,Currituck County
+832af0fffffffff,51810,51,VA,Virginia Beach city
+832750fffffffff,55005,55,WI,Barron County
+832750fffffffff,55107,55,WI,Rusk County
+832750fffffffff,55113,55,WI,Sawyer County
+832750fffffffff,55129,55,WI,Washburn County
+83275cfffffffff,55039,55,WI,Fond du Lac County
+83275cfffffffff,55047,55,WI,Green Lake County
+83275cfffffffff,55077,55,WI,Marquette County
+83275cfffffffff,55015,55,WI,Calumet County
+83275cfffffffff,55139,55,WI,Winnebago County
+83275cfffffffff,55137,55,WI,Waushara County
+83275cfffffffff,55087,55,WI,Outagamie County
+83275cfffffffff,55135,55,WI,Waupaca County
+83275cfffffffff,55097,55,WI,Portage County
+832751fffffffff,55073,55,WI,Marathon County
+832751fffffffff,55069,55,WI,Lincoln County
+832751fffffffff,55141,55,WI,Wood County
+832751fffffffff,55019,55,WI,Clark County
+832751fffffffff,55119,55,WI,Taylor County
+83275dfffffffff,55133,55,WI,Waukesha County
+83275dfffffffff,55131,55,WI,Washington County
+83275dfffffffff,55027,55,WI,Dodge County
+83275dfffffffff,55079,55,WI,Milwaukee County
+83275dfffffffff,55089,55,WI,Ozaukee County
+83275dfffffffff,55117,55,WI,Sheboygan County
+832746fffffffff,26043,26,MI,Dickinson County
+832746fffffffff,26103,26,MI,Marquette County
+832746fffffffff,55037,55,WI,Florence County
+832746fffffffff,26071,26,MI,Iron County
+832746fffffffff,26013,26,MI,Baraga County
+832752fffffffff,27123,27,MN,Ramsey County
+832752fffffffff,55109,55,WI,St. Croix County
+832752fffffffff,27163,27,MN,Washington County
+832752fffffffff,27003,27,MN,Anoka County
+832752fffffffff,55095,55,WI,Polk County
+832752fffffffff,27025,27,MN,Chisago County
+832752fffffffff,27059,27,MN,Isanti County
+832752fffffffff,55013,55,WI,Burnett County
+83275efffffffff,55001,55,WI,Adams County
+83275efffffffff,55103,55,WI,Richland County
+83275efffffffff,55123,55,WI,Vernon County
+83275efffffffff,55063,55,WI,La Crosse County
+83275efffffffff,55057,55,WI,Juneau County
+83275efffffffff,55081,55,WI,Monroe County
+83275efffffffff,55053,55,WI,Jackson County
+832753fffffffff,55121,55,WI,Trempealeau County
+832753fffffffff,55011,55,WI,Buffalo County
+832753fffffffff,55035,55,WI,Eau Claire County
+832753fffffffff,27157,27,MN,Wabasha County
+832753fffffffff,55091,55,WI,Pepin County
+832753fffffffff,55093,55,WI,Pierce County
+832753fffffffff,55033,55,WI,Dunn County
+832753fffffffff,55017,55,WI,Chippewa County
+832754fffffffff,55007,55,WI,Bayfield County
+832754fffffffff,55003,55,WI,Ashland County
+832755fffffffff,55085,55,WI,Oneida County
+832755fffffffff,55125,55,WI,Vilas County
+832755fffffffff,26053,26,MI,Gogebic County
+832755fffffffff,55099,55,WI,Price County
+832755fffffffff,55051,55,WI,Iron County
+83274afffffffff,26021,26,MI,Berrien County
+83274afffffffff,26159,26,MI,Van Buren County
+83274afffffffff,55059,55,WI,Kenosha County
+83274afffffffff,26005,26,MI,Allegan County
+83274afffffffff,55101,55,WI,Racine County
+83274afffffffff,26139,26,MI,Ottawa County
+832756fffffffff,27115,27,MN,Pine County
+832756fffffffff,55031,55,WI,Douglas County
+832756fffffffff,27017,27,MN,Carlton County
+832740fffffffff,55029,55,WI,Door County
+832740fffffffff,26109,26,MI,Menominee County
+832740fffffffff,26041,26,MI,Delta County
+832758fffffffff,55105,55,WI,Rock County
+832758fffffffff,55045,55,WI,Green County
+832758fffffffff,55055,55,WI,Jefferson County
+832758fffffffff,55025,55,WI,Dane County
+832758fffffffff,55021,55,WI,Columbia County
+832758fffffffff,55049,55,WI,Iowa County
+832758fffffffff,55111,55,WI,Sauk County
+832759fffffffff,17043,17,IL,DuPage County
+832759fffffffff,17097,17,IL,Lake County
+832759fffffffff,17037,17,IL,DeKalb County
+832759fffffffff,17089,17,IL,Kane County
+832759fffffffff,17007,17,IL,Boone County
+832759fffffffff,17111,17,IL,McHenry County
+832759fffffffff,55127,55,WI,Walworth County
+832742fffffffff,55115,55,WI,Shawano County
+832742fffffffff,55078,55,WI,Menominee County
+832742fffffffff,55067,55,WI,Langlade County
+832742fffffffff,55083,55,WI,Oconto County
+832742fffffffff,55075,55,WI,Marinette County
+832742fffffffff,55041,55,WI,Forest County
+83275afffffffff,19061,19,IA,Dubuque County
+83275afffffffff,19055,19,IA,Delaware County
+83275afffffffff,55065,55,WI,Lafayette County
+83275afffffffff,19043,19,IA,Clayton County
+83275afffffffff,55043,55,WI,Grant County
+83275afffffffff,55023,55,WI,Crawford County
+83275afffffffff,19005,19,IA,Allamakee County
+832743fffffffff,55071,55,WI,Manitowoc County
+832743fffffffff,55009,55,WI,Brown County
+832743fffffffff,55061,55,WI,Kewaunee County
+83275bfffffffff,17103,17,IL,Lee County
+83275bfffffffff,17195,17,IL,Whiteside County
+83275bfffffffff,17141,17,IL,Ogle County
+83275bfffffffff,17201,17,IL,Winnebago County
+83275bfffffffff,17177,17,IL,Stephenson County
+83275bfffffffff,17015,17,IL,Carroll County
+83275bfffffffff,19097,19,IA,Jackson County
+83275bfffffffff,17085,17,IL,Jo Daviess County
+832813fffffffff,06049,06,CA,Modoc County
+8328a3fffffffff,41045,41,OR,Malheur County
+832818fffffffff,41015,41,OR,Curry County
+832818fffffffff,41011,41,OR,Coos County
+8328a8fffffffff,41013,41,OR,Crook County
+83281afffffffff,41019,41,OR,Douglas County
+83281afffffffff,41039,41,OR,Lane County
+8328a9fffffffff,41017,41,OR,Deschutes County
+8328a9fffffffff,41031,41,OR,Jefferson County
+83281bfffffffff,,,,
+8328aafffffffff,41023,41,OR,Grant County
+83281cfffffffff,06015,06,CA,Del Norte County
+83281cfffffffff,41033,41,OR,Josephine County
+8328abfffffffff,41069,41,OR,Wheeler County
+83281dfffffffff,,,,
+8328acfffffffff,41037,41,OR,Lake County
+83281efffffffff,41029,41,OR,Jackson County
+8328adfffffffff,41035,41,OR,Klamath County
+8328aefffffffff,41025,41,OR,Harney County
+832881fffffffff,41001,41,OR,Baker County
+832885fffffffff,16027,16,ID,Canyon County
+832885fffffffff,16075,16,ID,Payette County
+832888fffffffff,53071,53,WA,Walla Walla County
+832888fffffffff,53005,53,WA,Benton County
+832888fffffffff,53013,53,WA,Columbia County
+832888fffffffff,53021,53,WA,Franklin County
+83288cfffffffff,41061,41,OR,Union County
+83288cfffffffff,41059,41,OR,Umatilla County
+83288dfffffffff,41021,41,OR,Gilliam County
+83288dfffffffff,41049,41,OR,Morrow County
+83288efffffffff,41063,41,OR,Wallowa County
+83288efffffffff,53003,53,WA,Asotin County
+8328f0fffffffff,41005,41,OR,Clackamas County
+8328f0fffffffff,41051,41,OR,Multnomah County
+8328f0fffffffff,41067,41,OR,Washington County
+8328f0fffffffff,53011,53,WA,Clark County
+8328f0fffffffff,41009,41,OR,Columbia County
+8328f1fffffffff,41057,41,OR,Tillamook County
+8328f1fffffffff,41007,41,OR,Clatsop County
+8328f4fffffffff,41043,41,OR,Linn County
+8328f4fffffffff,41047,41,OR,Marion County
+8328f5fffffffff,41003,41,OR,Benton County
+8328f5fffffffff,41041,41,OR,Lincoln County
+8328f5fffffffff,41053,41,OR,Polk County
+8328f5fffffffff,41071,41,OR,Yamhill County
+8328f6fffffffff,41065,41,OR,Wasco County
+8328f6fffffffff,41055,41,OR,Sherman County
+8328f6fffffffff,41027,41,OR,Hood River County
+83260afffffffff,31095,31,NE,Jefferson County
+83260afffffffff,31067,31,NE,Gage County
+83260afffffffff,31097,31,NE,Johnson County
+83260afffffffff,31151,31,NE,Saline County
+83260afffffffff,31131,31,NE,Otoe County
+83260afffffffff,31109,31,NE,Lancaster County
+83260afffffffff,31159,31,NE,Seward County
+83260afffffffff,31025,31,NE,Cass County
+83261efffffffff,31041,31,NE,Custer County
+83261efffffffff,31113,31,NE,Logan County
+83261efffffffff,31117,31,NE,McPherson County
+83261efffffffff,31009,31,NE,Blaine County
+83261efffffffff,31171,31,NE,Thomas County
+832601fffffffff,19193,19,IA,Woodbury County
+832601fffffffff,31043,31,NE,Dakota County
+832601fffffffff,31051,31,NE,Dixon County
+832601fffffffff,19035,19,IA,Cherokee County
+832601fffffffff,19149,19,IA,Plymouth County
+832601fffffffff,46127,46,SD,Union County
+832601fffffffff,46027,46,SD,Clay County
+832601fffffffff,19167,19,IA,Sioux County
+83260bfffffffff,20005,20,KS,Atchison County
+83260bfffffffff,20043,20,KS,Doniphan County
+83260bfffffffff,29087,29,MO,Holt County
+83260bfffffffff,20085,20,KS,Jackson County
+83260bfffffffff,20131,20,KS,Nemaha County
+83260bfffffffff,20013,20,KS,Brown County
+83260bfffffffff,31147,31,NE,Richardson County
+83260bfffffffff,31133,31,NE,Pawnee County
+83260bfffffffff,31127,31,NE,Nemaha County
+83260bfffffffff,29005,29,MO,Atchison County
+832602fffffffff,46053,46,SD,Gregory County
+832602fffffffff,31015,31,NE,Boyd County
+832602fffffffff,46023,46,SD,Charles Mix County
+832602fffffffff,46043,46,SD,Douglas County
+8326a8fffffffff,08075,08,CO,Logan County
+8326a8fffffffff,08115,08,CO,Sedgwick County
+8326a8fffffffff,31033,31,NE,Cheyenne County
+832603fffffffff,31179,31,NE,Wayne County
+832603fffffffff,31119,31,NE,Madison County
+832603fffffffff,31167,31,NE,Stanton County
+832603fffffffff,31003,31,NE,Antelope County
+832603fffffffff,31139,31,NE,Pierce County
+832603fffffffff,31027,31,NE,Cedar County
+832603fffffffff,31107,31,NE,Knox County
+8326a9fffffffff,20023,20,KS,Cheyenne County
+8326a9fffffffff,08125,08,CO,Yuma County
+8326a9fffffffff,31057,31,NE,Dundy County
+8326a9fffffffff,31029,31,NE,Chase County
+8326a9fffffffff,08095,08,CO,Phillips County
+83260efffffffff,31155,31,NE,Saunders County
+83260efffffffff,31055,31,NE,Douglas County
+83260efffffffff,31177,31,NE,Washington County
+83260efffffffff,31037,31,NE,Colfax County
+83260efffffffff,31053,31,NE,Dodge County
+83260efffffffff,19085,19,IA,Harrison County
+83260efffffffff,31021,31,NE,Burt County
+83260efffffffff,31039,31,NE,Cuming County
+83260efffffffff,19133,19,IA,Monona County
+83260efffffffff,31173,31,NE,Thurston County
+832618fffffffff,31137,31,NE,Phelps County
+832618fffffffff,31099,31,NE,Kearney County
+832618fffffffff,31019,31,NE,Buffalo County
+832618fffffffff,31047,31,NE,Dawson County
+832618fffffffff,31079,31,NE,Hall County
+832618fffffffff,31163,31,NE,Sherman County
+8326e4fffffffff,20161,20,KS,Riley County
+8326e4fffffffff,20027,20,KS,Clay County
+8326e4fffffffff,20149,20,KS,Pottawatomie County
+8326e4fffffffff,20117,20,KS,Marshall County
+8326e4fffffffff,20201,20,KS,Washington County
+832619fffffffff,20089,20,KS,Jewell County
+832619fffffffff,20157,20,KS,Republic County
+832619fffffffff,31169,31,NE,Thayer County
+832619fffffffff,31129,31,NE,Nuckolls County
+832619fffffffff,31181,31,NE,Webster County
+832619fffffffff,31035,31,NE,Clay County
+832619fffffffff,31001,31,NE,Adams County
+832619fffffffff,31059,31,NE,Fillmore County
+8326a1fffffffff,56015,56,WY,Goshen County
+8326a1fffffffff,31165,31,NE,Sioux County
+8326a1fffffffff,56027,56,WY,Niobrara County
+832610fffffffff,46121,46,SD,Todd County
+832610fffffffff,46007,46,SD,Bennett County
+832610fffffffff,46095,46,SD,Mellette County
+832610fffffffff,46071,46,SD,Jackson County
+83261afffffffff,31145,31,NE,Red Willow County
+83261afffffffff,31087,31,NE,Hitchcock County
+83261afffffffff,31073,31,NE,Gosper County
+83261afffffffff,31085,31,NE,Hayes County
+83261afffffffff,31063,31,NE,Frontier County
+83261afffffffff,31111,31,NE,Lincoln County
+8326acfffffffff,31069,31,NE,Garden County
+8326acfffffffff,31123,31,NE,Morrill County
+8326acfffffffff,31157,31,NE,Scotts Bluff County
+8326acfffffffff,31013,31,NE,Box Butte County
+832611fffffffff,31017,31,NE,Brown County
+832611fffffffff,31103,31,NE,Keya Paha County
+83261bfffffffff,20163,20,KS,Rooks County
+83261bfffffffff,20183,20,KS,Smith County
+83261bfffffffff,20137,20,KS,Norton County
+83261bfffffffff,20147,20,KS,Phillips County
+83261bfffffffff,31065,31,NE,Furnas County
+83261bfffffffff,31083,31,NE,Harlan County
+83261bfffffffff,31061,31,NE,Franklin County
+8326adfffffffff,31135,31,NE,Perkins County
+8326adfffffffff,31101,31,NE,Keith County
+8326adfffffffff,31049,31,NE,Deuel County
+8326adfffffffff,31005,31,NE,Arthur County
+832612fffffffff,31161,31,NE,Sheridan County
+832612fffffffff,31045,31,NE,Dawes County
+832612fffffffff,46102,46,SD,Oglala Lakota County
+83261cfffffffff,31175,31,NE,Valley County
+83261cfffffffff,31071,31,NE,Garfield County
+83261cfffffffff,31183,31,NE,Wheeler County
+83261cfffffffff,31089,31,NE,Holt County
+83261cfffffffff,31115,31,NE,Loup County
+83261cfffffffff,31149,31,NE,Rock County
+8326aefffffffff,31105,31,NE,Kimball County
+8326aefffffffff,56021,56,WY,Laramie County
+8326aefffffffff,31007,31,NE,Banner County
+832613fffffffff,31075,31,NE,Grant County
+832613fffffffff,31091,31,NE,Hooker County
+832613fffffffff,31031,31,NE,Cherry County
+83261dfffffffff,31023,31,NE,Butler County
+83261dfffffffff,31185,31,NE,York County
+83261dfffffffff,31081,31,NE,Hamilton County
+83261dfffffffff,31121,31,NE,Merrick County
+83261dfffffffff,31143,31,NE,Polk County
+83261dfffffffff,31093,31,NE,Howard County
+83261dfffffffff,31125,31,NE,Nance County
+83261dfffffffff,31077,31,NE,Greeley County
+83261dfffffffff,31141,31,NE,Platte County
+83261dfffffffff,31011,31,NE,Boone County
+8344c0fffffffff,13153,13,GA,Houston County
+8344c0fffffffff,13023,13,GA,Bleckley County
+8344c0fffffffff,13175,13,GA,Laurens County
+8344c0fffffffff,13289,13,GA,Twiggs County
+8344c0fffffffff,13167,13,GA,Johnson County
+8344c0fffffffff,13021,13,GA,Bibb County
+8344c0fffffffff,13319,13,GA,Wilkinson County
+8344c0fffffffff,13303,13,GA,Washington County
+8344c0fffffffff,13169,13,GA,Jones County
+8344c0fffffffff,13009,13,GA,Baldwin County
+8344c0fffffffff,13141,13,GA,Hancock County
+8344c0fffffffff,13237,13,GA,Putnam County
+8344c1fffffffff,13255,13,GA,Spalding County
+8344c1fffffffff,13035,13,GA,Butts County
+8344c1fffffffff,13159,13,GA,Jasper County
+8344c1fffffffff,13113,13,GA,Fayette County
+8344c1fffffffff,13151,13,GA,Henry County
+8344c1fffffffff,13063,13,GA,Clayton County
+8344c1fffffffff,13217,13,GA,Newton County
+8344c1fffffffff,13247,13,GA,Rockdale County
+8344c1fffffffff,13211,13,GA,Morgan County
+8344c1fffffffff,13089,13,GA,DeKalb County
+8344c1fffffffff,13297,13,GA,Walton County
+8344c1fffffffff,13121,13,GA,Fulton County
+8344c1fffffffff,13067,13,GA,Cobb County
+8344c1fffffffff,13135,13,GA,Gwinnett County
+8344c1fffffffff,13013,13,GA,Barrow County
+8344c2fffffffff,13165,13,GA,Jenkins County
+8344c2fffffffff,13163,13,GA,Jefferson County
+8344c2fffffffff,13125,13,GA,Glascock County
+8344c2fffffffff,13189,13,GA,McDuffie County
+8344c2fffffffff,13033,13,GA,Burke County
+8344c2fffffffff,13245,13,GA,Richmond County
+8344c2fffffffff,13073,13,GA,Columbia County
+8344c3fffffffff,13301,13,GA,Warren County
+8344c3fffffffff,13265,13,GA,Taliaferro County
+8344c3fffffffff,13133,13,GA,Greene County
+8344c3fffffffff,13317,13,GA,Wilkes County
+8344c3fffffffff,13181,13,GA,Lincoln County
+8344c3fffffffff,13219,13,GA,Oconee County
+8344c3fffffffff,13221,13,GA,Oglethorpe County
+8344c3fffffffff,45065,45,SC,McCormick County
+8344c3fffffffff,13059,13,GA,Clarke County
+8344c3fffffffff,13105,13,GA,Elbert County
+8344c3fffffffff,13195,13,GA,Madison County
+8344c3fffffffff,45001,45,SC,Abbeville County
+8344c3fffffffff,13147,13,GA,Hart County
+8344c3fffffffff,13119,13,GA,Franklin County
+8344f0fffffffff,12019,12,FL,Clay County
+8344f0fffffffff,12031,12,FL,Duval County
+8344f0fffffffff,12007,12,FL,Bradford County
+8344f0fffffffff,12003,12,FL,Baker County
+8344f0fffffffff,12089,12,FL,Nassau County
+8344c4fffffffff,13321,13,GA,Worth County
+8344c4fffffffff,13287,13,GA,Turner County
+8344c4fffffffff,13277,13,GA,Tift County
+8344c4fffffffff,13155,13,GA,Irwin County
+8344c4fffffffff,13017,13,GA,Ben Hill County
+8344c4fffffffff,13271,13,GA,Telfair County
+8344c4fffffffff,13315,13,GA,Wilcox County
+8344c4fffffffff,13081,13,GA,Crisp County
+8344c4fffffffff,13093,13,GA,Dooly County
+8344c4fffffffff,13091,13,GA,Dodge County
+8344c4fffffffff,13235,13,GA,Pulaski County
+8344f1fffffffff,13101,13,GA,Echols County
+8344f1fffffffff,13049,13,GA,Charlton County
+8344f1fffffffff,13065,13,GA,Clinch County
+8344f1fffffffff,13173,13,GA,Lanier County
+8344f1fffffffff,13299,13,GA,Ware County
+8344f1fffffffff,13019,13,GA,Berrien County
+8344f1fffffffff,13003,13,GA,Atkinson County
+8344f1fffffffff,13229,13,GA,Pierce County
+8344f1fffffffff,13069,13,GA,Coffee County
+8344c5fffffffff,13215,13,GA,Muscogee County
+8344c5fffffffff,13145,13,GA,Harris County
+8344c5fffffffff,13261,13,GA,Sumter County
+8344c5fffffffff,13249,13,GA,Schley County
+8344c5fffffffff,13053,13,GA,Chattahoochee County
+8344c5fffffffff,13197,13,GA,Marion County
+8344c5fffffffff,13193,13,GA,Macon County
+8344c5fffffffff,13269,13,GA,Taylor County
+8344c5fffffffff,13225,13,GA,Peach County
+8344c5fffffffff,13263,13,GA,Talbot County
+8344c5fffffffff,13079,13,GA,Crawford County
+8344c5fffffffff,13293,13,GA,Upson County
+8344c5fffffffff,13207,13,GA,Monroe County
+8344c5fffffffff,13199,13,GA,Meriwether County
+8344c5fffffffff,13171,13,GA,Lamar County
+8344c5fffffffff,13231,13,GA,Pike County
+8344c6fffffffff,13005,13,GA,Bacon County
+8344c6fffffffff,13001,13,GA,Appling County
+8344c6fffffffff,13161,13,GA,Jeff Davis County
+8344c6fffffffff,13309,13,GA,Wheeler County
+8344c6fffffffff,13279,13,GA,Toombs County
+8344c6fffffffff,13209,13,GA,Montgomery County
+8344c6fffffffff,13283,13,GA,Treutlen County
+8344c6fffffffff,13107,13,GA,Emanuel County
+8344c6fffffffff,13267,13,GA,Tattnall County
+8344c6fffffffff,13109,13,GA,Evans County
+8344c6fffffffff,13043,13,GA,Candler County
+8344f3fffffffff,13039,13,GA,Camden County
+8344f3fffffffff,13025,13,GA,Brantley County
+8344f3fffffffff,13127,13,GA,Glynn County
+8344f3fffffffff,13191,13,GA,McIntosh County
+8344f3fffffffff,13305,13,GA,Wayne County
+8344f3fffffffff,13183,13,GA,Long County
+8344f3fffffffff,13179,13,GA,Liberty County
+8344e0fffffffff,12039,12,FL,Gadsden County
+8344e0fffffffff,13087,13,GA,Decatur County
+8344e0fffffffff,12077,12,FL,Liberty County
+8344e0fffffffff,12013,12,FL,Calhoun County
+8344e0fffffffff,12063,12,FL,Jackson County
+8344e0fffffffff,13253,13,GA,Seminole County
+8344e2fffffffff,12079,12,FL,Madison County
+8344e2fffffffff,12065,12,FL,Jefferson County
+8344e2fffffffff,12073,12,FL,Leon County
+8344e2fffffffff,13275,13,GA,Thomas County
+8344e2fffffffff,13131,13,GA,Grady County
+8344e2fffffffff,13185,13,GA,Lowndes County
+8344e2fffffffff,13027,13,GA,Brooks County
+8344e2fffffffff,13075,13,GA,Cook County
+8344e2fffffffff,13071,13,GA,Colquitt County
+8344ccfffffffff,13015,13,GA,Bartow County
+8344ccfffffffff,13057,13,GA,Cherokee County
+8344ccfffffffff,13223,13,GA,Paulding County
+8344ccfffffffff,13233,13,GA,Polk County
+8344ccfffffffff,13115,13,GA,Floyd County
+8344ccfffffffff,13055,13,GA,Chattooga County
+8344ccfffffffff,13129,13,GA,Gordon County
+8344ccfffffffff,13295,13,GA,Walker County
+8344ccfffffffff,13313,13,GA,Whitfield County
+8344ccfffffffff,13047,13,GA,Catoosa County
+8344ccfffffffff,13227,13,GA,Pickens County
+8344ccfffffffff,13123,13,GA,Gilmer County
+8344ccfffffffff,13213,13,GA,Murray County
+8344e3fffffffff,13201,13,GA,Miller County
+8344e3fffffffff,13205,13,GA,Mitchell County
+8344e3fffffffff,13007,13,GA,Baker County
+8344e3fffffffff,13037,13,GA,Calhoun County
+8344e3fffffffff,13095,13,GA,Dougherty County
+8344e3fffffffff,13243,13,GA,Randolph County
+8344e3fffffffff,13273,13,GA,Terrell County
+8344e3fffffffff,13177,13,GA,Lee County
+8344e3fffffffff,13099,13,GA,Early County
+8344e3fffffffff,01067,01,AL,Henry County
+8344e3fffffffff,13061,13,GA,Clay County
+8344e3fffffffff,13239,13,GA,Quitman County
+8344e3fffffffff,13307,13,GA,Webster County
+8344e3fffffffff,13259,13,GA,Stewart County
+8344cdfffffffff,01071,01,AL,Jackson County
+8344cdfffffffff,47127,47,TN,Moore County
+8344cdfffffffff,13083,13,GA,Dade County
+8344cdfffffffff,47115,47,TN,Marion County
+8344cdfffffffff,47051,47,TN,Franklin County
+8344cdfffffffff,47153,47,TN,Sequatchie County
+8344cdfffffffff,47061,47,TN,Grundy County
+8344cdfffffffff,47031,47,TN,Coffee County
+8344cdfffffffff,47177,47,TN,Warren County
+8344cdfffffffff,47015,47,TN,Cannon County
+8344eafffffffff,01017,01,AL,Chambers County
+8344eafffffffff,13077,13,GA,Coweta County
+8344eafffffffff,13097,13,GA,Douglas County
+8344eafffffffff,13285,13,GA,Troup County
+8344eafffffffff,01111,01,AL,Randolph County
+8344eafffffffff,13149,13,GA,Heard County
+8344eafffffffff,13045,13,GA,Carroll County
+8344eafffffffff,01029,01,AL,Cleburne County
+8344eafffffffff,13143,13,GA,Haralson County
+8344d5fffffffff,13051,13,GA,Chatham County
+8344d5fffffffff,13029,13,GA,Bryan County
+8344d5fffffffff,45013,45,SC,Beaufort County
+8344d5fffffffff,13103,13,GA,Effingham County
+8344d5fffffffff,13031,13,GA,Bulloch County
+8344d5fffffffff,45053,45,SC,Jasper County
+8344d5fffffffff,13251,13,GA,Screven County
+8344d5fffffffff,45049,45,SC,Hampton County
+834453fffffffff,01129,01,AL,Washington County
+834453fffffffff,01099,01,AL,Monroe County
+834453fffffffff,01025,01,AL,Clarke County
+834453fffffffff,01091,01,AL,Marengo County
+834453fffffffff,01023,01,AL,Choctaw County
+834452fffffffff,12033,12,FL,Escambia County
+834452fffffffff,12091,12,FL,Okaloosa County
+834452fffffffff,12113,12,FL,Santa Rosa County
+834452fffffffff,01053,01,AL,Escambia County
+834452fffffffff,01039,01,AL,Covington County
+834452fffffffff,01035,01,AL,Conecuh County
+83445efffffffff,01119,01,AL,Sumter County
+83445efffffffff,28023,28,MS,Clarke County
+83445efffffffff,28101,28,MS,Newton County
+83445efffffffff,28075,28,MS,Lauderdale County
+83445efffffffff,28099,28,MS,Neshoba County
+83445efffffffff,28069,28,MS,Kemper County
+83445efffffffff,28159,28,MS,Winston County
+8344e9fffffffff,01073,01,AL,Jefferson County
+8344e9fffffffff,01057,01,AL,Fayette County
+8344e9fffffffff,01127,01,AL,Walker County
+8344e9fffffffff,01043,01,AL,Cullman County
+8344e9fffffffff,01093,01,AL,Marion County
+8344e9fffffffff,01133,01,AL,Winston County
+8344e8fffffffff,01051,01,AL,Elmore County
+8344e8fffffffff,01037,01,AL,Coosa County
+8344e8fffffffff,01021,01,AL,Chilton County
+8344e8fffffffff,01117,01,AL,Shelby County
+8344e8fffffffff,01027,01,AL,Clay County
+8344e8fffffffff,01121,01,AL,Talladega County
+8344eefffffffff,01005,01,AL,Barbour County
+8344eefffffffff,01011,01,AL,Bullock County
+8344eefffffffff,01113,01,AL,Russell County
+8344eefffffffff,01087,01,AL,Macon County
+8344eefffffffff,01081,01,AL,Lee County
+8344eefffffffff,01123,01,AL,Tallapoosa County
+83264bfffffffff,01059,01,AL,Franklin County
+83264bfffffffff,28057,28,MS,Itawamba County
+83264bfffffffff,28081,28,MS,Lee County
+83264bfffffffff,28117,28,MS,Prentiss County
+83264bfffffffff,01033,01,AL,Colbert County
+83264bfffffffff,47071,47,TN,Hardin County
+83264bfffffffff,28141,28,MS,Tishomingo County
+83264bfffffffff,28139,28,MS,Tippah County
+83264bfffffffff,28003,28,MS,Alcorn County
+83264bfffffffff,47109,47,TN,McNairy County
+834450fffffffff,28059,28,MS,Jackson County
+834450fffffffff,28039,28,MS,George County
+834450fffffffff,01003,01,AL,Baldwin County
+834450fffffffff,01097,01,AL,Mobile County
+834456fffffffff,,,,
+8344e1fffffffff,12059,12,FL,Holmes County
+8344e1fffffffff,01061,01,AL,Geneva County
+8344e1fffffffff,01069,01,AL,Houston County
+8344e1fffffffff,01031,01,AL,Coffee County
+8344e1fffffffff,01045,01,AL,Dale County
+8344e1fffffffff,01109,01,AL,Pike County
+8344edfffffffff,01105,01,AL,Perry County
+8344edfffffffff,01065,01,AL,Hale County
+8344edfffffffff,01063,01,AL,Greene County
+8344edfffffffff,01007,01,AL,Bibb County
+8344edfffffffff,01125,01,AL,Tuscaloosa County
+8344ecfffffffff,01041,01,AL,Crenshaw County
+8344ecfffffffff,01013,01,AL,Butler County
+8344ecfffffffff,01131,01,AL,Wilcox County
+8344ecfffffffff,01085,01,AL,Lowndes County
+8344ecfffffffff,01047,01,AL,Dallas County
+8344ecfffffffff,01001,01,AL,Autauga County
+8344ecfffffffff,01101,01,AL,Montgomery County
+832649fffffffff,01103,01,AL,Morgan County
+832649fffffffff,01079,01,AL,Lawrence County
+832649fffffffff,01089,01,AL,Madison County
+832649fffffffff,01083,01,AL,Limestone County
+832649fffffffff,01077,01,AL,Lauderdale County
+832649fffffffff,47103,47,TN,Lincoln County
+832649fffffffff,47055,47,TN,Giles County
+832649fffffffff,47099,47,TN,Lawrence County
+83445afffffffff,01107,01,AL,Pickens County
+83445afffffffff,28103,28,MS,Noxubee County
+83445afffffffff,28105,28,MS,Oktibbeha County
+83445afffffffff,28087,28,MS,Lowndes County
+83445afffffffff,28025,28,MS,Clay County
+83445afffffffff,01075,01,AL,Lamar County
+83445afffffffff,28095,28,MS,Monroe County
+83445afffffffff,28017,28,MS,Chickasaw County
+8344ebfffffffff,01115,01,AL,St. Clair County
+8344ebfffffffff,01015,01,AL,Calhoun County
+8344ebfffffffff,01009,01,AL,Blount County
+8344ebfffffffff,01095,01,AL,Marshall County
+8344ebfffffffff,01055,01,AL,Etowah County
+8344ebfffffffff,01019,01,AL,Cherokee County
+8344ebfffffffff,01049,01,AL,DeKalb County
+832692fffffffff,49039,49,UT,Sanpete County
+832692fffffffff,49023,49,UT,Juab County
+8326b2fffffffff,56023,56,WY,Lincoln County
+8326b2fffffffff,16007,16,ID,Bear Lake County
+832996fffffffff,,,,
+832694fffffffff,49043,49,UT,Summit County
+832694fffffffff,49029,49,UT,Morgan County
+832694fffffffff,56041,56,WY,Uinta County
+832694fffffffff,49033,49,UT,Rich County
+832991fffffffff,49021,49,UT,Iron County
+832991fffffffff,49001,49,UT,Beaver County
+832696fffffffff,49035,49,UT,Salt Lake County
+832696fffffffff,49011,49,UT,Davis County
+83299afffffffff,49045,49,UT,Tooele County
+832993fffffffff,49031,49,UT,Piute County
+832993fffffffff,49041,49,UT,Sevier County
+832691fffffffff,,,,
+8328b0fffffffff,16031,16,ID,Cassia County
+8328b0fffffffff,16077,16,ID,Power County
+8328b0fffffffff,16067,16,ID,Minidoka County
+832995fffffffff,49053,49,UT,Washington County
+83269afffffffff,49037,49,UT,San Juan County
+83299efffffffff,49027,49,UT,Millard County
+832693fffffffff,49015,49,UT,Emery County
+832990fffffffff,49025,49,UT,Kane County
+832695fffffffff,49047,49,UT,Uintah County
+832695fffffffff,49009,49,UT,Daggett County
+8328b4fffffffff,49003,49,UT,Box Elder County
+83269efffffffff,49019,49,UT,Grand County
+832992fffffffff,49017,49,UT,Garfield County
+832992fffffffff,49055,49,UT,Wayne County
+8328b6fffffffff,49057,49,UT,Weber County
+8328b6fffffffff,49005,49,UT,Cache County
+8328b6fffffffff,16041,16,ID,Franklin County
+8328b6fffffffff,16071,16,ID,Oneida County
+832690fffffffff,49007,49,UT,Carbon County
+832690fffffffff,49049,49,UT,Utah County
+832690fffffffff,49013,49,UT,Duchesne County
+832690fffffffff,49051,49,UT,Wasatch County
+832749fffffffff,18151,18,IN,Steuben County
+832749fffffffff,26023,26,MI,Branch County
+832749fffffffff,26025,26,MI,Calhoun County
+832749fffffffff,39171,39,OH,Williams County
+832749fffffffff,39051,39,OH,Fulton County
+832749fffffffff,26059,26,MI,Hillsdale County
+832749fffffffff,26091,26,MI,Lenawee County
+832749fffffffff,26075,26,MI,Jackson County
+832749fffffffff,26161,26,MI,Washtenaw County
+832a93fffffffff,18155,18,IN,Switzerland County
+832a93fffffffff,18115,18,IN,Ohio County
+832a93fffffffff,18029,18,IN,Dearborn County
+832a93fffffffff,18047,18,IN,Franklin County
+832a93fffffffff,21191,21,KY,Pendleton County
+832a93fffffffff,21117,21,KY,Kenton County
+832a93fffffffff,39015,39,OH,Brown County
+832a93fffffffff,21037,21,KY,Campbell County
+832a93fffffffff,21015,21,KY,Boone County
+832a93fffffffff,39025,39,OH,Clermont County
+832a93fffffffff,39061,39,OH,Hamilton County
+832a93fffffffff,39027,39,OH,Clinton County
+832a93fffffffff,39165,39,OH,Warren County
+832a93fffffffff,39017,39,OH,Butler County
+832ab0fffffffff,39085,39,OH,Lake County
+832a82fffffffff,54105,54,WV,Wirt County
+832a82fffffffff,39105,39,OH,Meigs County
+832a82fffffffff,54085,54,WV,Ritchie County
+832a82fffffffff,54107,54,WV,Wood County
+832a82fffffffff,39009,39,OH,Athens County
+832a82fffffffff,54073,54,WV,Pleasants County
+832a82fffffffff,39167,39,OH,Washington County
+832a82fffffffff,39127,39,OH,Perry County
+832a82fffffffff,39115,39,OH,Morgan County
+832a82fffffffff,39111,39,OH,Monroe County
+832a82fffffffff,39121,39,OH,Noble County
+832a82fffffffff,39119,39,OH,Muskingum County
+832a86fffffffff,39013,39,OH,Belmont County
+832a86fffffffff,39059,39,OH,Guernsey County
+832a86fffffffff,54069,54,WV,Ohio County
+832a86fffffffff,54009,54,WV,Brooke County
+832a86fffffffff,39067,39,OH,Harrison County
+832a86fffffffff,39081,39,OH,Jefferson County
+832a86fffffffff,39157,39,OH,Tuscarawas County
+832a86fffffffff,54029,54,WV,Hancock County
+832a86fffffffff,39019,39,OH,Carroll County
+832a86fffffffff,39029,39,OH,Columbiana County
+832a86fffffffff,39151,39,OH,Stark County
+832a96fffffffff,18075,18,IN,Jay County
+832a96fffffffff,39107,39,OH,Mercer County
+832a96fffffffff,39161,39,OH,Van Wert County
+832a96fffffffff,39125,39,OH,Paulding County
+832a96fffffffff,39039,39,OH,Defiance County
+832a96fffffffff,18179,18,IN,Wells County
+832a96fffffffff,18001,18,IN,Adams County
+832a96fffffffff,18069,18,IN,Huntington County
+832a96fffffffff,18003,18,IN,Allen County
+832a96fffffffff,18183,18,IN,Whitley County
+832a96fffffffff,18033,18,IN,DeKalb County
+832ab3fffffffff,39005,39,OH,Ashland County
+832ab3fffffffff,39169,39,OH,Wayne County
+832ab3fffffffff,39103,39,OH,Medina County
+832ab3fffffffff,39153,39,OH,Summit County
+832ab3fffffffff,39035,39,OH,Cuyahoga County
+832ab3fffffffff,39077,39,OH,Huron County
+832ab3fffffffff,39093,39,OH,Lorain County
+832ab3fffffffff,39043,39,OH,Erie County
+832a9efffffffff,21165,21,KY,Menifee County
+832a9efffffffff,21173,21,KY,Montgomery County
+832a9efffffffff,21011,21,KY,Bath County
+832a9efffffffff,21175,21,KY,Morgan County
+832a9efffffffff,21063,21,KY,Elliott County
+832a9efffffffff,21205,21,KY,Rowan County
+832a9efffffffff,21181,21,KY,Nicholas County
+832a9efffffffff,21069,21,KY,Fleming County
+832a9efffffffff,21201,21,KY,Robertson County
+832a9efffffffff,21161,21,KY,Mason County
+832a9efffffffff,21023,21,KY,Bracken County
+832a9efffffffff,21043,21,KY,Carter County
+832a9efffffffff,21135,21,KY,Lewis County
+832a9efffffffff,21089,21,KY,Greenup County
+832a9efffffffff,39001,39,OH,Adams County
+832a91fffffffff,39145,39,OH,Scioto County
+832a91fffffffff,39079,39,OH,Jackson County
+832a91fffffffff,39071,39,OH,Highland County
+832a91fffffffff,39131,39,OH,Pike County
+832a91fffffffff,39163,39,OH,Vinton County
+832a91fffffffff,39141,39,OH,Ross County
+832a91fffffffff,39073,39,OH,Hocking County
+832a91fffffffff,39047,39,OH,Fayette County
+832a91fffffffff,39129,39,OH,Pickaway County
+832a91fffffffff,39045,39,OH,Fairfield County
+832a95fffffffff,39049,39,OH,Franklin County
+832a95fffffffff,39089,39,OH,Licking County
+832a95fffffffff,39041,39,OH,Delaware County
+832a95fffffffff,39083,39,OH,Knox County
+832a95fffffffff,39117,39,OH,Morrow County
+832a95fffffffff,39101,39,OH,Marion County
+832a95fffffffff,39139,39,OH,Richland County
+832a95fffffffff,39031,39,OH,Coshocton County
+832a95fffffffff,39075,39,OH,Holmes County
+832ab2fffffffff,39123,39,OH,Ottawa County
+832ab2fffffffff,26115,26,MI,Monroe County
+832ab2fffffffff,26163,26,MI,Wayne County
+832a90fffffffff,39097,39,OH,Madison County
+832a90fffffffff,39057,39,OH,Greene County
+832a90fffffffff,39113,39,OH,Montgomery County
+832a90fffffffff,39023,39,OH,Clark County
+832a90fffffffff,39109,39,OH,Miami County
+832a90fffffffff,39037,39,OH,Darke County
+832a90fffffffff,39021,39,OH,Champaign County
+832a90fffffffff,39149,39,OH,Shelby County
+832a90fffffffff,39159,39,OH,Union County
+832a90fffffffff,39091,39,OH,Logan County
+832a90fffffffff,39011,39,OH,Auglaize County
+832a94fffffffff,39175,39,OH,Wyandot County
+832a94fffffffff,39033,39,OH,Crawford County
+832a94fffffffff,39065,39,OH,Hardin County
+832a94fffffffff,39003,39,OH,Allen County
+832a94fffffffff,39063,39,OH,Hancock County
+832a94fffffffff,39137,39,OH,Putnam County
+832a94fffffffff,39147,39,OH,Seneca County
+832a94fffffffff,39143,39,OH,Sandusky County
+832a94fffffffff,39095,39,OH,Lucas County
+832a94fffffffff,39069,39,OH,Henry County
+832a94fffffffff,39173,39,OH,Wood County
+832ab1fffffffff,42073,42,PA,Lawrence County
+832ab1fffffffff,39099,39,OH,Mahoning County
+832ab1fffffffff,39133,39,OH,Portage County
+832ab1fffffffff,39155,39,OH,Trumbull County
+832ab1fffffffff,39055,39,OH,Geauga County
+832ab1fffffffff,39007,39,OH,Ashtabula County
+832ab1fffffffff,42085,42,PA,Mercer County
+832ab1fffffffff,42039,42,PA,Crawford County
+832a9cfffffffff,54099,54,WV,Wayne County
+832a9cfffffffff,54043,54,WV,Lincoln County
+832a9cfffffffff,54039,54,WV,Kanawha County
+832a9cfffffffff,21019,21,KY,Boyd County
+832a9cfffffffff,54011,54,WV,Cabell County
+832a9cfffffffff,39087,39,OH,Lawrence County
+832a9cfffffffff,39053,39,OH,Gallia County
+832a9cfffffffff,54079,54,WV,Putnam County
+832a9cfffffffff,54053,54,WV,Mason County
+832a9cfffffffff,54035,54,WV,Jackson County
+8326ccfffffffff,40013,40,OK,Bryan County
+8326ccfffffffff,40095,40,OK,Marshall County
+8326ccfffffffff,40069,40,OK,Johnston County
+8326ccfffffffff,40005,40,OK,Atoka County
+8326ccfffffffff,40099,40,OK,Murray County
+8326ccfffffffff,40029,40,OK,Coal County
+8326ccfffffffff,40123,40,OK,Pontotoc County
+8326eafffffffff,40063,40,OK,Hughes County
+8326eafffffffff,40133,40,OK,Seminole County
+8326eafffffffff,40107,40,OK,Okfuskee County
+8326eafffffffff,40111,40,OK,Okmulgee County
+8326eafffffffff,40081,40,OK,Lincoln County
+8326eafffffffff,40037,40,OK,Creek County
+8326c3fffffffff,40141,40,OK,Tillman County
+8326c3fffffffff,40031,40,OK,Comanche County
+8326c3fffffffff,40075,40,OK,Kiowa County
+8326c3fffffffff,40065,40,OK,Jackson County
+8326c3fffffffff,40055,40,OK,Greer County
+8326c3fffffffff,40149,40,OK,Washita County
+8326cdfffffffff,48119,48,TX,Delta County
+8326cdfffffffff,48147,48,TX,Fannin County
+8326cdfffffffff,48277,48,TX,Lamar County
+8326cdfffffffff,40023,40,OK,Choctaw County
+8326cdfffffffff,48159,48,TX,Franklin County
+8326cdfffffffff,48387,48,TX,Red River County
+8326dcfffffffff,48155,48,TX,Foard County
+8326dcfffffffff,48345,48,TX,Motley County
+8326dcfffffffff,48101,48,TX,Cottle County
+8326dcfffffffff,48197,48,TX,Hardeman County
+8326dcfffffffff,48075,48,TX,Childress County
+8326dcfffffffff,48191,48,TX,Hall County
+8326dcfffffffff,40057,40,OK,Harmon County
+8326ebfffffffff,40121,40,OK,Pittsburg County
+8326ebfffffffff,40127,40,OK,Pushmataha County
+8326ebfffffffff,40077,40,OK,Latimer County
+8326ebfffffffff,40079,40,OK,Le Flore County
+8326ebfffffffff,40061,40,OK,Haskell County
+8326ebfffffffff,40091,40,OK,McIntosh County
+8326c4fffffffff,40003,40,OK,Alfalfa County
+8326c4fffffffff,40151,40,OK,Woods County
+8326c4fffffffff,20077,20,KS,Harper County
+8326c4fffffffff,20007,20,KS,Barber County
+8326c4fffffffff,20033,20,KS,Comanche County
+8326cefffffffff,48337,48,TX,Montague County
+8326cefffffffff,48077,48,TX,Clay County
+8326cefffffffff,40085,40,OK,Love County
+8326cefffffffff,40067,40,OK,Jefferson County
+8326cefffffffff,40019,40,OK,Carter County
+8326cefffffffff,40033,40,OK,Cotton County
+8326cefffffffff,40137,40,OK,Stephens County
+834449fffffffff,05081,05,AR,Little River County
+834449fffffffff,05133,05,AR,Sevier County
+834449fffffffff,05061,05,AR,Howard County
+834449fffffffff,40089,40,OK,McCurtain County
+834449fffffffff,05109,05,AR,Pike County
+834449fffffffff,05113,05,AR,Polk County
+8326ecfffffffff,40035,40,OK,Craig County
+8326ecfffffffff,40115,40,OK,Ottawa County
+8326ecfffffffff,29145,29,MO,Newton County
+8326ecfffffffff,20021,20,KS,Cherokee County
+8326ecfffffffff,20099,20,KS,Labette County
+8326ecfffffffff,29097,29,MO,Jasper County
+8326ecfffffffff,20037,20,KS,Crawford County
+8326c0fffffffff,40039,40,OK,Custer County
+8326c0fffffffff,40011,40,OK,Blaine County
+8326c0fffffffff,40043,40,OK,Dewey County
+8326c0fffffffff,40093,40,OK,Major County
+8326c5fffffffff,40083,40,OK,Logan County
+8326c5fffffffff,40119,40,OK,Payne County
+8326c5fffffffff,40073,40,OK,Kingfisher County
+8326c5fffffffff,40047,40,OK,Garfield County
+8326c5fffffffff,40103,40,OK,Noble County
+8326c5fffffffff,40053,40,OK,Grant County
+8326c5fffffffff,40071,40,OK,Kay County
+8326d4fffffffff,40025,40,OK,Cimarron County
+8326d4fffffffff,20129,20,KS,Morton County
+8326d4fffffffff,08009,08,CO,Baca County
+8326e3fffffffff,20035,20,KS,Cowley County
+8326e3fffffffff,20015,20,KS,Butler County
+8326e3fffffffff,20191,20,KS,Sumner County
+8326e3fffffffff,20173,20,KS,Sedgwick County
+8326e8fffffffff,40135,40,OK,Sequoyah County
+8326e8fffffffff,40101,40,OK,Muskogee County
+8326e8fffffffff,40001,40,OK,Adair County
+8326e8fffffffff,40021,40,OK,Cherokee County
+8326e8fffffffff,40145,40,OK,Wagoner County
+8326e8fffffffff,40097,40,OK,Mayes County
+8326e8fffffffff,40041,40,OK,Delaware County
+8326c1fffffffff,40049,40,OK,Garvin County
+8326c1fffffffff,40125,40,OK,Pottawatomie County
+8326c1fffffffff,40087,40,OK,McClain County
+8326c1fffffffff,40051,40,OK,Grady County
+8326c1fffffffff,40015,40,OK,Caddo County
+8326c1fffffffff,40027,40,OK,Cleveland County
+8326c1fffffffff,40017,40,OK,Canadian County
+8326c1fffffffff,40109,40,OK,Oklahoma County
+8326c6fffffffff,40045,40,OK,Ellis County
+8326c6fffffffff,48295,48,TX,Lipscomb County
+8326c6fffffffff,40153,40,OK,Woodward County
+8326c6fffffffff,40007,40,OK,Beaver County
+8326c6fffffffff,40059,40,OK,Harper County
+8326d5fffffffff,48393,48,TX,Roberts County
+8326d5fffffffff,48233,48,TX,Hutchinson County
+8326d5fffffffff,48195,48,TX,Hansford County
+8326d5fffffffff,48357,48,TX,Ochiltree County
+8326d5fffffffff,40139,40,OK,Texas County
+8326d5fffffffff,48421,48,TX,Sherman County
+8326e9fffffffff,05127,05,AR,Scott County
+8326e9fffffffff,05149,05,AR,Yell County
+8326e9fffffffff,05131,05,AR,Sebastian County
+8326e9fffffffff,05083,05,AR,Logan County
+8326e9fffffffff,05047,05,AR,Franklin County
+8326e9fffffffff,05033,05,AR,Crawford County
+8326eefffffffff,40143,40,OK,Tulsa County
+8326eefffffffff,40117,40,OK,Pawnee County
+8326eefffffffff,40131,40,OK,Rogers County
+8326eefffffffff,40113,40,OK,Osage County
+8326eefffffffff,40147,40,OK,Washington County
+8326eefffffffff,40105,40,OK,Nowata County
+8326eefffffffff,20019,20,KS,Chautauqua County
+8326f3fffffffff,20189,20,KS,Stevens County
+8326f3fffffffff,20175,20,KS,Seward County
+8326f3fffffffff,20119,20,KS,Meade County
+8326f3fffffffff,20067,20,KS,Grant County
+8326f3fffffffff,20081,20,KS,Haskell County
+8326c2fffffffff,48087,48,TX,Collingsworth County
+8326c2fffffffff,40009,40,OK,Beckham County
+8326c2fffffffff,48483,48,TX,Wheeler County
+8326c2fffffffff,40129,40,OK,Roger Mills County
+8326c2fffffffff,48211,48,TX,Hemphill County
+832659fffffffff,28143,28,MS,Tunica County
+832659fffffffff,05077,05,AR,Lee County
+832659fffffffff,28033,28,MS,DeSoto County
+832659fffffffff,05123,05,AR,St. Francis County
+832659fffffffff,05035,05,AR,Crittenden County
+832659fffffffff,05037,05,AR,Cross County
+832659fffffffff,05111,05,AR,Poinsett County
+832659fffffffff,47157,47,TN,Shelby County
+832a9bfffffffff,47025,47,TN,Claiborne County
+832a9bfffffffff,21013,21,KY,Bell County
+832a9bfffffffff,47063,47,TN,Hamblen County
+832a9bfffffffff,47057,47,TN,Grainger County
+832a9bfffffffff,47073,47,TN,Hawkins County
+832a9bfffffffff,47067,47,TN,Hancock County
+832a9bfffffffff,51105,51,VA,Lee County
+832a9bfffffffff,51169,51,VA,Scott County
+832a9bfffffffff,21095,21,KY,Harlan County
+832a9bfffffffff,51720,51,VA,Norton city
+832a9bfffffffff,51195,51,VA,Wise County
+832a9bfffffffff,21131,21,KY,Leslie County
+832a9bfffffffff,21133,21,KY,Letcher County
+83264efffffffff,47053,47,TN,Gibson County
+83264efffffffff,47045,47,TN,Dyer County
+83264efffffffff,47183,47,TN,Weakley County
+83264efffffffff,47079,47,TN,Henry County
+83264efffffffff,47095,47,TN,Lake County
+83264efffffffff,47131,47,TN,Obion County
+83264efffffffff,21075,21,KY,Fulton County
+83264efffffffff,29143,29,MO,New Madrid County
+83264efffffffff,21105,21,KY,Hickman County
+83264efffffffff,21083,21,KY,Graves County
+83264efffffffff,29133,29,MO,Mississippi County
+83264efffffffff,21039,21,KY,Carlisle County
+83264dfffffffff,47117,47,TN,Marshall County
+83264dfffffffff,47003,47,TN,Bedford County
+83264dfffffffff,47119,47,TN,Maury County
+83264dfffffffff,47149,47,TN,Rutherford County
+83264dfffffffff,47187,47,TN,Williamson County
+83264dfffffffff,47043,47,TN,Dickson County
+83264dfffffffff,47189,47,TN,Wilson County
+83264dfffffffff,47037,47,TN,Davidson County
+83264dfffffffff,47021,47,TN,Cheatham County
+83264dfffffffff,47165,47,TN,Sumner County
+83264dfffffffff,47147,47,TN,Robertson County
+83264cfffffffff,47083,47,TN,Houston County
+83264cfffffffff,47125,47,TN,Montgomery County
+83264cfffffffff,47161,47,TN,Stewart County
+83264cfffffffff,21035,21,KY,Calloway County
+83264cfffffffff,21221,21,KY,Trigg County
+83264cfffffffff,21219,21,KY,Todd County
+83264cfffffffff,21047,21,KY,Christian County
+83264cfffffffff,21143,21,KY,Lyon County
+83264cfffffffff,21033,21,KY,Caldwell County
+83264cfffffffff,21157,21,KY,Marshall County
+83264afffffffff,47047,47,TN,Fayette County
+83264afffffffff,47069,47,TN,Hardeman County
+83264afffffffff,47023,47,TN,Chester County
+83264afffffffff,47167,47,TN,Tipton County
+83264afffffffff,47075,47,TN,Haywood County
+83264afffffffff,47113,47,TN,Madison County
+83264afffffffff,47097,47,TN,Lauderdale County
+83264afffffffff,47033,47,TN,Crockett County
+832648fffffffff,47181,47,TN,Wayne County
+832648fffffffff,47101,47,TN,Lewis County
+832648fffffffff,47039,47,TN,Decatur County
+832648fffffffff,47135,47,TN,Perry County
+832648fffffffff,47081,47,TN,Hickman County
+832648fffffffff,47085,47,TN,Humphreys County
+832648fffffffff,47077,47,TN,Henderson County
+832648fffffffff,47017,47,TN,Carroll County
+832648fffffffff,47005,47,TN,Benton County
+83266bfffffffff,21003,21,KY,Allen County
+83266bfffffffff,21213,21,KY,Simpson County
+83266bfffffffff,21141,21,KY,Logan County
+83266bfffffffff,21227,21,KY,Warren County
+83266bfffffffff,21031,21,KY,Butler County
+83266bfffffffff,21177,21,KY,Muhlenberg County
+83266bfffffffff,21009,21,KY,Barren County
+83266bfffffffff,21061,21,KY,Edmonson County
+83266bfffffffff,21085,21,KY,Grayson County
+83266bfffffffff,21183,21,KY,Ohio County
+8344cbfffffffff,47001,47,TN,Anderson County
+8344cbfffffffff,47129,47,TN,Morgan County
+8344cbfffffffff,47173,47,TN,Union County
+8344cbfffffffff,47013,47,TN,Campbell County
+8344cbfffffffff,47151,47,TN,Scott County
+8344cbfffffffff,21147,21,KY,McCreary County
+8344cbfffffffff,21235,21,KY,Whitley County
+8344cbfffffffff,21231,21,KY,Wayne County
+8344cbfffffffff,47049,47,TN,Fentress County
+8344cbfffffffff,21121,21,KY,Knox County
+8344c9fffffffff,47175,47,TN,Van Buren County
+8344c9fffffffff,47185,47,TN,White County
+8344c9fffffffff,47041,47,TN,DeKalb County
+8344c9fffffffff,47141,47,TN,Putnam County
+8344c9fffffffff,47159,47,TN,Smith County
+8344c9fffffffff,47133,47,TN,Overton County
+8344c9fffffffff,47087,47,TN,Jackson County
+8344c9fffffffff,47169,47,TN,Trousdale County
+8344c9fffffffff,47111,47,TN,Macon County
+8344c9fffffffff,47027,47,TN,Clay County
+8344c9fffffffff,47137,47,TN,Pickett County
+8344c9fffffffff,21171,21,KY,Monroe County
+8344c8fffffffff,47011,47,TN,Bradley County
+8344c8fffffffff,47065,47,TN,Hamilton County
+8344c8fffffffff,47007,47,TN,Bledsoe County
+8344c8fffffffff,47143,47,TN,Rhea County
+8344c8fffffffff,47035,47,TN,Cumberland County
+8344c8fffffffff,47139,47,TN,Polk County
+8344c8fffffffff,47107,47,TN,McMinn County
+8344c8fffffffff,47123,47,TN,Monroe County
+8344c8fffffffff,47121,47,TN,Meigs County
+8344c8fffffffff,47105,47,TN,Loudon County
+8344c8fffffffff,47145,47,TN,Roane County
+8326a3fffffffff,56001,56,WY,Albany County
+8326a3fffffffff,56031,56,WY,Platte County
+8326a5fffffffff,46047,46,SD,Fall River County
+8326a5fffffffff,46033,46,SD,Custer County
+8326a5fffffffff,56045,56,WY,Weston County
+83278bfffffffff,46081,46,SD,Lawrence County
+83278bfffffffff,56011,56,WY,Crook County
+83278bfffffffff,46019,46,SD,Butte County
+8326b1fffffffff,,,,
+8326b3fffffffff,56037,56,WY,Sweetwater County
+8326b5fffffffff,56013,56,WY,Fremont County
+8326b5fffffffff,56017,56,WY,Hot Springs County
+832799fffffffff,56033,56,WY,Sheridan County
+83279bfffffffff,56043,56,WY,Washakie County
+83279bfffffffff,56003,56,WY,Big Horn County
+832680fffffffff,08057,08,CO,Jackson County
+832680fffffffff,08107,08,CO,Routt County
+832684fffffffff,56007,56,WY,Carbon County
+832686fffffffff,08081,08,CO,Moffat County
+8326a0fffffffff,56009,56,WY,Converse County
+8326a2fffffffff,56025,56,WY,Natrona County
+8326a4fffffffff,56005,56,WY,Campbell County
+8326a6fffffffff,56019,56,WY,Johnson County
+83278afffffffff,30075,30,MT,Powder River County
+83278afffffffff,30011,30,MT,Carter County
+8326b0fffffffff,56035,56,WY,Sublette County
+8326b4fffffffff,,,,
+832798fffffffff,30003,30,MT,Big Horn County
+8326b6fffffffff,16019,16,ID,Bonneville County
+8326b6fffffffff,16081,16,ID,Teton County
+83279afffffffff,56029,56,WY,Park County
+83279afffffffff,30009,30,MT,Carbon County
+832896fffffffff,56039,56,WY,Teton County
+832685fffffffff,08069,08,CO,Larimer County
+832a31fffffffff,25019,25,MA,Nantucket County
+832a31fffffffff,25001,25,MA,Barnstable County
+832a31fffffffff,25023,25,MA,Plymouth County
+832a30fffffffff,25025,25,MA,Suffolk County
+832a30fffffffff,25017,25,MA,Middlesex County
+832a30fffffffff,25009,25,MA,Essex County
+832a30fffffffff,33015,33,NH,Rockingham County
+832a06fffffffff,25007,25,MA,Dukes County
+832aaafffffffff,51047,51,VA,Culpeper County
+832aaafffffffff,51153,51,VA,Prince William County
+832aaafffffffff,51139,51,VA,Page County
+832aaafffffffff,51157,51,VA,Rappahannock County
+832aaafffffffff,51061,51,VA,Fauquier County
+832aaafffffffff,51171,51,VA,Shenandoah County
+832aaafffffffff,51187,51,VA,Warren County
+832aaafffffffff,51683,51,VA,Manassas city
+832aaafffffffff,51685,51,VA,Manassas Park city
+832aaafffffffff,51059,51,VA,Fairfax County
+832aaafffffffff,51600,51,VA,Fairfax city
+832aaafffffffff,51107,51,VA,Loudoun County
+832aaafffffffff,51043,51,VA,Clarke County
+832aaafffffffff,51840,51,VA,Winchester city
+832aaafffffffff,51069,51,VA,Frederick County
+832aaafffffffff,54037,54,WV,Jefferson County
+832aaafffffffff,54003,54,WV,Berkeley County
+832aabfffffffff,51085,51,VA,Hanover County
+832aabfffffffff,51101,51,VA,King William County
+832aabfffffffff,51097,51,VA,King and Queen County
+832aabfffffffff,51159,51,VA,Richmond County
+832aabfffffffff,51057,51,VA,Essex County
+832aabfffffffff,51033,51,VA,Caroline County
+832aabfffffffff,51193,51,VA,Westmoreland County
+832aabfffffffff,24037,24,MD,St. Mary's County
+832aabfffffffff,51177,51,VA,Spotsylvania County
+832aabfffffffff,51099,51,VA,King George County
+832aabfffffffff,51630,51,VA,Fredericksburg city
+832aabfffffffff,51179,51,VA,Stafford County
+832aabfffffffff,24017,24,MD,Charles County
+832af6fffffffff,51550,51,VA,Chesapeake city
+832af6fffffffff,51740,51,VA,Portsmouth city
+832af6fffffffff,51093,51,VA,Isle of Wight County
+832af6fffffffff,51710,51,VA,Norfolk city
+832af6fffffffff,51650,51,VA,Hampton city
+832af6fffffffff,51700,51,VA,Newport News city
+832af6fffffffff,51181,51,VA,Surry County
+832af6fffffffff,51735,51,VA,Poquoson city
+832af6fffffffff,51199,51,VA,York County
+832af6fffffffff,51830,51,VA,Williamsburg city
+832af6fffffffff,51131,51,VA,Northampton County
+832af6fffffffff,51095,51,VA,James City County
+832af6fffffffff,51036,51,VA,Charles City County
+832af6fffffffff,51073,51,VA,Gloucester County
+832af6fffffffff,51115,51,VA,Mathews County
+832af6fffffffff,51127,51,VA,New Kent County
+832af6fffffffff,51119,51,VA,Middlesex County
+832af6fffffffff,51103,51,VA,Lancaster County
+832a81fffffffff,51091,51,VA,Highland County
+832a81fffffffff,51660,51,VA,Harrisonburg city
+832a81fffffffff,51165,51,VA,Rockingham County
+832a81fffffffff,54071,54,WV,Pendleton County
+832a81fffffffff,54083,54,WV,Randolph County
+832a81fffffffff,54031,54,WV,Hardy County
+832a81fffffffff,54023,54,WV,Grant County
+832a81fffffffff,54093,54,WV,Tucker County
+832a8cfffffffff,51049,51,VA,Cumberland County
+832a8cfffffffff,51029,51,VA,Buckingham County
+832a8cfffffffff,51075,51,VA,Goochland County
+832a8cfffffffff,51125,51,VA,Nelson County
+832a8cfffffffff,51065,51,VA,Fluvanna County
+832a8cfffffffff,51109,51,VA,Louisa County
+832a8cfffffffff,51003,51,VA,Albemarle County
+832a8cfffffffff,51540,51,VA,Charlottesville city
+832a8cfffffffff,51820,51,VA,Waynesboro city
+832a8cfffffffff,51790,51,VA,Staunton city
+832a8cfffffffff,51015,51,VA,Augusta County
+832a8cfffffffff,51137,51,VA,Orange County
+832a8cfffffffff,51079,51,VA,Greene County
+832a8cfffffffff,51113,51,VA,Madison County
+832a9dfffffffff,54047,54,WV,McDowell County
+832a9dfffffffff,54055,54,WV,Mercer County
+832a9dfffffffff,54109,54,WV,Wyoming County
+832a9dfffffffff,54089,54,WV,Summers County
+832a9dfffffffff,54081,54,WV,Raleigh County
+832a9dfffffffff,54045,54,WV,Logan County
+832a9dfffffffff,54005,54,WV,Boone County
+832a9dfffffffff,54019,54,WV,Fayette County
+832a8dfffffffff,51081,51,VA,Greensville County
+832a8dfffffffff,51183,51,VA,Sussex County
+832a8dfffffffff,51595,51,VA,Emporia city
+832a8dfffffffff,51025,51,VA,Brunswick County
+832a8dfffffffff,51111,51,VA,Lunenburg County
+832a8dfffffffff,51053,51,VA,Dinwiddie County
+832a8dfffffffff,51135,51,VA,Nottoway County
+832a8dfffffffff,51149,51,VA,Prince George County
+832a8dfffffffff,51730,51,VA,Petersburg city
+832a8dfffffffff,51570,51,VA,Colonial Heights city
+832a8dfffffffff,51670,51,VA,Hopewell city
+832a8dfffffffff,51147,51,VA,Prince Edward County
+832a8dfffffffff,51007,51,VA,Amelia County
+832a8dfffffffff,51041,51,VA,Chesterfield County
+832a8dfffffffff,51760,51,VA,Richmond city
+832a8dfffffffff,51087,51,VA,Henrico County
+832a8dfffffffff,51145,51,VA,Powhatan County
+832a98fffffffff,21193,21,KY,Perry County
+832a98fffffffff,21119,21,KY,Knott County
+832a98fffffffff,21195,21,KY,Pike County
+832a98fffffffff,21071,21,KY,Floyd County
+832a98fffffffff,21153,21,KY,Magoffin County
+832a98fffffffff,54059,54,WV,Mingo County
+832a98fffffffff,21159,21,KY,Martin County
+832a98fffffffff,21115,21,KY,Johnson County
+832a98fffffffff,21127,21,KY,Lawrence County
+832a88fffffffff,51083,51,VA,Halifax County
+832a88fffffffff,51143,51,VA,Pittsylvania County
+832a88fffffffff,51037,51,VA,Charlotte County
+832a88fffffffff,51031,51,VA,Campbell County
+832a88fffffffff,51019,51,VA,Bedford County
+832a88fffffffff,51011,51,VA,Appomattox County
+832a88fffffffff,51680,51,VA,Lynchburg city
+832a88fffffffff,51009,51,VA,Amherst County
+832a8efffffffff,54063,54,WV,Monroe County
+832a8efffffffff,54025,54,WV,Greenbrier County
+832a8efffffffff,51045,51,VA,Craig County
+832a8efffffffff,51023,51,VA,Botetourt County
+832a8efffffffff,51530,51,VA,Buena Vista city
+832a8efffffffff,51580,51,VA,Covington city
+832a8efffffffff,51678,51,VA,Lexington city
+832a8efffffffff,51005,51,VA,Alleghany County
+832a8efffffffff,51163,51,VA,Rockbridge County
+832a8efffffffff,51017,51,VA,Bath County
+832a8efffffffff,54075,54,WV,Pocahontas County
+832aa8fffffffff,24009,24,MD,Calvert County
+832aa8fffffffff,24041,24,MD,Talbot County
+832aa8fffffffff,51510,51,VA,Alexandria city
+832aa8fffffffff,24033,24,MD,Prince George's County
+832aa8fffffffff,51013,51,VA,Arlington County
+832aa8fffffffff,51610,51,VA,Falls Church city
+832aa8fffffffff,11001,11,DC,District of Columbia
+832aa8fffffffff,24003,24,MD,Anne Arundel County
+832aa8fffffffff,24035,24,MD,Queen Anne's County
+832aa8fffffffff,24031,24,MD,Montgomery County
+832aa8fffffffff,24029,24,MD,Kent County
+832aa8fffffffff,24027,24,MD,Howard County
+832aa8fffffffff,24510,24,MD,Baltimore city
+832aa8fffffffff,24005,24,MD,Baltimore County
+832605fffffffff,19143,19,IA,Osceola County
+832605fffffffff,19119,19,IA,Lyon County
+832605fffffffff,27105,27,MN,Nobles County
+832605fffffffff,27133,27,MN,Rock County
+832605fffffffff,46101,46,SD,Moody County
+832605fffffffff,27101,27,MN,Murray County
+832605fffffffff,27117,27,MN,Pipestone County
+83262bfffffffff,19169,19,IA,Story County
+83262bfffffffff,19015,19,IA,Boone County
+83262bfffffffff,19079,19,IA,Hamilton County
+83262bfffffffff,19187,19,IA,Webster County
+83262bfffffffff,19197,19,IA,Wright County
+83262bfffffffff,19083,19,IA,Hardin County
+83262bfffffffff,19069,19,IA,Franklin County
+83260dfffffffff,19053,19,IA,Decatur County
+83260dfffffffff,19175,19,IA,Union County
+83260dfffffffff,19039,19,IA,Clarke County
+83260dfffffffff,19117,19,IA,Lucas County
+83260dfffffffff,19121,19,IA,Madison County
+83260dfffffffff,19001,19,IA,Adair County
+83260dfffffffff,19077,19,IA,Guthrie County
+83260dfffffffff,19049,19,IA,Dallas County
+83260dfffffffff,19181,19,IA,Warren County
+83260dfffffffff,19153,19,IA,Polk County
+832628fffffffff,19067,19,IA,Floyd County
+832628fffffffff,19033,19,IA,Cerro Gordo County
+832628fffffffff,19131,19,IA,Mitchell County
+832628fffffffff,19195,19,IA,Worth County
+832628fffffffff,27047,27,MN,Freeborn County
+832628fffffffff,19081,19,IA,Hancock County
+832628fffffffff,19189,19,IA,Winnebago County
+832628fffffffff,27043,27,MN,Faribault County
+832674fffffffff,19139,19,IA,Muscatine County
+832674fffffffff,19163,19,IA,Scott County
+832674fffffffff,19103,19,IA,Johnson County
+832674fffffffff,19031,19,IA,Cedar County
+832674fffffffff,19045,19,IA,Clinton County
+832674fffffffff,19113,19,IA,Linn County
+832674fffffffff,19105,19,IA,Jones County
+83262dfffffffff,19191,19,IA,Winneshiek County
+83262dfffffffff,19089,19,IA,Howard County
+83262dfffffffff,27099,27,MN,Mower County
+83262dfffffffff,27045,27,MN,Fillmore County
+83262dfffffffff,27055,27,MN,Houston County
+83262dfffffffff,27169,27,MN,Winona County
+83262dfffffffff,27109,27,MN,Olmsted County
+83262afffffffff,19151,19,IA,Pocahontas County
+83262afffffffff,19021,19,IA,Buena Vista County
+83262afffffffff,19091,19,IA,Humboldt County
+83262afffffffff,19147,19,IA,Palo Alto County
+83262afffffffff,19041,19,IA,Clay County
+83262afffffffff,19109,19,IA,Kossuth County
+83262afffffffff,19059,19,IA,Dickinson County
+83262afffffffff,19063,19,IA,Emmet County
+83262afffffffff,19141,19,IA,O'Brien County
+832672fffffffff,29001,29,MO,Adair County
+832672fffffffff,29211,29,MO,Sullivan County
+832672fffffffff,29199,29,MO,Scotland County
+832672fffffffff,29197,29,MO,Schuyler County
+832672fffffffff,29171,29,MO,Putnam County
+832672fffffffff,19185,19,IA,Wayne County
+832672fffffffff,19007,19,IA,Appanoose County
+832672fffffffff,19051,19,IA,Davis County
+832672fffffffff,19135,19,IA,Monroe County
+83260cfffffffff,19009,19,IA,Audubon County
+83260cfffffffff,19165,19,IA,Shelby County
+83260cfffffffff,19027,19,IA,Carroll County
+83260cfffffffff,19073,19,IA,Greene County
+83260cfffffffff,19093,19,IA,Ida County
+83260cfffffffff,19047,19,IA,Crawford County
+83260cfffffffff,19025,19,IA,Calhoun County
+83260cfffffffff,19161,19,IA,Sac County
+832676fffffffff,19179,19,IA,Wapello County
+832676fffffffff,19125,19,IA,Marion County
+832676fffffffff,19123,19,IA,Mahaska County
+832676fffffffff,19107,19,IA,Keokuk County
+832676fffffffff,19099,19,IA,Jasper County
+832676fffffffff,19095,19,IA,Iowa County
+832676fffffffff,19157,19,IA,Poweshiek County
+832676fffffffff,19127,19,IA,Marshall County
+832676fffffffff,19171,19,IA,Tama County
+832609fffffffff,29063,29,MO,DeKalb County
+832609fffffffff,29061,29,MO,Daviess County
+832609fffffffff,29003,29,MO,Andrew County
+832609fffffffff,29075,29,MO,Gentry County
+832609fffffffff,29079,29,MO,Grundy County
+832609fffffffff,29129,29,MO,Mercer County
+832609fffffffff,29081,29,MO,Harrison County
+832609fffffffff,29147,29,MO,Nodaway County
+832609fffffffff,29227,29,MO,Worth County
+832609fffffffff,19159,19,IA,Ringgold County
+832670fffffffff,17067,17,IL,Hancock County
+832670fffffffff,29045,29,MO,Clark County
+832670fffffffff,19111,19,IA,Lee County
+832670fffffffff,17071,17,IL,Henderson County
+832670fffffffff,19177,19,IA,Van Buren County
+832670fffffffff,19101,19,IA,Jefferson County
+832670fffffffff,19057,19,IA,Des Moines County
+832670fffffffff,19087,19,IA,Henry County
+832670fffffffff,19115,19,IA,Louisa County
+832670fffffffff,19183,19,IA,Washington County
+832629fffffffff,19011,19,IA,Benton County
+832629fffffffff,19075,19,IA,Grundy County
+832629fffffffff,19013,19,IA,Black Hawk County
+832629fffffffff,19019,19,IA,Buchanan County
+832629fffffffff,19023,19,IA,Butler County
+832629fffffffff,19017,19,IA,Bremer County
+832629fffffffff,19065,19,IA,Fayette County
+832629fffffffff,19037,19,IA,Chickasaw County
+832608fffffffff,19173,19,IA,Taylor County
+832608fffffffff,19145,19,IA,Page County
+832608fffffffff,19003,19,IA,Adams County
+832608fffffffff,19137,19,IA,Montgomery County
+832608fffffffff,19029,19,IA,Cass County
+832608fffffffff,19071,19,IA,Fremont County
+832608fffffffff,19129,19,IA,Mills County
+832608fffffffff,31153,31,NE,Sarpy County
+832608fffffffff,19155,19,IA,Pottawattamie County
+8329b3fffffffff,04015,04,AZ,Mohave County
+8348ccfffffffff,,,,
+8348e8fffffffff,04019,04,AZ,Pima County
+8329b6fffffffff,,,,
+8348ebfffffffff,04021,04,AZ,Pinal County
+8348ebfffffffff,04007,04,AZ,Gila County
+83485afffffffff,04027,04,AZ,Yuma County
+8348eefffffffff,04003,04,AZ,Cochise County
+8329b4fffffffff,04012,04,AZ,La Paz County
+8348cdfffffffff,,,,
+8348e9fffffffff,04013,04,AZ,Maricopa County
+8348c8fffffffff,04001,04,AZ,Apache County
+8348c8fffffffff,04017,04,AZ,Navajo County
+8348ecfffffffff,04023,04,AZ,Santa Cruz County
+83485bfffffffff,06025,06,CA,Imperial County
+8329b2fffffffff,04025,04,AZ,Yavapai County
+8348cbfffffffff,,,,
+8329b5fffffffff,,,,
+8348eafffffffff,04009,04,AZ,Graham County
+832994fffffffff,,,,
+8329b0fffffffff,,,,
+8348c9fffffffff,04005,04,AZ,Coconino County
+8348edfffffffff,,,,
+8348b2fffffffff,,,,
+834468fffffffff,48407,48,TX,San Jacinto County
+834468fffffffff,48457,48,TX,Tyler County
+834468fffffffff,48373,48,TX,Polk County
+834468fffffffff,48455,48,TX,Trinity County
+834468fffffffff,48005,48,TX,Angelina County
+83446afffffffff,48241,48,TX,Jasper County
+83446afffffffff,48351,48,TX,Newton County
+83446afffffffff,22011,22,LA,Beauregard Parish
+83446afffffffff,22115,22,LA,Vernon Parish
+83446afffffffff,22085,22,LA,Sabine Parish
+83446afffffffff,48403,48,TX,Sabine County
+83446afffffffff,48405,48,TX,San Augustine County
+83446cfffffffff,48039,48,TX,Brazoria County
+83446cfffffffff,48201,48,TX,Harris County
+83446cfffffffff,48167,48,TX,Galveston County
+83446cfffffffff,48071,48,TX,Chambers County
+83446cfffffffff,48291,48,TX,Liberty County
+83446efffffffff,48245,48,TX,Jefferson County
+83446efffffffff,48361,48,TX,Orange County
+83446efffffffff,48199,48,TX,Hardin County
+83446efffffffff,22023,22,LA,Cameron Parish
+83446efffffffff,22019,22,LA,Calcasieu Parish
+8348f2fffffffff,48243,48,TX,Jeff Davis County
+8348f6fffffffff,48377,48,TX,Presidio County
+834881fffffffff,48323,48,TX,Maverick County
+834883fffffffff,48507,48,TX,Zavala County
+834883fffffffff,48463,48,TX,Uvalde County
+834889fffffffff,48371,48,TX,Pecos County
+834889fffffffff,48389,48,TX,Reeves County
+834889fffffffff,48103,48,TX,Crane County
+834889fffffffff,48475,48,TX,Ward County
+83488bfffffffff,48461,48,TX,Upton County
+83488bfffffffff,48329,48,TX,Midland County
+83488bfffffffff,48383,48,TX,Reagan County
+83488bfffffffff,48173,48,TX,Glasscock County
+83488dfffffffff,48043,48,TX,Brewster County
+8326c9fffffffff,48423,48,TX,Smith County
+8326c9fffffffff,48499,48,TX,Wood County
+8326c9fffffffff,48213,48,TX,Henderson County
+8326c9fffffffff,48467,48,TX,Van Zandt County
+8326c9fffffffff,48257,48,TX,Kaufman County
+8326c9fffffffff,48379,48,TX,Rains County
+8326c9fffffffff,48231,48,TX,Hunt County
+8326c9fffffffff,48223,48,TX,Hopkins County
+834891fffffffff,48025,48,TX,Bee County
+834891fffffffff,48175,48,TX,Goliad County
+834891fffffffff,48255,48,TX,Karnes County
+834891fffffffff,48123,48,TX,DeWitt County
+834891fffffffff,48391,48,TX,Refugio County
+834891fffffffff,48469,48,TX,Victoria County
+8326cbfffffffff,48251,48,TX,Johnson County
+8326cbfffffffff,48217,48,TX,Hill County
+8326cbfffffffff,48349,48,TX,Navarro County
+8326cbfffffffff,48139,48,TX,Ellis County
+8326cbfffffffff,48113,48,TX,Dallas County
+8326cbfffffffff,48439,48,TX,Tarrant County
+834893fffffffff,48321,48,TX,Matagorda County
+834893fffffffff,48239,48,TX,Jackson County
+834893fffffffff,48481,48,TX,Wharton County
+834893fffffffff,48285,48,TX,Lavaca County
+834893fffffffff,48157,48,TX,Fort Bend County
+834893fffffffff,48089,48,TX,Colorado County
+834895fffffffff,48273,48,TX,Kleberg County
+834895fffffffff,48249,48,TX,Jim Wells County
+834895fffffffff,48355,48,TX,Nueces County
+834895fffffffff,48409,48,TX,San Patricio County
+8326d1fffffffff,48381,48,TX,Randall County
+8326d1fffffffff,48375,48,TX,Potter County
+8326d1fffffffff,48045,48,TX,Briscoe County
+8326d1fffffffff,48011,48,TX,Armstrong County
+8326d1fffffffff,48129,48,TX,Donley County
+8326d1fffffffff,48179,48,TX,Gray County
+8326d1fffffffff,48065,48,TX,Carson County
+834899fffffffff,48327,48,TX,Menard County
+834899fffffffff,48411,48,TX,San Saba County
+834899fffffffff,48307,48,TX,McCulloch County
+834899fffffffff,48095,48,TX,Concho County
+834899fffffffff,48083,48,TX,Coleman County
+834899fffffffff,48049,48,TX,Brown County
+83489bfffffffff,48099,48,TX,Coryell County
+83489bfffffffff,48333,48,TX,Mills County
+83489bfffffffff,48193,48,TX,Hamilton County
+83489bfffffffff,48035,48,TX,Bosque County
+83489bfffffffff,48093,48,TX,Comanche County
+83489bfffffffff,48425,48,TX,Somervell County
+83489bfffffffff,48143,48,TX,Erath County
+83489dfffffffff,48171,48,TX,Gillespie County
+83489dfffffffff,48019,48,TX,Bandera County
+83489dfffffffff,48385,48,TX,Real County
+83489dfffffffff,48265,48,TX,Kerr County
+83489dfffffffff,48267,48,TX,Kimble County
+83489dfffffffff,48319,48,TX,Mason County
+8326d9fffffffff,48133,48,TX,Eastland County
+8326d9fffffffff,48429,48,TX,Stephens County
+8326d9fffffffff,48059,48,TX,Callahan County
+8326d9fffffffff,48417,48,TX,Shackelford County
+8326d9fffffffff,48253,48,TX,Jones County
+8326dbfffffffff,48431,48,TX,Sterling County
+8326dbfffffffff,48399,48,TX,Runnels County
+8326dbfffffffff,48081,48,TX,Coke County
+8326dbfffffffff,48441,48,TX,Taylor County
+8326dbfffffffff,48353,48,TX,Nolan County
+8326dbfffffffff,48335,48,TX,Mitchell County
+8326ddfffffffff,48447,48,TX,Throckmorton County
+8326ddfffffffff,48275,48,TX,Knox County
+8326ddfffffffff,48023,48,TX,Baylor County
+8326ddfffffffff,48009,48,TX,Archer County
+8326ddfffffffff,48487,48,TX,Wilbarger County
+8326ddfffffffff,48485,48,TX,Wichita County
+8348abfffffffff,,,,
+8348b1fffffffff,48427,48,TX,Starr County
+8348b3fffffffff,48061,48,TX,Cameron County
+8348b3fffffffff,48215,48,TX,Hidalgo County
+8348b3fffffffff,48489,48,TX,Willacy County
+8348b3fffffffff,48261,48,TX,Kenedy County
+8348b3fffffffff,48047,48,TX,Brooks County
+83444dfffffffff,48203,48,TX,Harrison County
+83444dfffffffff,48459,48,TX,Upshur County
+83444dfffffffff,48315,48,TX,Marion County
+83444dfffffffff,48063,48,TX,Camp County
+83444dfffffffff,48067,48,TX,Cass County
+83444dfffffffff,48343,48,TX,Morris County
+83444dfffffffff,48449,48,TX,Titus County
+83444dfffffffff,05091,05,AR,Miller County
+83444dfffffffff,48037,48,TX,Bowie County
+834469fffffffff,48313,48,TX,Madison County
+834469fffffffff,48289,48,TX,Leon County
+834469fffffffff,48225,48,TX,Houston County
+834469fffffffff,48293,48,TX,Limestone County
+834469fffffffff,48161,48,TX,Freestone County
+834469fffffffff,48001,48,TX,Anderson County
+83446bfffffffff,48347,48,TX,Nacogdoches County
+83446bfffffffff,48419,48,TX,Shelby County
+83446bfffffffff,48073,48,TX,Cherokee County
+83446bfffffffff,48401,48,TX,Rusk County
+83446bfffffffff,48365,48,TX,Panola County
+83446bfffffffff,48183,48,TX,Gregg County
+83446dfffffffff,48015,48,TX,Austin County
+83446dfffffffff,48473,48,TX,Waller County
+83446dfffffffff,48477,48,TX,Washington County
+83446dfffffffff,48339,48,TX,Montgomery County
+83446dfffffffff,48051,48,TX,Burleson County
+83446dfffffffff,48185,48,TX,Grimes County
+83446dfffffffff,48041,48,TX,Brazos County
+83446dfffffffff,48471,48,TX,Walker County
+8348f3fffffffff,48229,48,TX,Hudspeth County
+834880fffffffff,48479,48,TX,Webb County
+834880fffffffff,48127,48,TX,Dimmit County
+834882fffffffff,48283,48,TX,La Salle County
+834882fffffffff,48163,48,TX,Frio County
+834882fffffffff,48297,48,TX,Live Oak County
+834882fffffffff,48311,48,TX,McMullen County
+834882fffffffff,48013,48,TX,Atascosa County
+834886fffffffff,48247,48,TX,Jim Hogg County
+834886fffffffff,48131,48,TX,Duval County
+834886fffffffff,48505,48,TX,Zapata County
+834888fffffffff,48443,48,TX,Terrell County
+834888fffffffff,48105,48,TX,Crockett County
+83488afffffffff,48435,48,TX,Sutton County
+83488afffffffff,48413,48,TX,Schleicher County
+83488afffffffff,48235,48,TX,Irion County
+83488afffffffff,48451,48,TX,Tom Green County
+83488cfffffffff,,,,
+83488efffffffff,48271,48,TX,Kinney County
+83488efffffffff,48465,48,TX,Val Verde County
+83488efffffffff,48137,48,TX,Edwards County
+8326c8fffffffff,48397,48,TX,Rockwall County
+8326c8fffffffff,48097,48,TX,Cooke County
+8326c8fffffffff,48085,48,TX,Collin County
+8326c8fffffffff,48121,48,TX,Denton County
+8326c8fffffffff,48181,48,TX,Grayson County
+834890fffffffff,48007,48,TX,Aransas County
+834890fffffffff,48057,48,TX,Calhoun County
+8326cafffffffff,48221,48,TX,Hood County
+8326cafffffffff,48363,48,TX,Palo Pinto County
+8326cafffffffff,48367,48,TX,Parker County
+8326cafffffffff,48503,48,TX,Young County
+8326cafffffffff,48497,48,TX,Wise County
+8326cafffffffff,48237,48,TX,Jack County
+834892fffffffff,,,,
+8326d0fffffffff,48359,48,TX,Oldham County
+8326d0fffffffff,48341,48,TX,Moore County
+8326d0fffffffff,48205,48,TX,Hartley County
+8326d0fffffffff,48111,48,TX,Dallam County
+834898fffffffff,48031,48,TX,Blanco County
+834898fffffffff,48299,48,TX,Llano County
+834898fffffffff,48053,48,TX,Burnet County
+834898fffffffff,48281,48,TX,Lampasas County
+83489afffffffff,48491,48,TX,Williamson County
+83489afffffffff,48027,48,TX,Bell County
+83489afffffffff,48309,48,TX,McLennan County
+83489afffffffff,48331,48,TX,Milam County
+83489afffffffff,48395,48,TX,Robertson County
+83489afffffffff,48145,48,TX,Falls County
+83489cfffffffff,48325,48,TX,Medina County
+83489cfffffffff,48493,48,TX,Wilson County
+83489cfffffffff,48029,48,TX,Bexar County
+83489cfffffffff,48187,48,TX,Guadalupe County
+83489cfffffffff,48091,48,TX,Comal County
+83489cfffffffff,48259,48,TX,Kendall County
+83489efffffffff,48177,48,TX,Gonzales County
+83489efffffffff,48055,48,TX,Caldwell County
+83489efffffffff,48209,48,TX,Hays County
+83489efffffffff,48021,48,TX,Bastrop County
+83489efffffffff,48149,48,TX,Fayette County
+83489efffffffff,48287,48,TX,Lee County
+83489efffffffff,48453,48,TX,Travis County
+8326d8fffffffff,48151,48,TX,Fisher County
+8326d8fffffffff,48207,48,TX,Haskell County
+8326d8fffffffff,48433,48,TX,Stonewall County
+8326d8fffffffff,48263,48,TX,Kent County
+8326d8fffffffff,48269,48,TX,King County
+8326d8fffffffff,48125,48,TX,Dickens County
+8326dafffffffff,48317,48,TX,Martin County
+8326dafffffffff,48115,48,TX,Dawson County
+8326dafffffffff,48305,48,TX,Lynn County
+8326dafffffffff,48227,48,TX,Howard County
+8326dafffffffff,48033,48,TX,Borden County
+8326dafffffffff,48415,48,TX,Scurry County
+8326dafffffffff,48169,48,TX,Garza County
+8326defffffffff,48303,48,TX,Lubbock County
+8326defffffffff,48189,48,TX,Hale County
+8326defffffffff,48437,48,TX,Swisher County
+8326defffffffff,48107,48,TX,Crosby County
+8326defffffffff,48153,48,TX,Floyd County
+835d14fffffffff,,,,
+835d16fffffffff,15009,15,HI,Maui County
+834649fffffffff,15005,15,HI,Kalawao County
+835d11fffffffff,,,,
+835d13fffffffff,,,,
+834648fffffffff,,,,
+835d10fffffffff,15001,15,HI,Hawaii County
+83465dfffffffff,,,,
+83464efffffffff,15007,15,HI,Kauai County
+834642fffffffff,,,,
+834608fffffffff,,,,
+834601fffffffff,,,,
+834606fffffffff,,,,
+834633fffffffff,,,,
+83478dfffffffff,,,,
+8347aefffffffff,,,,
+8347a2fffffffff,,,,
+8327a9fffffffff,38065,38,ND,Oliver County
+8327a9fffffffff,38083,38,ND,Sheridan County
+8327a9fffffffff,38055,38,ND,McLean County
+83271afffffffff,38027,38,ND,Eddy County
+83271afffffffff,38071,38,ND,Ramsey County
+83271afffffffff,38103,38,ND,Wells County
+83271afffffffff,38005,38,ND,Benson County
+83271afffffffff,38069,38,ND,Pierce County
+832622fffffffff,46051,46,SD,Grant County
+832622fffffffff,27011,27,MN,Big Stone County
+832622fffffffff,46037,46,SD,Day County
+832622fffffffff,46091,46,SD,Marshall County
+832622fffffffff,46109,46,SD,Roberts County
+832622fffffffff,27155,27,MN,Traverse County
+8327a8fffffffff,38061,38,ND,Mountrail County
+8327a8fffffffff,38101,38,ND,Ward County
+832719fffffffff,27107,27,MN,Norman County
+832719fffffffff,38097,38,ND,Traill County
+832719fffffffff,27119,27,MN,Polk County
+832719fffffffff,27125,27,MN,Red Lake County
+832719fffffffff,27113,27,MN,Pennington County
+832630fffffffff,46045,46,SD,Edmunds County
+832630fffffffff,46129,46,SD,Walworth County
+832630fffffffff,46089,46,SD,McPherson County
+832630fffffffff,46021,46,SD,Campbell County
+832630fffffffff,38051,38,ND,McIntosh County
+832718fffffffff,38063,38,ND,Nelson County
+832718fffffffff,38035,38,ND,Grand Forks County
+832718fffffffff,38099,38,ND,Walsh County
+832718fffffffff,38067,38,ND,Pembina County
+8327aefffffffff,38105,38,ND,Williams County
+8327aefffffffff,38023,38,ND,Divide County
+832788fffffffff,46063,46,SD,Harding County
+832788fffffffff,38011,38,ND,Bowman County
+832636fffffffff,38085,38,ND,Sioux County
+832636fffffffff,38029,38,ND,Emmons County
+832636fffffffff,38037,38,ND,Grant County
+832636fffffffff,38059,38,ND,Morton County
+832636fffffffff,38015,38,ND,Burleigh County
+8327adfffffffff,38049,38,ND,McHenry County
+8327adfffffffff,38075,38,ND,Renville County
+8327adfffffffff,38009,38,ND,Bottineau County
+83271efffffffff,38019,38,ND,Cavalier County
+83271efffffffff,38095,38,ND,Towner County
+83271efffffffff,38079,38,ND,Rolette County
+832626fffffffff,38017,38,ND,Cass County
+832626fffffffff,38077,38,ND,Richland County
+832626fffffffff,27167,27,MN,Wilkin County
+832626fffffffff,27027,27,MN,Clay County
+832635fffffffff,38081,38,ND,Sargent County
+832635fffffffff,38021,38,ND,Dickey County
+832635fffffffff,38073,38,ND,Ransom County
+832635fffffffff,38045,38,ND,LaMoure County
+8327acfffffffff,38013,38,ND,Burke County
+832634fffffffff,38093,38,ND,Stutsman County
+832634fffffffff,38047,38,ND,Logan County
+832634fffffffff,38043,38,ND,Kidder County
+83278dfffffffff,38001,38,ND,Adams County
+83278dfffffffff,38041,38,ND,Hettinger County
+8327abfffffffff,38089,38,ND,Stark County
+8327abfffffffff,38057,38,ND,Mercer County
+8327abfffffffff,38025,38,ND,Dunn County
+83271cfffffffff,,,,
+83278cfffffffff,38087,38,ND,Slope County
+83278cfffffffff,38033,38,ND,Golden Valley County
+83278cfffffffff,30109,30,MT,Wibaux County
+83278cfffffffff,38007,38,ND,Billings County
+8327aafffffffff,38053,38,ND,McKenzie County
+83271bfffffffff,38003,38,ND,Barnes County
+83271bfffffffff,38091,38,ND,Steele County
+83271bfffffffff,38031,38,ND,Foster County
+83271bfffffffff,38039,38,ND,Griggs County
+832a9afffffffff,21025,21,KY,Breathitt County
+832a9afffffffff,21199,21,KY,Pulaski County
+832a9afffffffff,21125,21,KY,Laurel County
+832a9afffffffff,21051,21,KY,Clay County
+832a9afffffffff,21203,21,KY,Rockcastle County
+832a9afffffffff,21189,21,KY,Owsley County
+832a9afffffffff,21109,21,KY,Jackson County
+832a9afffffffff,21137,21,KY,Lincoln County
+832a9afffffffff,21129,21,KY,Lee County
+832a9afffffffff,21079,21,KY,Garrard County
+832a9afffffffff,21065,21,KY,Estill County
+832a9afffffffff,21151,21,KY,Madison County
+832a9afffffffff,21197,21,KY,Powell County
+832a9afffffffff,21049,21,KY,Clark County
+832a9afffffffff,21237,21,KY,Wolfe County
+83266afffffffff,21107,21,KY,Hopkins County
+83266afffffffff,21233,21,KY,Webster County
+83266afffffffff,21149,21,KY,McLean County
+83266afffffffff,21225,21,KY,Union County
+83266afffffffff,21059,21,KY,Daviess County
+83266afffffffff,21101,21,KY,Henderson County
+83266afffffffff,18147,18,IN,Spencer County
+83266afffffffff,18129,18,IN,Posey County
+83266afffffffff,18163,18,IN,Vanderburgh County
+83266afffffffff,18173,18,IN,Warrick County
+83266afffffffff,18051,18,IN,Gibson County
+83266dfffffffff,21167,21,KY,Mercer County
+83266dfffffffff,21005,21,KY,Anderson County
+83266dfffffffff,21215,21,KY,Spencer County
+83266dfffffffff,21113,21,KY,Jessamine County
+83266dfffffffff,21067,21,KY,Fayette County
+83266dfffffffff,21239,21,KY,Woodford County
+83266dfffffffff,21017,21,KY,Bourbon County
+83266dfffffffff,21209,21,KY,Scott County
+83266dfffffffff,21097,21,KY,Harrison County
+83266dfffffffff,21187,21,KY,Owen County
+83266dfffffffff,21081,21,KY,Grant County
+83266dfffffffff,21211,21,KY,Shelby County
+83266dfffffffff,21073,21,KY,Franklin County
+83266dfffffffff,21185,21,KY,Oldham County
+83266dfffffffff,21103,21,KY,Henry County
+83266dfffffffff,21223,21,KY,Trimble County
+83266dfffffffff,21041,21,KY,Carroll County
+83266dfffffffff,21077,21,KY,Gallatin County
+832641fffffffff,21145,21,KY,McCracken County
+832641fffffffff,21007,21,KY,Ballard County
+832641fffffffff,21139,21,KY,Livingston County
+832641fffffffff,17127,17,IL,Massac County
+832641fffffffff,17153,17,IL,Pulaski County
+832641fffffffff,21055,21,KY,Crittenden County
+832641fffffffff,17151,17,IL,Pope County
+832641fffffffff,17087,17,IL,Johnson County
+832641fffffffff,17181,17,IL,Union County
+832641fffffffff,17069,17,IL,Hardin County
+832641fffffffff,17199,17,IL,Williamson County
+832641fffffffff,17165,17,IL,Saline County
+832641fffffffff,17059,17,IL,Gallatin County
+832641fffffffff,17077,17,IL,Jackson County
+832641fffffffff,17055,17,IL,Franklin County
+832669fffffffff,21053,21,KY,Clinton County
+832669fffffffff,21057,21,KY,Cumberland County
+832669fffffffff,21169,21,KY,Metcalfe County
+832669fffffffff,21207,21,KY,Russell County
+832669fffffffff,21001,21,KY,Adair County
+832669fffffffff,21087,21,KY,Green County
+832669fffffffff,21099,21,KY,Hart County
+832669fffffffff,21045,21,KY,Casey County
+832669fffffffff,21217,21,KY,Taylor County
+832669fffffffff,21123,21,KY,Larue County
+832669fffffffff,21155,21,KY,Marion County
+832669fffffffff,21021,21,KY,Boyle County
+832669fffffffff,21229,21,KY,Washington County
+832669fffffffff,21179,21,KY,Nelson County
+832668fffffffff,21027,21,KY,Breckinridge County
+832668fffffffff,21093,21,KY,Hardin County
+832668fffffffff,21163,21,KY,Meade County
+832668fffffffff,21029,21,KY,Bullitt County
+832668fffffffff,21091,21,KY,Hancock County
+832668fffffffff,18123,18,IN,Perry County
+832668fffffffff,18025,18,IN,Crawford County
+832668fffffffff,21111,21,KY,Jefferson County
+832668fffffffff,18061,18,IN,Harrison County
+832668fffffffff,18043,18,IN,Floyd County
+832668fffffffff,18117,18,IN,Orange County
+834ce9fffffffff,,,,
+834cebfffffffff,78010,78,VI,St. Croix Island
+834ce8fffffffff,72147,72,PR,Vieques Municipio
+834ce8fffffffff,72037,72,PR,Ceiba Municipio
+834ce8fffffffff,72049,72,PR,Culebra Municipio
+834ce8fffffffff,78020,78,VI,St. John Island
+834ce8fffffffff,78030,78,VI,St. Thomas Island
+832a80fffffffff,54001,54,WV,Barbour County
+832a80fffffffff,54091,54,WV,Taylor County
+832a80fffffffff,54077,54,WV,Preston County
+832a80fffffffff,54049,54,WV,Marion County
+832a80fffffffff,54061,54,WV,Monongalia County
+832a80fffffffff,42059,42,PA,Greene County
+832a80fffffffff,42051,42,PA,Fayette County
+832a80fffffffff,54017,54,WV,Doddridge County
+832a80fffffffff,54033,54,WV,Harrison County
+832a80fffffffff,54095,54,WV,Tyler County
+832a80fffffffff,54103,54,WV,Wetzel County
+832a80fffffffff,54051,54,WV,Marshall County
+832a85fffffffff,54027,54,WV,Hampshire County
+832a85fffffffff,54057,54,WV,Mineral County
+832a85fffffffff,24023,24,MD,Garrett County
+832a85fffffffff,54065,54,WV,Morgan County
+832a85fffffffff,24001,24,MD,Allegany County
+832a85fffffffff,42057,42,PA,Fulton County
+832a85fffffffff,42111,42,PA,Somerset County
+832a85fffffffff,42009,42,PA,Bedford County
+832a83fffffffff,54067,54,WV,Nicholas County
+832a83fffffffff,54015,54,WV,Clay County
+832a83fffffffff,54101,54,WV,Webster County
+832a83fffffffff,54007,54,WV,Braxton County
+832a83fffffffff,54087,54,WV,Roane County
+832a83fffffffff,54013,54,WV,Calhoun County
+832a83fffffffff,54021,54,WV,Gilmer County
+832a83fffffffff,54041,54,WV,Lewis County
+832a83fffffffff,54097,54,WV,Upshur County
+8344f4fffffffff,12017,12,FL,Citrus County
+8344f4fffffffff,12001,12,FL,Alachua County
+8344f4fffffffff,12119,12,FL,Sumter County
+8344f4fffffffff,12083,12,FL,Marion County
+8344f4fffffffff,12107,12,FL,Putnam County
+8344acfffffffff,12051,12,FL,Hendry County
+8344acfffffffff,12099,12,FL,Palm Beach County
+8344acfffffffff,12043,12,FL,Glades County
+8344e5fffffffff,12005,12,FL,Bay County
+8344e5fffffffff,12131,12,FL,Walton County
+8344e5fffffffff,12133,12,FL,Washington County
+834412fffffffff,,,,
+8344f5fffffffff,12029,12,FL,Dixie County
+8344f5fffffffff,12041,12,FL,Gilchrist County
+8344f5fffffffff,12067,12,FL,Lafayette County
+8344f5fffffffff,12125,12,FL,Union County
+8344f5fffffffff,12121,12,FL,Suwannee County
+8344f5fffffffff,12023,12,FL,Columbia County
+8344f5fffffffff,12047,12,FL,Hamilton County
+8344adfffffffff,12027,12,FL,DeSoto County
+8344adfffffffff,12055,12,FL,Highlands County
+8344adfffffffff,12049,12,FL,Hardee County
+8344adfffffffff,12105,12,FL,Polk County
+8344a8fffffffff,12111,12,FL,St. Lucie County
+8344a8fffffffff,12093,12,FL,Okeechobee County
+8344a8fffffffff,12061,12,FL,Indian River County
+8344e6fffffffff,12123,12,FL,Taylor County
+8344e6fffffffff,12129,12,FL,Wakulla County
+834413fffffffff,12021,12,FL,Collier County
+834413fffffffff,12071,12,FL,Lee County
+834413fffffffff,12015,12,FL,Charlotte County
+8344f6fffffffff,12127,12,FL,Volusia County
+8344f6fffffffff,12035,12,FL,Flagler County
+8344f6fffffffff,12109,12,FL,St. Johns County
+8344aefffffffff,12085,12,FL,Martin County
+8344a9fffffffff,12097,12,FL,Osceola County
+8344a9fffffffff,12095,12,FL,Orange County
+8344a9fffffffff,12117,12,FL,Seminole County
+8344a9fffffffff,12069,12,FL,Lake County
+83441efffffffff,12115,12,FL,Sarasota County
+83441efffffffff,12081,12,FL,Manatee County
+834414fffffffff,,,,
+8344a5fffffffff,,,,
+83441afffffffff,12057,12,FL,Hillsborough County
+83441afffffffff,12103,12,FL,Pinellas County
+83441afffffffff,12101,12,FL,Pasco County
+83441afffffffff,12053,12,FL,Hernando County
+834415fffffffff,,,,
+8344abfffffffff,12009,12,FL,Brevard County
+83441bfffffffff,12075,12,FL,Levy County
+8344a1fffffffff,12086,12,FL,Miami-Dade County
+8344a1fffffffff,12011,12,FL,Broward County
+8344e4fffffffff,12037,12,FL,Franklin County
+8344e4fffffffff,12045,12,FL,Gulf County
+834416fffffffff,12087,12,FL,Monroe County
+832646fffffffff,29189,29,MO,St. Louis County
+832646fffffffff,29219,29,MO,Warren County
+832646fffffffff,29183,29,MO,St. Charles County
+832646fffffffff,29113,29,MO,Lincoln County
+832646fffffffff,17083,17,IL,Jersey County
+832646fffffffff,17013,17,IL,Calhoun County
+832646fffffffff,29163,29,MO,Pike County
+832646fffffffff,17061,17,IL,Greene County
+832646fffffffff,17149,17,IL,Pike County
+832645fffffffff,17193,17,IL,White County
+832645fffffffff,17065,17,IL,Hamilton County
+832645fffffffff,17081,17,IL,Jefferson County
+832645fffffffff,17191,17,IL,Wayne County
+832645fffffffff,17121,17,IL,Marion County
+832645fffffffff,17025,17,IL,Clay County
+832645fffffffff,17047,17,IL,Edwards County
+832645fffffffff,17185,17,IL,Wabash County
+832645fffffffff,17159,17,IL,Richland County
+832645fffffffff,17079,17,IL,Jasper County
+832645fffffffff,17049,17,IL,Effingham County
+832644fffffffff,17005,17,IL,Bond County
+832644fffffffff,17051,17,IL,Fayette County
+832644fffffffff,17135,17,IL,Montgomery County
+832644fffffffff,17117,17,IL,Macoupin County
+832644fffffffff,17173,17,IL,Shelby County
+832644fffffffff,17021,17,IL,Christian County
+832644fffffffff,17167,17,IL,Sangamon County
+832666fffffffff,17105,17,IL,Livingston County
+832666fffffffff,17123,17,IL,Marshall County
+832666fffffffff,17155,17,IL,Putnam County
+832666fffffffff,17063,17,IL,Grundy County
+832666fffffffff,17099,17,IL,LaSalle County
+832666fffffffff,17011,17,IL,Bureau County
+832666fffffffff,17093,17,IL,Kendall County
+832640fffffffff,29186,29,MO,Ste. Genevieve County
+832640fffffffff,17133,17,IL,Monroe County
+832640fffffffff,17163,17,IL,St. Clair County
+832640fffffffff,29510,29,MO,St. Louis city
+832640fffffffff,17157,17,IL,Randolph County
+832640fffffffff,17145,17,IL,Perry County
+832640fffffffff,17189,17,IL,Washington County
+832640fffffffff,17027,17,IL,Clinton County
+832640fffffffff,17119,17,IL,Madison County
+832664fffffffff,18073,18,IN,Jasper County
+832664fffffffff,17091,17,IL,Kankakee County
+832664fffffffff,18149,18,IN,Starke County
+832664fffffffff,17197,17,IL,Will County
+832664fffffffff,18089,18,IN,Lake County
+832664fffffffff,18127,18,IN,Porter County
+832664fffffffff,18091,18,IN,LaPorte County
+832664fffffffff,17031,17,IL,Cook County
+832663fffffffff,17023,17,IL,Clark County
+832663fffffffff,18167,18,IN,Vigo County
+832663fffffffff,17035,17,IL,Cumberland County
+832663fffffffff,17139,17,IL,Moultrie County
+832663fffffffff,17029,17,IL,Coles County
+832663fffffffff,17045,17,IL,Edgar County
+832663fffffffff,17041,17,IL,Douglas County
+832675fffffffff,17187,17,IL,Warren County
+832675fffffffff,17095,17,IL,Knox County
+832675fffffffff,17131,17,IL,Mercer County
+832675fffffffff,17073,17,IL,Henry County
+832675fffffffff,17161,17,IL,Rock Island County
+832675fffffffff,17143,17,IL,Peoria County
+832675fffffffff,17175,17,IL,Stark County
+832662fffffffff,17115,17,IL,Macon County
+832662fffffffff,17147,17,IL,Piatt County
+832662fffffffff,17107,17,IL,Logan County
+832662fffffffff,17039,17,IL,De Witt County
+832662fffffffff,17113,17,IL,McLean County
+832662fffffffff,17179,17,IL,Tazewell County
+832662fffffffff,17203,17,IL,Woodford County
+832673fffffffff,29137,29,MO,Monroe County
+832673fffffffff,29173,29,MO,Ralls County
+832673fffffffff,29127,29,MO,Marion County
+832673fffffffff,29205,29,MO,Shelby County
+832673fffffffff,29103,29,MO,Knox County
+832673fffffffff,17001,17,IL,Adams County
+832673fffffffff,29111,29,MO,Lewis County
+832660fffffffff,17019,17,IL,Champaign County
+832660fffffffff,17183,17,IL,Vermilion County
+832660fffffffff,18171,18,IN,Warren County
+832660fffffffff,17053,17,IL,Ford County
+832660fffffffff,18007,18,IN,Benton County
+832660fffffffff,17075,17,IL,Iroquois County
+832660fffffffff,18111,18,IN,Newton County
+832671fffffffff,17171,17,IL,Scott County
+832671fffffffff,17137,17,IL,Morgan County
+832671fffffffff,17009,17,IL,Brown County
+832671fffffffff,17017,17,IL,Cass County
+832671fffffffff,17169,17,IL,Schuyler County
+832671fffffffff,17109,17,IL,McDonough County
+832671fffffffff,17057,17,IL,Fulton County
+832671fffffffff,17129,17,IL,Menard County
+832671fffffffff,17125,17,IL,Mason County
+83266efffffffff,18037,18,IN,Dubois County
+83266efffffffff,18125,18,IN,Pike County
+83266efffffffff,18083,18,IN,Knox County
+83266efffffffff,18027,18,IN,Daviess County
+83266efffffffff,18101,18,IN,Martin County
+83266efffffffff,17101,17,IL,Lawrence County
+83266efffffffff,18093,18,IN,Lawrence County
+83266efffffffff,17033,17,IL,Crawford County
+83266efffffffff,18055,18,IN,Greene County
+83266efffffffff,18153,18,IN,Sullivan County
+832620fffffffff,27121,27,MN,Pope County
+832620fffffffff,27149,27,MN,Stevens County
+832620fffffffff,27041,27,MN,Douglas County
+832620fffffffff,27051,27,MN,Grant County
+832620fffffffff,27111,27,MN,Otter Tail County
+832620fffffffff,27153,27,MN,Todd County
+83270afffffffff,27029,27,MN,Clearwater County
+83270afffffffff,27007,27,MN,Beltrami County
+83262cfffffffff,27147,27,MN,Steele County
+83262cfffffffff,27039,27,MN,Dodge County
+83262cfffffffff,27131,27,MN,Rice County
+83262cfffffffff,27049,27,MN,Goodhue County
+83262cfffffffff,27139,27,MN,Scott County
+83262cfffffffff,27037,27,MN,Dakota County
+83262cfffffffff,27161,27,MN,Waseca County
+83262cfffffffff,27079,27,MN,Le Sueur County
+832621fffffffff,27143,27,MN,Sibley County
+832621fffffffff,27053,27,MN,Hennepin County
+832621fffffffff,27019,27,MN,Carver County
+832621fffffffff,27085,27,MN,McLeod County
+832621fffffffff,27093,27,MN,Meeker County
+832621fffffffff,27067,27,MN,Kandiyohi County
+832621fffffffff,27171,27,MN,Wright County
+832621fffffffff,27141,27,MN,Sherburne County
+832621fffffffff,27145,27,MN,Stearns County
+83270bfffffffff,27021,27,MN,Cass County
+83270bfffffffff,27061,27,MN,Itasca County
+83262efffffffff,27063,27,MN,Jackson County
+83262efffffffff,27091,27,MN,Martin County
+83262efffffffff,27165,27,MN,Watonwan County
+83262efffffffff,27033,27,MN,Cottonwood County
+83262efffffffff,27013,27,MN,Blue Earth County
+83262efffffffff,27015,27,MN,Brown County
+83262efffffffff,27103,27,MN,Nicollet County
+832623fffffffff,27127,27,MN,Redwood County
+832623fffffffff,27129,27,MN,Renville County
+832623fffffffff,27081,27,MN,Lincoln County
+832623fffffffff,27083,27,MN,Lyon County
+832623fffffffff,27173,27,MN,Yellow Medicine County
+832623fffffffff,27073,27,MN,Lac qui Parle County
+832623fffffffff,27023,27,MN,Chippewa County
+832623fffffffff,27151,27,MN,Swift County
+83270dfffffffff,,,,
+832772fffffffff,27031,27,MN,Cook County
+832624fffffffff,27005,27,MN,Becker County
+832624fffffffff,27087,27,MN,Mahnomen County
+832624fffffffff,27159,27,MN,Wadena County
+832624fffffffff,27057,27,MN,Hubbard County
+83270efffffffff,27077,27,MN,Lake of the Woods County
+832625fffffffff,27009,27,MN,Benton County
+832625fffffffff,27095,27,MN,Mille Lacs County
+832625fffffffff,27097,27,MN,Morrison County
+832625fffffffff,27035,27,MN,Crow Wing County
+832625fffffffff,27065,27,MN,Kanabec County
+832625fffffffff,27001,27,MN,Aitkin County
+83271dfffffffff,27089,27,MN,Marshall County
+83271dfffffffff,27135,27,MN,Roseau County
+83271dfffffffff,27069,27,MN,Kittson County
+832708fffffffff,27071,27,MN,Koochiching County
+832709fffffffff,27075,27,MN,Lake County
+832709fffffffff,27137,27,MN,St. Louis County
+832aaefffffffff,24021,24,MD,Frederick County
+832aaefffffffff,24013,24,MD,Carroll County
+832aaefffffffff,24043,24,MD,Washington County
+832aaefffffffff,42001,42,PA,Adams County
+832aaefffffffff,42133,42,PA,York County
+832aaefffffffff,42041,42,PA,Cumberland County
+832aaefffffffff,42055,42,PA,Franklin County
+832880fffffffff,16087,16,ID,Washington County
+832880fffffffff,16015,16,ID,Boise County
+832880fffffffff,16045,16,ID,Gem County
+832880fffffffff,16085,16,ID,Valley County
+832880fffffffff,16003,16,ID,Adams County
+83288afffffffff,53023,53,WA,Garfield County
+83288afffffffff,53075,53,WA,Whitman County
+83288afffffffff,16057,16,ID,Latah County
+832894fffffffff,16065,16,ID,Madison County
+832894fffffffff,16051,16,ID,Jefferson County
+832894fffffffff,16043,16,ID,Fremont County
+832894fffffffff,16033,16,ID,Clark County
+832899fffffffff,16009,16,ID,Benewah County
+832899fffffffff,16079,16,ID,Shoshone County
+832899fffffffff,16055,16,ID,Kootenai County
+8328b2fffffffff,16005,16,ID,Bannock County
+8328b2fffffffff,16029,16,ID,Caribou County
+8328b2fffffffff,16011,16,ID,Bingham County
+832883fffffffff,,,,
+83289cfffffffff,16049,16,ID,Idaho County
+83289cfffffffff,30081,30,MT,Ravalli County
+8312d8fffffffff,53065,53,WA,Stevens County
+8312d8fffffffff,53051,53,WA,Pend Oreille County
+832886fffffffff,16025,16,ID,Camas County
+832886fffffffff,16037,16,ID,Custer County
+832890fffffffff,30057,30,MT,Madison County
+832895fffffffff,,,,
+8328b3fffffffff,16013,16,ID,Blaine County
+8328b3fffffffff,16023,16,ID,Butte County
+832884fffffffff,16039,16,ID,Elmore County
+832884fffffffff,16001,16,ID,Ada County
+8312dbfffffffff,53063,53,WA,Spokane County
+832898fffffffff,30063,30,MT,Missoula County
+832898fffffffff,30061,30,MT,Mineral County
+83289dfffffffff,16061,16,ID,Lewis County
+83289dfffffffff,16069,16,ID,Nez Perce County
+83289dfffffffff,16035,16,ID,Clearwater County
+8328b1fffffffff,16083,16,ID,Twin Falls County
+8328b1fffffffff,16053,16,ID,Jerome County
+8328b1fffffffff,16047,16,ID,Gooding County
+8328b1fffffffff,16063,16,ID,Lincoln County
+832882fffffffff,16059,16,ID,Lemhi County
+8312d9fffffffff,16017,16,ID,Bonner County
+8312d9fffffffff,30053,30,MT,Lincoln County
+8312d9fffffffff,16021,16,ID,Boundary County
+832891fffffffff,30001,30,MT,Beaverhead County
+832a36fffffffff,33017,33,NH,Strafford County
+832a36fffffffff,33013,33,NH,Merrimack County
+832a36fffffffff,33019,33,NH,Sullivan County
+832a36fffffffff,33001,33,NH,Belknap County
+832a36fffffffff,33003,33,NH,Carroll County
+832a36fffffffff,33009,33,NH,Grafton County
+832ba8fffffffff,,,,
+832ba9fffffffff,23017,23,ME,Oxford County
+832ba9fffffffff,33007,33,NH,Coos County
+832ba9fffffffff,23007,23,ME,Franklin County
+832806fffffffff,06045,06,CA,Mendocino County
+834859fffffffff,,,,
+832832fffffffff,06005,06,CA,Amador County
+832832fffffffff,06067,06,CA,Sacramento County
+832832fffffffff,06017,06,CA,El Dorado County
+832832fffffffff,06061,06,CA,Placer County
+832832fffffffff,06115,06,CA,Yuba County
+832832fffffffff,06057,06,CA,Nevada County
+8329abfffffffff,06019,06,CA,Fresno County
+8329abfffffffff,06039,06,CA,Madera County
+8329abfffffffff,06043,06,CA,Mariposa County
+8329a2fffffffff,06071,06,CA,San Bernardino County
+832836fffffffff,06047,06,CA,Merced County
+832836fffffffff,06099,06,CA,Stanislaus County
+832836fffffffff,06077,06,CA,San Joaquin County
+832836fffffffff,06009,06,CA,Calaveras County
+8329a6fffffffff,06065,06,CA,Riverside County
+832831fffffffff,06097,06,CA,Sonoma County
+8329aafffffffff,06107,06,CA,Tulare County
+832800fffffffff,,,,
+8329a1fffffffff,06037,06,CA,Los Angeles County
+8329a1fffffffff,06111,06,CA,Ventura County
+832913fffffffff,,,,
+832835fffffffff,06075,06,CA,San Francisco County
+8329aefffffffff,06029,06,CA,Kern County
+8329a5fffffffff,,,,
+832811fffffffff,06093,06,CA,Siskiyou County
+832830fffffffff,06013,06,CA,Contra Costa County
+832830fffffffff,06041,06,CA,Marin County
+832830fffffffff,06095,06,CA,Solano County
+832830fffffffff,06055,06,CA,Napa County
+832830fffffffff,06113,06,CA,Yolo County
+8329a9fffffffff,06053,06,CA,Monterey County
+8329a9fffffffff,06069,06,CA,San Benito County
+8329a0fffffffff,06059,06,CA,Orange County
+832912fffffffff,,,,
+832815fffffffff,06103,06,CA,Tehama County
+832815fffffffff,06089,06,CA,Shasta County
+8329a3fffffffff,,,,
+832834fffffffff,06087,06,CA,Santa Cruz County
+832834fffffffff,06085,06,CA,Santa Clara County
+832834fffffffff,06081,06,CA,San Mateo County
+832834fffffffff,06001,06,CA,Alameda County
+8329adfffffffff,06079,06,CA,San Luis Obispo County
+832985fffffffff,06027,06,CA,Inyo County
+8329a4fffffffff,06073,06,CA,San Diego County
+832916fffffffff,,,,
+832810fffffffff,06035,06,CA,Lassen County
+8329a8fffffffff,06031,06,CA,Kings County
+83291afffffffff,,,,
+832814fffffffff,06091,06,CA,Sierra County
+832814fffffffff,06007,06,CA,Butte County
+832814fffffffff,06063,06,CA,Plumas County
+832833fffffffff,06101,06,CA,Sutter County
+832833fffffffff,06033,06,CA,Lake County
+832833fffffffff,06011,06,CA,Colusa County
+832833fffffffff,06021,06,CA,Glenn County
+8329acfffffffff,06083,06,CA,Santa Barbara County
+832802fffffffff,06105,06,CA,Trinity County
+832802fffffffff,06023,06,CA,Humboldt County
+832a13fffffffff,34001,34,NJ,Atlantic County
+832a13fffffffff,34015,34,NJ,Gloucester County
+832a13fffffffff,34007,34,NJ,Camden County
+832a13fffffffff,34029,34,NJ,Ocean County
+832a13fffffffff,34005,34,NJ,Burlington County
+832a13fffffffff,42101,42,PA,Philadelphia County
+832a13fffffffff,34021,34,NJ,Mercer County
+832a13fffffffff,34025,34,NJ,Monmouth County
+832a13fffffffff,34023,34,NJ,Middlesex County
+832a12fffffffff,42017,42,PA,Bucks County
+832a12fffffffff,34035,34,NJ,Somerset County
+832a12fffffffff,34019,34,NJ,Hunterdon County
+832a12fffffffff,42077,42,PA,Lehigh County
+832a12fffffffff,42095,42,PA,Northampton County
+832a12fffffffff,34041,34,NJ,Warren County
+832a12fffffffff,34027,34,NJ,Morris County
+832a12fffffffff,42025,42,PA,Carbon County
+832a12fffffffff,42089,42,PA,Monroe County
+832a12fffffffff,34037,34,NJ,Sussex County
+8344d3fffffffff,45015,45,SC,Berkeley County
+8344d3fffffffff,45043,45,SC,Georgetown County
+8344d3fffffffff,45089,45,SC,Williamsburg County
+8344d3fffffffff,45027,45,SC,Clarendon County
+8344d3fffffffff,45041,45,SC,Florence County
+8344d0fffffffff,45019,45,SC,Charleston County
+8344d0fffffffff,45029,45,SC,Colleton County
+8344dcfffffffff,45003,45,SC,Aiken County
+8344dcfffffffff,45037,45,SC,Edgefield County
+8344dcfffffffff,45063,45,SC,Lexington County
+8344dcfffffffff,45081,45,SC,Saluda County
+8344dcfffffffff,45047,45,SC,Greenwood County
+8344dcfffffffff,45071,45,SC,Newberry County
+8344dcfffffffff,45059,45,SC,Laurens County
+8344d1fffffffff,45005,45,SC,Allendale County
+8344d1fffffffff,45035,45,SC,Dorchester County
+8344d1fffffffff,45009,45,SC,Bamberg County
+8344d1fffffffff,45011,45,SC,Barnwell County
+8344d1fffffffff,45075,45,SC,Orangeburg County
+8344d1fffffffff,45017,45,SC,Calhoun County
+8344d2fffffffff,,,,
+8344defffffffff,45061,45,SC,Lee County
+8344defffffffff,45085,45,SC,Sumter County
+8344defffffffff,45079,45,SC,Richland County
+8344defffffffff,45055,45,SC,Kershaw County
+8344defffffffff,45039,45,SC,Fairfield County
+8344defffffffff,45057,45,SC,Lancaster County
+8344defffffffff,45025,45,SC,Chesterfield County
+83274efffffffff,26123,26,MI,Newaygo County
+83274efffffffff,26121,26,MI,Muskegon County
+83274efffffffff,26127,26,MI,Oceana County
+83274efffffffff,26105,26,MI,Mason County
+832770fffffffff,26083,26,MI,Keweenaw County
+832769fffffffff,,,,
+832762fffffffff,,,,
+832773fffffffff,26061,26,MI,Houghton County
+832773fffffffff,26131,26,MI,Ontonagon County
+83274dfffffffff,26125,26,MI,Oakland County
+83274dfffffffff,26065,26,MI,Ingham County
+83274dfffffffff,26093,26,MI,Livingston County
+83274dfffffffff,26037,26,MI,Clinton County
+83274dfffffffff,26155,26,MI,Shiawassee County
+83274dfffffffff,26049,26,MI,Genesee County
+83274dfffffffff,26145,26,MI,Saginaw County
+83274dfffffffff,26087,26,MI,Lapeer County
+832768fffffffff,26001,26,MI,Alcona County
+832768fffffffff,26007,26,MI,Alpena County
+83276bfffffffff,26017,26,MI,Bay County
+83276bfffffffff,26157,26,MI,Tuscola County
+83276bfffffffff,26063,26,MI,Huron County
+83276bfffffffff,26069,26,MI,Iosco County
+83276bfffffffff,26011,26,MI,Arenac County
+83274cfffffffff,26117,26,MI,Montcalm County
+83274cfffffffff,26107,26,MI,Mecosta County
+83274cfffffffff,26133,26,MI,Osceola County
+83274cfffffffff,26113,26,MI,Missaukee County
+83274cfffffffff,26057,26,MI,Gratiot County
+83274cfffffffff,26073,26,MI,Isabella County
+83274cfffffffff,26111,26,MI,Midland County
+83274cfffffffff,26035,26,MI,Clare County
+83274cfffffffff,26051,26,MI,Gladwin County
+832ab6fffffffff,26099,26,MI,Macomb County
+832ab6fffffffff,26147,26,MI,St. Clair County
+832ab6fffffffff,26151,26,MI,Sanilac County
+832745fffffffff,26029,26,MI,Charlevoix County
+832745fffffffff,26047,26,MI,Emmet County
+832745fffffffff,26097,26,MI,Mackinac County
+83276efffffffff,26141,26,MI,Presque Isle County
+83276efffffffff,26031,26,MI,Cheboygan County
+832748fffffffff,26077,26,MI,Kalamazoo County
+832748fffffffff,26015,26,MI,Barry County
+832748fffffffff,26067,26,MI,Ionia County
+832748fffffffff,26081,26,MI,Kent County
+832748fffffffff,26045,26,MI,Eaton County
+832771fffffffff,,,,
+832741fffffffff,26085,26,MI,Lake County
+832741fffffffff,26101,26,MI,Manistee County
+832741fffffffff,26165,26,MI,Wexford County
+832741fffffffff,26055,26,MI,Grand Traverse County
+832741fffffffff,26089,26,MI,Leelanau County
+832741fffffffff,26019,26,MI,Benzie County
+83276afffffffff,26129,26,MI,Ogemaw County
+83276afffffffff,26143,26,MI,Roscommon County
+83276afffffffff,26135,26,MI,Oscoda County
+83276afffffffff,26039,26,MI,Crawford County
+83276afffffffff,26137,26,MI,Otsego County
+83276afffffffff,26119,26,MI,Montmorency County
+83276afffffffff,26079,26,MI,Kalkaska County
+83276afffffffff,26009,26,MI,Antrim County
+832763fffffffff,26033,26,MI,Chippewa County
+832763fffffffff,26095,26,MI,Luce County
+83274bfffffffff,18085,18,IN,Kosciusko County
+83274bfffffffff,18099,18,IN,Marshall County
+83274bfffffffff,18113,18,IN,Noble County
+83274bfffffffff,18039,18,IN,Elkhart County
+83274bfffffffff,18087,18,IN,LaGrange County
+83274bfffffffff,26149,26,MI,St. Joseph County
+83274bfffffffff,26027,26,MI,Cass County
+83274bfffffffff,18141,18,IN,St. Joseph County
+832744fffffffff,26153,26,MI,Schoolcraft County
+832744fffffffff,26003,26,MI,Alger County
+8326edfffffffff,05143,05,AR,Washington County
+8326edfffffffff,05087,05,AR,Madison County
+8326edfffffffff,05007,05,AR,Benton County
+8326edfffffffff,29119,29,MO,McDonald County
+8326edfffffffff,29009,29,MO,Barry County
+8326edfffffffff,05015,05,AR,Carroll County
+8326edfffffffff,29209,29,MO,Stone County
+83444afffffffff,05003,05,AR,Ashley County
+83444afffffffff,05011,05,AR,Bradley County
+83444afffffffff,05013,05,AR,Calhoun County
+83444afffffffff,05025,05,AR,Cleveland County
+83444afffffffff,05043,05,AR,Drew County
+83444afffffffff,05079,05,AR,Lincoln County
+83444afffffffff,05069,05,AR,Jefferson County
+83445dfffffffff,22035,22,LA,East Carroll Parish
+83445dfffffffff,28055,28,MS,Issaquena County
+83445dfffffffff,28163,28,MS,Yazoo County
+83445dfffffffff,22123,22,LA,West Carroll Parish
+83445dfffffffff,28125,28,MS,Sharkey County
+83445dfffffffff,28053,28,MS,Humphreys County
+83445dfffffffff,05017,05,AR,Chicot County
+83445dfffffffff,28151,28,MS,Washington County
+83265efffffffff,05089,05,AR,Marion County
+83265efffffffff,05005,05,AR,Baxter County
+83265efffffffff,05009,05,AR,Boone County
+83265efffffffff,29153,29,MO,Ozark County
+83265efffffffff,29213,29,MO,Taney County
+83265efffffffff,29091,29,MO,Howell County
+83265efffffffff,29067,29,MO,Douglas County
+83265bfffffffff,05085,05,AR,Lonoke County
+83265bfffffffff,05119,05,AR,Pulaski County
+83265bfffffffff,05095,05,AR,Monroe County
+83265bfffffffff,05117,05,AR,Prairie County
+83265bfffffffff,05147,05,AR,Woodruff County
+83265bfffffffff,05145,05,AR,White County
+832658fffffffff,05023,05,AR,Cleburne County
+832658fffffffff,05137,05,AR,Stone County
+832658fffffffff,05065,05,AR,Izard County
+832658fffffffff,05067,05,AR,Jackson County
+832658fffffffff,05063,05,AR,Independence County
+832658fffffffff,05075,05,AR,Lawrence County
+832658fffffffff,05135,05,AR,Sharp County
+832658fffffffff,05049,05,AR,Fulton County
+832658fffffffff,05121,05,AR,Randolph County
+83444efffffffff,22021,22,LA,Caldwell Parish
+83444efffffffff,22049,22,LA,Jackson Parish
+83444efffffffff,22083,22,LA,Richland Parish
+83444efffffffff,22073,22,LA,Ouachita Parish
+83444efffffffff,22061,22,LA,Lincoln Parish
+83444efffffffff,22067,22,LA,Morehouse Parish
+83444efffffffff,22111,22,LA,Union Parish
+834459fffffffff,28133,28,MS,Sunflower County
+834459fffffffff,28011,28,MS,Bolivar County
+834459fffffffff,05041,05,AR,Desha County
+834459fffffffff,28135,28,MS,Tallahatchie County
+834459fffffffff,28027,28,MS,Coahoma County
+834459fffffffff,28119,28,MS,Quitman County
+834459fffffffff,05001,05,AR,Arkansas County
+834459fffffffff,05107,05,AR,Phillips County
+83444bfffffffff,05039,05,AR,Dallas County
+83444bfffffffff,05097,05,AR,Montgomery County
+83444bfffffffff,05019,05,AR,Clark County
+83444bfffffffff,05053,05,AR,Grant County
+83444bfffffffff,05059,05,AR,Hot Spring County
+83444bfffffffff,05051,05,AR,Garland County
+83444bfffffffff,05125,05,AR,Saline County
+83444bfffffffff,05105,05,AR,Perry County
+83265dfffffffff,05093,05,AR,Mississippi County
+83265dfffffffff,05031,05,AR,Craighead County
+83265dfffffffff,05055,05,AR,Greene County
+83265dfffffffff,29069,29,MO,Dunklin County
+83265dfffffffff,05021,05,AR,Clay County
+83265dfffffffff,29023,29,MO,Butler County
+83265dfffffffff,29155,29,MO,Pemiscot County
+834448fffffffff,22027,22,LA,Claiborne Parish
+834448fffffffff,05139,05,AR,Union County
+834448fffffffff,05027,05,AR,Columbia County
+834448fffffffff,05103,05,AR,Ouachita County
+834448fffffffff,05099,05,AR,Nevada County
+834448fffffffff,05073,05,AR,Lafayette County
+834448fffffffff,05057,05,AR,Hempstead County
+83265afffffffff,05045,05,AR,Faulkner County
+83265afffffffff,05029,05,AR,Conway County
+83265afffffffff,05115,05,AR,Pope County
+83265afffffffff,05071,05,AR,Johnson County
+83265afffffffff,05141,05,AR,Van Buren County
+83265afffffffff,05129,05,AR,Searcy County
+83265afffffffff,05101,05,AR,Newton County
+834458fffffffff,28051,28,MS,Holmes County
+834458fffffffff,28083,28,MS,Leflore County
+834458fffffffff,28079,28,MS,Leake County
+834458fffffffff,28007,28,MS,Attala County
+834458fffffffff,28019,28,MS,Choctaw County
+834458fffffffff,28015,28,MS,Carroll County
+834458fffffffff,28097,28,MS,Montgomery County
+834458fffffffff,28155,28,MS,Webster County
+834458fffffffff,28043,28,MS,Grenada County
+834440fffffffff,22097,22,LA,St. Landry Parish
+834440fffffffff,22047,22,LA,Iberville Parish
+834440fffffffff,22121,22,LA,West Baton Rouge Parish
+834440fffffffff,22033,22,LA,East Baton Rouge Parish
+834440fffffffff,22077,22,LA,Pointe Coupee Parish
+834440fffffffff,22037,22,LA,East Feliciana Parish
+834440fffffffff,22125,22,LA,West Feliciana Parish
+834440fffffffff,28157,28,MS,Wilkinson County
+834440fffffffff,22009,22,LA,Avoyelles Parish
+834451fffffffff,28111,28,MS,Perry County
+834451fffffffff,28035,28,MS,Forrest County
+834451fffffffff,28073,28,MS,Lamar County
+834451fffffffff,28041,28,MS,Greene County
+834451fffffffff,28067,28,MS,Jones County
+834451fffffffff,28031,28,MS,Covington County
+834451fffffffff,28153,28,MS,Wayne County
+834451fffffffff,28061,28,MS,Jasper County
+83445cfffffffff,28029,28,MS,Copiah County
+83445cfffffffff,28121,28,MS,Rankin County
+83445cfffffffff,28049,28,MS,Hinds County
+83445cfffffffff,28089,28,MS,Madison County
+83445cfffffffff,28127,28,MS,Simpson County
+83445cfffffffff,28129,28,MS,Smith County
+83445cfffffffff,28123,28,MS,Scott County
+83445bfffffffff,28107,28,MS,Panola County
+83445bfffffffff,28137,28,MS,Tate County
+83445bfffffffff,28013,28,MS,Calhoun County
+83445bfffffffff,28161,28,MS,Yalobusha County
+83445bfffffffff,28115,28,MS,Pontotoc County
+83445bfffffffff,28071,28,MS,Lafayette County
+83445bfffffffff,28145,28,MS,Union County
+83445bfffffffff,28093,28,MS,Marshall County
+83445bfffffffff,28009,28,MS,Benton County
+834455fffffffff,22103,22,LA,St. Tammany Parish
+834455fffffffff,22087,22,LA,St. Bernard Parish
+834455fffffffff,28045,28,MS,Hancock County
+834455fffffffff,28047,28,MS,Harrison County
+834455fffffffff,28109,28,MS,Pearl River County
+834455fffffffff,28131,28,MS,Stone County
+834443fffffffff,22029,22,LA,Concordia Parish
+834443fffffffff,28037,28,MS,Franklin County
+834443fffffffff,28001,28,MS,Adams County
+834443fffffffff,28063,28,MS,Jefferson County
+834443fffffffff,28021,28,MS,Claiborne County
+834443fffffffff,22107,22,LA,Tensas Parish
+834443fffffffff,22041,22,LA,Franklin Parish
+834443fffffffff,28149,28,MS,Warren County
+834443fffffffff,22065,22,LA,Madison Parish
+834442fffffffff,22105,22,LA,Tangipahoa Parish
+834442fffffffff,22091,22,LA,St. Helena Parish
+834442fffffffff,22117,22,LA,Washington Parish
+834442fffffffff,28147,28,MS,Walthall County
+834442fffffffff,28005,28,MS,Amite County
+834442fffffffff,28113,28,MS,Pike County
+834442fffffffff,28085,28,MS,Lincoln County
+834442fffffffff,28077,28,MS,Lawrence County
+834442fffffffff,28091,28,MS,Marion County
+834442fffffffff,28065,28,MS,Jefferson Davis County
+83265cfffffffff,29181,29,MO,Ripley County
+83265cfffffffff,29149,29,MO,Oregon County
+83265cfffffffff,29035,29,MO,Carter County
+83265cfffffffff,29203,29,MO,Shannon County
+83265cfffffffff,29179,29,MO,Reynolds County
+832656fffffffff,29037,29,MO,Cass County
+832656fffffffff,20091,20,KS,Johnson County
+832656fffffffff,29095,29,MO,Jackson County
+832656fffffffff,29107,29,MO,Lafayette County
+832656fffffffff,20209,20,KS,Wyandotte County
+832656fffffffff,20103,20,KS,Leavenworth County
+832656fffffffff,29047,29,MO,Clay County
+832656fffffffff,29177,29,MO,Ray County
+832656fffffffff,29165,29,MO,Platte County
+832656fffffffff,29049,29,MO,Clinton County
+832656fffffffff,29025,29,MO,Caldwell County
+832656fffffffff,29021,29,MO,Buchanan County
+832654fffffffff,29195,29,MO,Saline County
+832654fffffffff,29089,29,MO,Howard County
+832654fffffffff,29033,29,MO,Carroll County
+832654fffffffff,29175,29,MO,Randolph County
+832654fffffffff,29041,29,MO,Chariton County
+832654fffffffff,29117,29,MO,Livingston County
+832654fffffffff,29121,29,MO,Macon County
+832654fffffffff,29115,29,MO,Linn County
+832652fffffffff,29217,29,MO,Vernon County
+832652fffffffff,20011,20,KS,Bourbon County
+832652fffffffff,20107,20,KS,Linn County
+832652fffffffff,20003,20,KS,Anderson County
+832652fffffffff,29013,29,MO,Bates County
+832652fffffffff,20121,20,KS,Miami County
+832650fffffffff,29185,29,MO,St. Clair County
+832650fffffffff,29083,29,MO,Henry County
+832650fffffffff,29101,29,MO,Johnson County
+832650fffffffff,29085,29,MO,Hickory County
+832650fffffffff,29015,29,MO,Benton County
+832650fffffffff,29141,29,MO,Morgan County
+832650fffffffff,29159,29,MO,Pettis County
+832642fffffffff,29093,29,MO,Iron County
+832642fffffffff,29065,29,MO,Dent County
+832642fffffffff,29187,29,MO,St. Francois County
+832642fffffffff,29221,29,MO,Washington County
+832642fffffffff,29055,29,MO,Crawford County
+832642fffffffff,29099,29,MO,Jefferson County
+832642fffffffff,29071,29,MO,Franklin County
+832655fffffffff,29151,29,MO,Osage County
+832655fffffffff,29051,29,MO,Cole County
+832655fffffffff,29135,29,MO,Moniteau County
+832655fffffffff,29073,29,MO,Gasconade County
+832655fffffffff,29139,29,MO,Montgomery County
+832655fffffffff,29027,29,MO,Callaway County
+832655fffffffff,29053,29,MO,Cooper County
+832655fffffffff,29019,29,MO,Boone County
+832655fffffffff,29007,29,MO,Audrain County
+832653fffffffff,29109,29,MO,Lawrence County
+832653fffffffff,29043,29,MO,Christian County
+832653fffffffff,29077,29,MO,Greene County
+832653fffffffff,29225,29,MO,Webster County
+832653fffffffff,29167,29,MO,Polk County
+832653fffffffff,29059,29,MO,Dallas County
+832653fffffffff,29057,29,MO,Dade County
+832653fffffffff,29011,29,MO,Barton County
+832653fffffffff,29039,29,MO,Cedar County
+832651fffffffff,29229,29,MO,Wright County
+832651fffffffff,29215,29,MO,Texas County
+832651fffffffff,29105,29,MO,Laclede County
+832651fffffffff,29169,29,MO,Pulaski County
+832651fffffffff,29161,29,MO,Phelps County
+832651fffffffff,29029,29,MO,Camden County
+832651fffffffff,29125,29,MO,Maries County
+832651fffffffff,29131,29,MO,Miller County
+832643fffffffff,29207,29,MO,Stoddard County
+832643fffffffff,29223,29,MO,Wayne County
+832643fffffffff,29017,29,MO,Bollinger County
+832643fffffffff,29123,29,MO,Madison County
+832643fffffffff,29201,29,MO,Scott County
+832643fffffffff,17003,17,IL,Alexander County
+832643fffffffff,29031,29,MO,Cape Girardeau County
+832643fffffffff,29157,29,MO,Perry County
+83289afffffffff,,,,
+832781fffffffff,30079,30,MT,Prairie County
+832781fffffffff,30021,30,MT,Dawson County
+832781fffffffff,30083,30,MT,Richland County
+8312cafffffffff,,,,
+832792fffffffff,30049,30,MT,Lewis and Clark County
+832792fffffffff,30013,30,MT,Cascade County
+83279dfffffffff,30087,30,MT,Rosebud County
+832786fffffffff,30071,30,MT,Phillips County
+832780fffffffff,30055,30,MT,McCone County
+832780fffffffff,30105,30,MT,Valley County
+832893fffffffff,30093,30,MT,Silver Bow County
+832893fffffffff,30043,30,MT,Jefferson County
+832893fffffffff,30007,30,MT,Broadwater County
+8312c9fffffffff,30101,30,MT,Toole County
+832791fffffffff,30027,30,MT,Fergus County
+8327b3fffffffff,,,,
+83289efffffffff,30023,30,MT,Deer Lodge County
+83289efffffffff,30039,30,MT,Granite County
+83289efffffffff,30077,30,MT,Powell County
+83279cfffffffff,30111,30,MT,Yellowstone County
+83279cfffffffff,30103,30,MT,Treasure County
+83279cfffffffff,30065,30,MT,Musselshell County
+832785fffffffff,30085,30,MT,Roosevelt County
+832785fffffffff,30091,30,MT,Sheridan County
+832785fffffffff,30019,30,MT,Daniels County
+832796fffffffff,30099,30,MT,Teton County
+832796fffffffff,30073,30,MT,Pondera County
+832892fffffffff,30067,30,MT,Park County
+832892fffffffff,30031,30,MT,Gallatin County
+832790fffffffff,30045,30,MT,Judith Basin County
+832790fffffffff,30015,30,MT,Chouteau County
+832784fffffffff,,,,
+832795fffffffff,30005,30,MT,Blaine County
+832783fffffffff,30033,30,MT,Garfield County
+832794fffffffff,30051,30,MT,Liberty County
+832794fffffffff,30041,30,MT,Hill County
+83278efffffffff,30017,30,MT,Custer County
+83278efffffffff,30025,30,MT,Fallon County
+83289bfffffffff,30047,30,MT,Lake County
+83289bfffffffff,30089,30,MT,Sanders County
+83289bfffffffff,30029,30,MT,Flathead County
+832782fffffffff,30069,30,MT,Petroleum County
+8312cbfffffffff,30035,30,MT,Glacier County
+832793fffffffff,30107,30,MT,Wheatland County
+832793fffffffff,30059,30,MT,Meagher County
+83279efffffffff,30095,30,MT,Stillwater County
+83279efffffffff,30097,30,MT,Sweet Grass County
+83279efffffffff,30037,30,MT,Golden Valley County
+8326e0fffffffff,20079,20,KS,Harvey County
+8326e0fffffffff,20113,20,KS,McPherson County
+8326e0fffffffff,20017,20,KS,Chase County
+8326e0fffffffff,20115,20,KS,Marion County
+8326e0fffffffff,20127,20,KS,Morris County
+8326e0fffffffff,20041,20,KS,Dickinson County
+8326e0fffffffff,20169,20,KS,Saline County
+8326e0fffffffff,20061,20,KS,Geary County
+8326f0fffffffff,20093,20,KS,Kearny County
+8326f0fffffffff,20055,20,KS,Finney County
+8326f0fffffffff,20101,20,KS,Lane County
+8326f0fffffffff,20203,20,KS,Wichita County
+8326f0fffffffff,20171,20,KS,Scott County
+8326f0fffffffff,20063,20,KS,Gove County
+8326f0fffffffff,20109,20,KS,Logan County
+8326e1fffffffff,20125,20,KS,Montgomery County
+8326e1fffffffff,20049,20,KS,Elk County
+8326e1fffffffff,20205,20,KS,Wilson County
+8326e1fffffffff,20073,20,KS,Greenwood County
+8326e1fffffffff,20207,20,KS,Woodson County
+8326e1fffffffff,20031,20,KS,Coffey County
+8326e1fffffffff,20133,20,KS,Neosho County
+8326e1fffffffff,20001,20,KS,Allen County
+8326f4fffffffff,20179,20,KS,Sheridan County
+8326f4fffffffff,20193,20,KS,Thomas County
+8326f4fffffffff,20039,20,KS,Decatur County
+8326f4fffffffff,20153,20,KS,Rawlins County
+8326e5fffffffff,20111,20,KS,Lyon County
+8326e5fffffffff,20139,20,KS,Osage County
+8326e5fffffffff,20197,20,KS,Wabaunsee County
+8326e5fffffffff,20059,20,KS,Franklin County
+8326e5fffffffff,20045,20,KS,Douglas County
+8326e5fffffffff,20087,20,KS,Jefferson County
+8326e5fffffffff,20177,20,KS,Shawnee County
+8326f1fffffffff,20025,20,KS,Clark County
+8326f1fffffffff,20097,20,KS,Kiowa County
+8326f1fffffffff,20057,20,KS,Ford County
+8326f1fffffffff,20069,20,KS,Gray County
+8326f1fffffffff,20047,20,KS,Edwards County
+8326f1fffffffff,20083,20,KS,Hodgeman County
+8326f1fffffffff,20145,20,KS,Pawnee County
+8326e2fffffffff,20095,20,KS,Kingman County
+8326e2fffffffff,20151,20,KS,Pratt County
+8326e2fffffffff,20155,20,KS,Reno County
+8326e2fffffffff,20185,20,KS,Stafford County
+8326e2fffffffff,20159,20,KS,Rice County
+8326e2fffffffff,20009,20,KS,Barton County
+8326f5fffffffff,20135,20,KS,Ness County
+8326f5fffffffff,20165,20,KS,Rush County
+8326f5fffffffff,20195,20,KS,Trego County
+8326f5fffffffff,20051,20,KS,Ellis County
+8326f5fffffffff,20065,20,KS,Graham County
+8326e6fffffffff,20053,20,KS,Ellsworth County
+8326e6fffffffff,20167,20,KS,Russell County
+8326e6fffffffff,20105,20,KS,Lincoln County
+8326e6fffffffff,20143,20,KS,Ottawa County
+8326e6fffffffff,20141,20,KS,Osborne County
+8326e6fffffffff,20123,20,KS,Mitchell County
+8326e6fffffffff,20029,20,KS,Cloud County
+8326f2fffffffff,20187,20,KS,Stanton County
+8326f2fffffffff,08099,08,CO,Prowers County
+8326f2fffffffff,20075,20,KS,Hamilton County
+8326f2fffffffff,20071,20,KS,Greeley County
+8326f6fffffffff,08017,08,CO,Cheyenne County
+8326f6fffffffff,20199,20,KS,Wallace County
+8326f6fffffffff,08063,08,CO,Kit Carson County
+8326f6fffffffff,20181,20,KS,Sherman County
+832661fffffffff,18119,18,IN,Owen County
+832661fffffffff,18021,18,IN,Clay County
+832661fffffffff,18109,18,IN,Morgan County
+832661fffffffff,18097,18,IN,Marion County
+832661fffffffff,18133,18,IN,Putnam County
+832661fffffffff,18063,18,IN,Hendricks County
+832661fffffffff,18121,18,IN,Parke County
+832661fffffffff,18165,18,IN,Vermillion County
+832661fffffffff,18107,18,IN,Montgomery County
+832661fffffffff,18011,18,IN,Boone County
+832661fffffffff,18045,18,IN,Fountain County
+832a92fffffffff,18139,18,IN,Rush County
+832a92fffffffff,18161,18,IN,Union County
+832a92fffffffff,18041,18,IN,Fayette County
+832a92fffffffff,18059,18,IN,Hancock County
+832a92fffffffff,18177,18,IN,Wayne County
+832a92fffffffff,18065,18,IN,Henry County
+832a92fffffffff,18057,18,IN,Hamilton County
+832a92fffffffff,18135,18,IN,Randolph County
+832a92fffffffff,18095,18,IN,Madison County
+832a92fffffffff,18035,18,IN,Delaware County
+832a92fffffffff,18009,18,IN,Blackford County
+832a92fffffffff,39135,39,OH,Preble County
+832665fffffffff,18159,18,IN,Tipton County
+832665fffffffff,18067,18,IN,Howard County
+832665fffffffff,18023,18,IN,Clinton County
+832665fffffffff,18157,18,IN,Tippecanoe County
+832665fffffffff,18015,18,IN,Carroll County
+832665fffffffff,18181,18,IN,White County
+832665fffffffff,18053,18,IN,Grant County
+832665fffffffff,18103,18,IN,Miami County
+832665fffffffff,18169,18,IN,Wabash County
+832665fffffffff,18049,18,IN,Fulton County
+832665fffffffff,18017,18,IN,Cass County
+832665fffffffff,18131,18,IN,Pulaski County
+83266cfffffffff,18019,18,IN,Clark County
+83266cfffffffff,18175,18,IN,Washington County
+83266cfffffffff,18143,18,IN,Scott County
+83266cfffffffff,18077,18,IN,Jefferson County
+83266cfffffffff,18071,18,IN,Jackson County
+83266cfffffffff,18079,18,IN,Jennings County
+83266cfffffffff,18137,18,IN,Ripley County
+83266cfffffffff,18013,18,IN,Brown County
+83266cfffffffff,18105,18,IN,Monroe County
+83266cfffffffff,18005,18,IN,Bartholomew County
+83266cfffffffff,18031,18,IN,Decatur County
+83266cfffffffff,18081,18,IN,Johnson County
+83266cfffffffff,18145,18,IN,Shelby County
+834cc5fffffffff,72055,72,PR,Guánica Municipio
+834cc5fffffffff,72133,72,PR,Santa Isabel Municipio
+834cc5fffffffff,72123,72,PR,Salinas Municipio
+834cc5fffffffff,72079,72,PR,Lajas Municipio
+834cc5fffffffff,72075,72,PR,Juana Díaz Municipio
+834cc5fffffffff,72113,72,PR,Ponce Municipio
+834cc5fffffffff,72059,72,PR,Guayanilla Municipio
+834cc5fffffffff,72111,72,PR,Peñuelas Municipio
+834cc5fffffffff,72153,72,PR,Yauco Municipio
+834cc5fffffffff,72121,72,PR,Sabana Grande Municipio
+834cc5fffffffff,72043,72,PR,Coamo Municipio
+834cc5fffffffff,72125,72,PR,San Germán Municipio
+834cc5fffffffff,72149,72,PR,Villalba Municipio
+834cc5fffffffff,72009,72,PR,Aibonito Municipio
+834cc5fffffffff,72067,72,PR,Hormigueros Municipio
+834cc5fffffffff,72093,72,PR,Maricao Municipio
+834cc5fffffffff,72041,72,PR,Cidra Municipio
+834cc5fffffffff,72001,72,PR,Adjuntas Municipio
+834cc5fffffffff,72019,72,PR,Barranquitas Municipio
+834cc5fffffffff,72073,72,PR,Jayuya Municipio
+834cc5fffffffff,72107,72,PR,Orocovis Municipio
+834cc5fffffffff,72045,72,PR,Comerío Municipio
+834cc5fffffffff,72083,72,PR,Las Marías Municipio
+834cc5fffffffff,72081,72,PR,Lares Municipio
+834cc5fffffffff,72141,72,PR,Utuado Municipio
+834cc5fffffffff,72011,72,PR,Añasco Municipio
+834cc5fffffffff,72105,72,PR,Naranjito Municipio
+834cc5fffffffff,72039,72,PR,Ciales Municipio
+834cc5fffffffff,72047,72,PR,Corozal Municipio
+834cc5fffffffff,72101,72,PR,Morovis Municipio
+834cc5fffffffff,72131,72,PR,San Sebastián Municipio
+834cc5fffffffff,72135,72,PR,Toa Alta Municipio
+834cc5fffffffff,72054,72,PR,Florida Municipio
+834cc5fffffffff,72003,72,PR,Aguada Municipio
+834cc5fffffffff,72099,72,PR,Moca Municipio
+834cc5fffffffff,72013,72,PR,Arecibo Municipio
+834cc5fffffffff,72143,72,PR,Vega Alta Municipio
+834cc5fffffffff,72065,72,PR,Hatillo Municipio
+834cc5fffffffff,72027,72,PR,Camuy Municipio
+834cc5fffffffff,72091,72,PR,Manatí Municipio
+834cc5fffffffff,72145,72,PR,Vega Baja Municipio
+834cc5fffffffff,72115,72,PR,Quebradillas Municipio
+834cc5fffffffff,72017,72,PR,Barceloneta Municipio
+834cc5fffffffff,72005,72,PR,Aguadilla Municipio
+834cc5fffffffff,72071,72,PR,Isabela Municipio
+834cc0fffffffff,72023,72,PR,Cabo Rojo Municipio
+834cc0fffffffff,72097,72,PR,Mayagüez Municipio
+834cc0fffffffff,72117,72,PR,Rincón Municipio
+834cc4fffffffff,,,,
+834ceafffffffff,72015,72,PR,Arroyo Municipio
+834ceafffffffff,72057,72,PR,Guayama Municipio
+834ceafffffffff,72095,72,PR,Maunabo Municipio
+834ceafffffffff,72109,72,PR,Patillas Municipio
+834ceafffffffff,72151,72,PR,Yabucoa Municipio
+834ceafffffffff,72035,72,PR,Cayey Municipio
+834ceafffffffff,72069,72,PR,Humacao Municipio
+834ceafffffffff,72129,72,PR,San Lorenzo Municipio
+834ceafffffffff,72085,72,PR,Las Piedras Municipio
+834ceafffffffff,72103,72,PR,Naguabo Municipio
+834ceafffffffff,72077,72,PR,Juncos Municipio
+834ceefffffffff,72025,72,PR,Caguas Municipio
+834ceefffffffff,72007,72,PR,Aguas Buenas Municipio
+834ceefffffffff,72063,72,PR,Gurabo Municipio
+834ceefffffffff,72029,72,PR,Canóvanas Municipio
+834ceefffffffff,72139,72,PR,Trujillo Alto Municipio
+834ceefffffffff,72061,72,PR,Guaynabo Municipio
+834ceefffffffff,72021,72,PR,Bayamón Municipio
+834ceefffffffff,72053,72,PR,Fajardo Municipio
+834ceefffffffff,72089,72,PR,Luquillo Municipio
+834ceefffffffff,72119,72,PR,Río Grande Municipio
+834ceefffffffff,72031,72,PR,Carolina Municipio
+834ceefffffffff,72127,72,PR,San Juan Municipio
+834ceefffffffff,72033,72,PR,Cataño Municipio
+834ceefffffffff,72137,72,PR,Toa Baja Municipio
+834ceefffffffff,72087,72,PR,Loíza Municipio
+834ceefffffffff,72051,72,PR,Dorado Municipio
+832600fffffffff,46083,46,SD,Lincoln County
+832600fffffffff,46125,46,SD,Turner County
+832600fffffffff,46009,46,SD,Bon Homme County
+832600fffffffff,46135,46,SD,Yankton County
+832600fffffffff,46067,46,SD,Hutchinson County
+832600fffffffff,46087,46,SD,McCook County
+832600fffffffff,46061,46,SD,Hanson County
+832600fffffffff,46099,46,SD,Minnehaha County
+832604fffffffff,46079,46,SD,Lake County
+832604fffffffff,46011,46,SD,Brookings County
+832604fffffffff,46097,46,SD,Miner County
+832604fffffffff,46077,46,SD,Kingsbury County
+832604fffffffff,46025,46,SD,Clark County
+832604fffffffff,46029,46,SD,Codington County
+832604fffffffff,46057,46,SD,Hamlin County
+832604fffffffff,46039,46,SD,Deuel County
+832632fffffffff,46041,46,SD,Dewey County
+832632fffffffff,46031,46,SD,Corson County
+832614fffffffff,46055,46,SD,Haakon County
+832614fffffffff,46117,46,SD,Stanley County
+832789fffffffff,46093,46,SD,Meade County
+832789fffffffff,46137,46,SD,Ziebach County
+832789fffffffff,46105,46,SD,Perkins County
+832633fffffffff,46065,46,SD,Hughes County
+832633fffffffff,46069,46,SD,Hyde County
+832633fffffffff,46119,46,SD,Sully County
+832633fffffffff,46107,46,SD,Potter County
+832615fffffffff,46123,46,SD,Tripp County
+832615fffffffff,46085,46,SD,Lyman County
+832615fffffffff,46075,46,SD,Jones County
+832606fffffffff,46035,46,SD,Davison County
+832606fffffffff,46015,46,SD,Brule County
+832606fffffffff,46017,46,SD,Buffalo County
+832606fffffffff,46003,46,SD,Aurora County
+832606fffffffff,46111,46,SD,Sanborn County
+832606fffffffff,46073,46,SD,Jerauld County
+832606fffffffff,46005,46,SD,Beadle County
+832606fffffffff,46059,46,SD,Hand County
+832616fffffffff,46103,46,SD,Pennington County
+832631fffffffff,46115,46,SD,Spink County
+832631fffffffff,46049,46,SD,Faulk County
+832631fffffffff,46013,46,SD,Brown County
+83269dfffffffff,08053,08,CO,Hinsdale County
+83269dfffffffff,08091,08,CO,Ouray County
+83269dfffffffff,08051,08,CO,Gunnison County
+83268cfffffffff,08041,08,CO,El Paso County
+83268cfffffffff,08039,08,CO,Elbert County
+83268cfffffffff,08035,08,CO,Douglas County
+83268cfffffffff,08005,08,CO,Arapahoe County
+83268cfffffffff,08031,08,CO,Denver County
+83269cfffffffff,08029,08,CO,Delta County
+83269cfffffffff,08077,08,CO,Mesa County
+832683fffffffff,08097,08,CO,Pitkin County
+832683fffffffff,08037,08,CO,Eagle County
+832682fffffffff,08045,08,CO,Garfield County
+832682fffffffff,08103,08,CO,Rio Blanco County
+8326abfffffffff,08121,08,CO,Washington County
+83268afffffffff,08021,08,CO,Conejos County
+83268afffffffff,08003,08,CO,Alamosa County
+83268afffffffff,08105,08,CO,Rio Grande County
+83268afffffffff,08109,08,CO,Saguache County
+832681fffffffff,08059,08,CO,Jefferson County
+832681fffffffff,08117,08,CO,Summit County
+832681fffffffff,08019,08,CO,Clear Creek County
+832681fffffffff,08047,08,CO,Gilpin County
+832681fffffffff,08014,08,CO,Broomfield County
+832681fffffffff,08013,08,CO,Boulder County
+832681fffffffff,08049,08,CO,Grand County
+8326aafffffffff,08001,08,CO,Adams County
+8326aafffffffff,08087,08,CO,Morgan County
+8326aafffffffff,08123,08,CO,Weld County
+832689fffffffff,08071,08,CO,Las Animas County
+832689fffffffff,08089,08,CO,Otero County
+832689fffffffff,08011,08,CO,Bent County
+832688fffffffff,08055,08,CO,Huerfano County
+832688fffffffff,08027,08,CO,Custer County
+832688fffffffff,08101,08,CO,Pueblo County
+832698fffffffff,08083,08,CO,Montezuma County
+832698fffffffff,08033,08,CO,Dolores County
+832698fffffffff,08113,08,CO,San Miguel County
+832698fffffffff,08085,08,CO,Montrose County
+83268efffffffff,08043,08,CO,Fremont County
+83268efffffffff,08015,08,CO,Chaffee County
+83268efffffffff,08119,08,CO,Teller County
+83268efffffffff,08093,08,CO,Park County
+83268efffffffff,08065,08,CO,Lake County
+83268dfffffffff,08025,08,CO,Crowley County
+83268dfffffffff,08061,08,CO,Kiowa County
+83268dfffffffff,08073,08,CO,Lincoln County
+832aa2fffffffff,42065,42,PA,Jefferson County
+832aa2fffffffff,42031,42,PA,Clarion County
+832aa2fffffffff,42121,42,PA,Venango County
+832aa2fffffffff,42047,42,PA,Elk County
+832aa2fffffffff,42053,42,PA,Forest County
+832aa2fffffffff,42083,42,PA,McKean County
+832aa2fffffffff,42123,42,PA,Warren County
+832aa3fffffffff,42061,42,PA,Huntingdon County
+832aa3fffffffff,42013,42,PA,Blair County
+832aa3fffffffff,42021,42,PA,Cambria County
+832aa3fffffffff,42087,42,PA,Mifflin County
+832aa3fffffffff,42027,42,PA,Centre County
+832aa3fffffffff,42033,42,PA,Clearfield County
+832aa1fffffffff,42075,42,PA,Lebanon County
+832aa1fffffffff,42099,42,PA,Perry County
+832aa1fffffffff,42043,42,PA,Dauphin County
+832aa1fffffffff,42067,42,PA,Juniata County
+832aa1fffffffff,42107,42,PA,Schuylkill County
+832aa1fffffffff,42109,42,PA,Snyder County
+832aa1fffffffff,42097,42,PA,Northumberland County
+832aa1fffffffff,42119,42,PA,Union County
+832aa1fffffffff,42093,42,PA,Montour County
+832aa1fffffffff,42037,42,PA,Columbia County
+832a84fffffffff,42125,42,PA,Washington County
+832a84fffffffff,42129,42,PA,Westmoreland County
+832a84fffffffff,42003,42,PA,Allegheny County
+832a84fffffffff,42063,42,PA,Indiana County
+832a84fffffffff,42005,42,PA,Armstrong County
+832a84fffffffff,42019,42,PA,Butler County
+832a84fffffffff,42007,42,PA,Beaver County
+8328d2fffffffff,53047,53,WA,Okanogan County
+8328f2fffffffff,53039,53,WA,Klickitat County
+8328f2fffffffff,53059,53,WA,Skamania County
+8328d5fffffffff,53045,53,WA,Mason County
+8328d5fffffffff,53035,53,WA,Kitsap County
+8312dafffffffff,53019,53,WA,Ferry County
+8328d0fffffffff,53061,53,WA,Snohomish County
+8328d0fffffffff,53057,53,WA,Skagit County
+8328d3fffffffff,53073,53,WA,Whatcom County
+8328f3fffffffff,53015,53,WA,Cowlitz County
+8328f3fffffffff,53069,53,WA,Wahkiakum County
+8328f3fffffffff,53041,53,WA,Lewis County
+8328f3fffffffff,53067,53,WA,Thurston County
+8328d6fffffffff,53017,53,WA,Douglas County
+8328d6fffffffff,53007,53,WA,Chelan County
+8328c2fffffffff,53031,53,WA,Jefferson County
+8328c2fffffffff,53009,53,WA,Clallam County
+8312defffffffff,,,,
+83288bfffffffff,53001,53,WA,Adams County
+83288bfffffffff,53025,53,WA,Grant County
+83288bfffffffff,53043,53,WA,Lincoln County
+8328d1fffffffff,53029,53,WA,Island County
+8328d1fffffffff,53055,53,WA,San Juan County
+8328d4fffffffff,53053,53,WA,Pierce County
+8328d4fffffffff,53037,53,WA,Kittitas County
+8328d4fffffffff,53033,53,WA,King County
+832889fffffffff,53077,53,WA,Yakima County
+8328c6fffffffff,53049,53,WA,Pacific County
+8328c6fffffffff,53027,53,WA,Grays Harbor County
+834446fffffffff,22057,22,LA,Lafourche Parish
+834446fffffffff,22051,22,LA,Jefferson Parish
+834446fffffffff,22007,22,LA,Assumption Parish
+834446fffffffff,22089,22,LA,St. Charles Parish
+834446fffffffff,22093,22,LA,St. James Parish
+834446fffffffff,22095,22,LA,St. John the Baptist Parish
+834446fffffffff,22005,22,LA,Ascension Parish
+834446fffffffff,22063,22,LA,Livingston Parish
+834446fffffffff,22071,22,LA,Orleans Parish
+834441fffffffff,22079,22,LA,Rapides Parish
+834441fffffffff,22043,22,LA,Grant Parish
+834441fffffffff,22025,22,LA,Catahoula Parish
+834441fffffffff,22059,22,LA,LaSalle Parish
+834441fffffffff,22069,22,LA,Natchitoches Parish
+834441fffffffff,22127,22,LA,Winn Parish
+834445fffffffff,22055,22,LA,Lafayette Parish
+834445fffffffff,22053,22,LA,Jefferson Davis Parish
+834445fffffffff,22001,22,LA,Acadia Parish
+834445fffffffff,22003,22,LA,Allen Parish
+834445fffffffff,22039,22,LA,Evangeline Parish
+834471fffffffff,22109,22,LA,Terrebonne Parish
+834463fffffffff,,,,
+834444fffffffff,22101,22,LA,St. Mary Parish
+834444fffffffff,22099,22,LA,St. Martin Parish
+834444fffffffff,22045,22,LA,Iberia Parish
+834444fffffffff,22113,22,LA,Vermilion Parish
+83444cfffffffff,22031,22,LA,De Soto Parish
+83444cfffffffff,22081,22,LA,Red River Parish
+83444cfffffffff,22013,22,LA,Bienville Parish
+83444cfffffffff,22119,22,LA,Webster Parish
+83444cfffffffff,22017,22,LA,Caddo Parish
+83444cfffffffff,22015,22,LA,Bossier Parish
+834473fffffffff,22075,22,LA,Plaquemines Parish
+834454fffffffff,,,,
+834e42fffffffff,,,,
+834f49fffffffff,66010,66,GU,Guam
+834f49fffffffff,69100,69,MP,Rota Municipality
+834e46fffffffff,,,,
+834e62fffffffff,69085,69,MP,Northern Islands Municipality
+834e66fffffffff,,,,
+834e71fffffffff,,,,
+834f4bfffffffff,69120,69,MP,Tinian Municipality
+834f4bfffffffff,69110,69,MP,Saipan Municipality
+834e64fffffffff,,,,
+832b10fffffffff,,,,
+832b1efffffffff,23019,23,ME,Penobscot County
+832b11fffffffff,,,,
+832b18fffffffff,23029,23,ME,Washington County
+832b12fffffffff,,,,
+832b13fffffffff,23003,23,ME,Aroostook County
+832b1afffffffff,23013,23,ME,Knox County
+832b1afffffffff,23011,23,ME,Kennebec County
+832b1afffffffff,23027,23,ME,Waldo County
+832b1afffffffff,23009,23,ME,Hancock County
+832b1bfffffffff,,,,
+832a34fffffffff,23031,23,ME,York County
+832a34fffffffff,23005,23,ME,Cumberland County
+832a34fffffffff,23023,23,ME,Sagadahoc County
+832a34fffffffff,23015,23,ME,Lincoln County
+832a34fffffffff,23001,23,ME,Androscoggin County
+832badfffffffff,23025,23,ME,Somerset County
+832badfffffffff,23021,23,ME,Piscataquis County

@@ -21,10 +21,19 @@ would show nothing on it as-is. This script adds just enough signal:
      date ~ 5.5 + sum of 4 U(0,1) (mean 7.5); everyone else
      ~ 3.5 + 0.75 * sum of 4 U(0,1) (mean 5.0).
 
+  3. Hexagon locations. SynPUF locations are counties, coded with SSA
+     state+county codes. location gains an h3_id column: SSA code -> county
+     FIPS (NBER crosswalk) -> the H3 resolution-3 hexagon assigned to that
+     county (staging/data/h3res3_countyfips_cw.csv). Locations with no match
+     (unknown-county codes, Connecticut's pre-2022 counties, ...) get NULL.
+
 Output dataset (default `synpuf_workshop`):
-  - condition_occurrence, measurement : real tables (source rows + changes)
+  - condition_occurrence, measurement,
+    location                           : real tables (source rows + changes)
   - every other source table           : a view onto the source dataset
-  - _pc_patients, _augment_manifest    : instructor-facing audit tables
+  - _pc_patients, _augment_manifest,
+    _ssa_fips_crosswalk,
+    _h3_county_crosswalk               : instructor-facing audit/lookup tables
 
 Randomness comes from FARM_FINGERPRINT(seed:tag:id), so it is reproducible
 and runs entirely inside BigQuery -- no data is pulled to the VM.
@@ -40,6 +49,7 @@ Usage:
   python3 augment.py --print-sql           # show the SQL, run nothing
 """
 import argparse
+import csv
 import json
 import os
 import sys
@@ -88,8 +98,13 @@ DIABETES_SEEDS = [
     201254,    # Type 1 diabetes mellitus
 ]
 
+# Crosswalks for the hexagon step, in staging/data/.
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+SSA_FIPS_CSV = "ssa_fips_state_county2011.csv"   # NBER SSA <-> FIPS county crosswalk
+H3_COUNTY_CSV = "h3res3_countyfips_cw.csv"       # county FIPS -> H3 res-3 hexagon
+
 # Tables materialized here; everything else becomes a view.
-MODIFIED = {"condition_occurrence", "measurement"}
+MODIFIED = {"condition_occurrence", "measurement", "location"}
 
 PRINT_ONLY = False
 client = S = T = None
@@ -293,6 +308,81 @@ FROM {src('measurement')} m
 LEFT JOIN first_dm dm ON dm.person_id = m.person_id""", "measurement: recode A1C rows and fill values")
 
 
+def drop_if_view(name):
+    """An earlier build may have left a view where we now want a table."""
+    if PRINT_ONLY:
+        return
+    try:
+        existing = client.get_table(f"{T}.{name}")
+    except Exception:  # noqa: BLE001 -- not found
+        return
+    if existing.table_type == "VIEW":
+        client.delete_table(existing)
+
+
+def load_csv(filename, table):
+    """Load staging/data/<filename> into T.<table>, every column as STRING
+    (keeps leading zeros in codes), replacing any previous copy."""
+    path = os.path.join(DATA_DIR, filename)
+    print(f"\n-- load {filename} -> {table}")
+    if PRINT_ONLY:
+        return
+    with open(path, newline="") as f:
+        header = next(csv.reader(f))
+    config = bigquery.LoadJobConfig(
+        source_format=bigquery.SourceFormat.CSV, skip_leading_rows=1,
+        schema=[bigquery.SchemaField(c, "STRING") for c in header],
+        write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE)
+    with open(path, "rb") as f:
+        job = client.load_table_from_file(f, f"{T}.{table}", job_config=config)
+    job.result()
+    print(f"   ok ({job.output_rows} rows)")
+
+
+def build_location():
+    load_csv(SSA_FIPS_CSV, "_ssa_fips_crosswalk")
+    load_csv(H3_COUNTY_CSV, "_h3_county_crosswalk")
+    drop_if_view("location")
+    run(f"""
+CREATE OR REPLACE TABLE {tgt('location')} AS
+WITH ssa AS (
+  SELECT ssacounty, ANY_VALUE(fipscounty) AS fipscounty
+  FROM {tgt('_ssa_fips_crosswalk')}
+  WHERE ssacounty IS NOT NULL AND ssacounty != ''
+  GROUP BY ssacounty),
+h3 AS (
+  SELECT county AS fipscounty, ANY_VALUE(h3_id) AS h3_id
+  FROM {tgt('_h3_county_crosswalk')}
+  WHERE county IS NOT NULL AND county != ''
+  GROUP BY county)
+SELECT l.*, h3.h3_id
+FROM {src('location')} l
+LEFT JOIN ssa ON ssa.ssacounty = LPAD(l.county, 5, '0')
+LEFT JOIN h3 USING (fipscounty)""", "location: add h3_id (SSA county -> FIPS -> H3 res 3)")
+
+    rows = run(f"""
+SELECT COUNT(*) AS locations, COUNTIF(h3_id IS NOT NULL) AS locations_with_h3,
+  (SELECT COUNT(*) FROM {src('person')}) AS persons,
+  (SELECT COUNTIF(l.h3_id IS NOT NULL)
+   FROM {src('person')} p JOIN {tgt('location')} l USING (location_id)) AS persons_with_h3,
+  (SELECT COUNT(DISTINCT h3_id) FROM {tgt('location')}) AS distinct_hexes
+FROM {tgt('location')}""", "location: match summary")
+    if PRINT_ONLY:
+        return {}
+    stats = dict(rows[0])
+    for k, v in stats.items():
+        print(f"   {k:24s} {v}")
+    print("\n   People without a hexagon, by SSA state code (top 10):")
+    for r in run(f"""
+SELECT l.state, COUNT(*) AS persons, COUNT(DISTINCT l.county) AS counties,
+       ARRAY_AGG(DISTINCT l.county LIMIT 5) AS example_counties
+FROM {src('person')} p JOIN {tgt('location')} l USING (location_id)
+WHERE l.h3_id IS NULL
+GROUP BY 1 ORDER BY persons DESC LIMIT 10""", "location: unmatched by state"):
+        print(f"   state {r.state}: {r.persons:,} persons in {r.counties} counties, e.g. {list(r.example_counties)}")
+    return {"location_" + k: v for k, v in stats.items()}
+
+
 def build_views():
     names = sorted(t.table_id for t in client.list_tables(S)) if client else ["<every other table>"]
     for name in names:
@@ -301,7 +391,7 @@ def build_views():
         run(f"CREATE OR REPLACE VIEW {tgt(name)} AS SELECT * FROM {src(name)}", f"view {name}")
 
 
-def report(recode):
+def report(recode, location_stats):
     rows = run(f"""
 WITH {first_diabetes_cte()},
 icd AS (SELECT COUNT(DISTINCT person_id) AS n FROM {src('condition_occurrence')}
@@ -335,7 +425,7 @@ SELECT
         "seed": SEED, "source": S, "pc_concept_id": PC_CONCEPT_ID,
         "pc_decedent_fraction": PC_DECEDENT_FRACTION, "pc_censored_share": PC_CENSORED_SHARE,
         "survival_scale_days": SURVIVAL_SCALE_DAYS, "diabetes_seeds": DIABETES_SEEDS,
-        "a1c_recode": {str(k): v for k, v in recode.items()}, **r,
+        "a1c_recode": {str(k): v for k, v in recode.items()}, **r, **location_stats,
     }
     rows_sql = ", ".join(
         f"STRUCT('{k}' AS key, '{v if isinstance(v, str) else json.dumps(v)}' AS value)"
@@ -364,8 +454,9 @@ def main():
     build_pc_patients()
     build_condition_occurrence()
     build_measurement(recode)
+    location_stats = build_location()
     build_views()
-    report(recode)
+    report(recode, location_stats)
     print(f"\nDone. Notebooks should point at {T}.")
 
 

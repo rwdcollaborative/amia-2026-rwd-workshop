@@ -15,6 +15,9 @@ Us CDR, without touching real EHR data.
 | `reference/OMOPCDM_bigquery_5.3_ddl.sql` | Canonical DDL, from OHDSI/CommonDataModel @ v5.3.1. |
 | `diagnostics.py` | Read-only survey of BigQuery access and the loaded data. |
 | `augment.py` | Builds `synpuf_workshop`: SynPUF plus the synthetic records the exercises need. |
+| `data/h3res3_countyfips_cw.csv` | County FIPS → H3 resolution-3 hexagon (one hexagon per county). |
+| `data/h3_res3.gpkg` | GeoPackage of the H3 resolution-3 hexagon polygons, keyed by `h3_id`. |
+| `data/ssa_fips_state_county2011.csv` | NBER SSA ↔ FIPS county crosswalk ([source](https://www.nber.org/research/data/ssa-federal-information-processing-series-fips-state-and-county-crosswalk)). |
 
 ## Why two phases
 
@@ -218,11 +221,18 @@ deaths are unrelated to diagnoses and its lab rows have no values, so
   to" (the CPT code is kept as the source concept) and given a value. The value
   is drawn around 7.5 if the person had diabetes on or before the test date,
   and around 5.0 otherwise.
+- **Hexagon locations.** SynPUF locations are counties with SSA state+county
+  codes. `location` gains an `h3_id` column by translating SSA → county FIPS
+  (NBER crosswalk) → the county's H3 resolution-3 hexagon. Locations that don't
+  match get `NULL`: "unknown county" codes (`x999`), state code `54`, and
+  Connecticut, whose old counties aren't in the hexagon crosswalk (it uses the
+  2022 planning regions). The script prints match rates and the unmatched
+  states.
 
-The output is a separate dataset in which `condition_occurrence` and
-`measurement` are real tables and every other table is a view onto
-`synpuf_omop`. Notebooks query it like any OMOP dataset. Two tables starting
-with `_` record what was added, for instructors.
+The output is a separate dataset in which `condition_occurrence`,
+`measurement` and `location` are real tables and every other table is a view onto
+`synpuf_omop`. Notebooks query it like any OMOP dataset. Tables starting with
+`_` record what was added and hold the crosswalks, for instructors.
 
 ```bash
 # once: create the target dataset as a Workbench resource (UI or `wb resource create bq-dataset`),

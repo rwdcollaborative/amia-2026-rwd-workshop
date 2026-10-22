@@ -50,10 +50,12 @@ on workspace project `wb-glossy-cherry-7026` (dataset `synpuf_omop`, 25 tables,
   time-at-risk artifact. About half of decedents have type 2 diabetes.
 - **Location.** The `location` table has 3,185 rows with only state and county
   codes. Zip, city and address are empty. Every person has a valid
-  `location_id`. The codes look like SSA codes (e.g. state `54`, county `54999`,
-  source value `54-999`), not FIPS; verify against the SynPUF codebook before
-  linking to FIPS- or H3-based data. There is no `location_history` table (it
-  first appears in CDM 5.4).
+  `location_id`. The codes are SSA state+county codes, not FIPS (e.g. county
+  `54520`, source value `54-520`). Each location is a county, which is why there
+  are only ~3,185 of them: about 3,140 US counties plus an "unknown county"
+  (`x999`) per state. State `54` isn't in the NBER SSA crosswalk; it is probably
+  SynPUF's "other" code, but that's unconfirmed. There is no
+  `location_history` table (it first appears in CDM 5.4).
 - **IDs.** The original +16,000,000 offset for new `measurement_id` values would
   collide with 52 existing IDs.
 
@@ -99,3 +101,8 @@ on workspace project `wb-glossy-cherry-7026` (dataset `synpuf_omop`, 25 tables,
   201254 (type 1) were added. The definition appears in both
   `staging/augment.py` (`DIABETES_SEEDS`) and section 2.2 of
   `notebooks/survival_and_a1c.ipynb`, and the two must stay in sync.
+- **Hexagons.** `augment.py` adds `location.h3_id`: SSA code → county FIPS (NBER
+  2011 crosswalk) → the county's H3 resolution-3 hexagon
+  (`staging/data/h3res3_countyfips_cw.csv`, one hexagon per county). Expected
+  misses: `x999` codes, state `54`, and Connecticut. The hexagon crosswalk uses
+  CT's 2022 planning regions, so CT's old county FIPS codes don't match.

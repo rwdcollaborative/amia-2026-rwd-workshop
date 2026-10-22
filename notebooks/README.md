@@ -5,6 +5,7 @@ Open these in JupyterLab on the Workbench. They read from BigQuery.
 | Notebook | Dataset | What it shows |
 |----------|---------|---------------|
 | `survival_and_a1c.ipynb` | `synpuf_workshop` | The workshop exercises: survival analysis and A1C by diabetes status. |
+| `hex_density_map.ipynb` | `synpuf_workshop` + `staging/data/h3_res3.gpkg` | People per H3 hexagon via `location.h3_id`, mapped with geopandas. |
 
 `synpuf_workshop` is built once per workspace by `staging/augment.py`; see
 `staging/README.md`.
