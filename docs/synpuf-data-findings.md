@@ -119,4 +119,4 @@ on workspace project `wb-glossy-cherry-7026` (dataset `synpuf_omop`, 25 tables,
   `staging/data/county_h3_supplement.csv` now covers the CT, Honolulu and
   rename/merge rows. CT's 9 planning regions fall in only 3 hexagons, so each
   old county maps to one of them; the county-to-region pairing is approximate.
-  Expect roughly 98.5% of people placed.
+  With it, 98,470 of 100,000 people (98.5%) are placed, in 639 hexagons.
