@@ -17,6 +17,7 @@ Us CDR, without touching real EHR data.
 | `augment.py` | Builds `synpuf_workshop`: SynPUF plus the synthetic records the exercises need. |
 | `data/h3res3_countyfips_cw.csv` | County FIPS → H3 resolution-3 hexagon (one hexagon per county). |
 | `data/h3_res3.gpkg` | GeoPackage of the H3 resolution-3 hexagon polygons, keyed by `h3_id`. |
+| `data/county_h3_supplement.csv` | Hexagons for 2010-era counties missing from the main crosswalk (CT's pre-2022 counties, renamed/merged counties, Honolulu). |
 | `data/ssa_fips_state_county2011.csv` | NBER SSA ↔ FIPS county crosswalk ([source](https://www.nber.org/research/data/ssa-federal-information-processing-series-fips-state-and-county-crosswalk)). |
 
 ## Why two phases
@@ -223,11 +224,13 @@ deaths are unrelated to diagnoses and its lab rows have no values, so
   and around 5.0 otherwise.
 - **Hexagon locations.** SynPUF locations are counties with SSA state+county
   codes. `location` gains an `h3_id` column by translating SSA → county FIPS
-  (NBER crosswalk) → the county's H3 resolution-3 hexagon. Locations that don't
-  match get `NULL`: "unknown county" codes (`x999`), state code `54`, and
-  Connecticut, whose old counties aren't in the hexagon crosswalk (it uses the
-  2022 planning regions). The script prints match rates and the unmatched
-  states.
+  (NBER crosswalk) → the county's H3 resolution-3 hexagon. The hexagon
+  crosswalk uses current county codes and SynPUF is ~2010, so
+  `data/county_h3_supplement.csv` fills in counties that changed since
+  (Connecticut's pre-2022 counties, renames and merges) or are missing
+  (Honolulu). Locations that still don't match get `NULL`: state code `54`
+  and a few codes in neither crosswalk. The script prints match rates and
+  the unmatched states.
 
 The output is a separate dataset in which `condition_occurrence`,
 `measurement` and `location` are real tables and every other table is a view onto

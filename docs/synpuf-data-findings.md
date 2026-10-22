@@ -103,6 +103,20 @@ on workspace project `wb-glossy-cherry-7026` (dataset `synpuf_omop`, 25 tables,
   `notebooks/survival_and_a1c.ipynb`, and the two must stay in sync.
 - **Hexagons.** `augment.py` adds `location.h3_id`: SSA code → county FIPS (NBER
   2011 crosswalk) → the county's H3 resolution-3 hexagon
-  (`staging/data/h3res3_countyfips_cw.csv`, one hexagon per county). Expected
-  misses: `x999` codes, state `54`, and Connecticut. The hexagon crosswalk uses
-  CT's 2022 planning regions, so CT's old county FIPS codes don't match.
+  (`staging/data/h3res3_countyfips_cw.csv`, one hexagon per county). The first
+  build (2026-10-22) placed 96,781 of 100,000 people in 643 hexagons. The misses
+  came from the hexagon crosswalk using *current* county FIPS while SynPUF is
+  ~2010:
+
+  | Unmatched | People | Cause |
+  |---|---:|---|
+  | State `54` | 1,456 | SynPUF's "other" code; not fixable |
+  | Connecticut | 1,291 | Counties replaced by planning regions in 2022 |
+  | Honolulu, HI | 375 | `15003` absent from the hexagon crosswalk |
+  | AK, SD, VA | ~45 | Wade Hampton → Kusilvak, Shannon → Oglala Lakota, Bedford city merged into Bedford County |
+  | Various | ~50 | SSA codes in neither crosswalk (synthetic noise) |
+
+  `staging/data/county_h3_supplement.csv` now covers the CT, Honolulu and
+  rename/merge rows. CT's 9 planning regions fall in only 3 hexagons, so each
+  old county maps to one of them; the county-to-region pairing is approximate.
+  Expect roughly 98.5% of people placed.

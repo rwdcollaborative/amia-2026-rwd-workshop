@@ -24,8 +24,9 @@ would show nothing on it as-is. This script adds just enough signal:
   3. Hexagon locations. SynPUF locations are counties, coded with SSA
      state+county codes. location gains an h3_id column: SSA code -> county
      FIPS (NBER crosswalk) -> the H3 resolution-3 hexagon assigned to that
-     county (staging/data/h3res3_countyfips_cw.csv). Locations with no match
-     (unknown-county codes, Connecticut's pre-2022 counties, ...) get NULL.
+     county (staging/data/h3res3_countyfips_cw.csv, plus county_h3_supplement.csv
+     for 2010-era counties that crosswalk lacks). Locations with no match
+     (unknown-county codes, state code 54) get NULL.
 
 Output dataset (default `synpuf_workshop`):
   - condition_occurrence, measurement,
@@ -33,7 +34,8 @@ Output dataset (default `synpuf_workshop`):
   - every other source table           : a view onto the source dataset
   - _pc_patients, _augment_manifest,
     _ssa_fips_crosswalk,
-    _h3_county_crosswalk               : instructor-facing audit/lookup tables
+    _h3_county_crosswalk,
+    _h3_county_supplement              : instructor-facing audit/lookup tables
 
 Randomness comes from FARM_FINGERPRINT(seed:tag:id), so it is reproducible
 and runs entirely inside BigQuery -- no data is pulled to the VM.
@@ -102,6 +104,11 @@ DIABETES_SEEDS = [
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 SSA_FIPS_CSV = "ssa_fips_state_county2011.csv"   # NBER SSA <-> FIPS county crosswalk
 H3_COUNTY_CSV = "h3res3_countyfips_cw.csv"       # county FIPS -> H3 res-3 hexagon
+# The hexagon crosswalk uses current county FIPS; SynPUF is ~2010. This adds
+# hexagons for counties that have changed since (CT's 2022 planning regions,
+# renames/merges) or are missing from it (Honolulu). Used only where the main
+# crosswalk has no row for a county.
+H3_SUPPLEMENT_CSV = "county_h3_supplement.csv"
 
 # Tables materialized here; everything else becomes a view.
 MODIFIED = {"condition_occurrence", "measurement", "location"}
@@ -342,6 +349,7 @@ def load_csv(filename, table):
 def build_location():
     load_csv(SSA_FIPS_CSV, "_ssa_fips_crosswalk")
     load_csv(H3_COUNTY_CSV, "_h3_county_crosswalk")
+    load_csv(H3_SUPPLEMENT_CSV, "_h3_county_supplement")
     drop_if_view("location")
     run(f"""
 CREATE OR REPLACE TABLE {tgt('location')} AS
@@ -350,11 +358,16 @@ WITH ssa AS (
   FROM {tgt('_ssa_fips_crosswalk')}
   WHERE ssacounty IS NOT NULL AND ssacounty != ''
   GROUP BY ssacounty),
-h3 AS (
+main AS (
   SELECT county AS fipscounty, ANY_VALUE(h3_id) AS h3_id
   FROM {tgt('_h3_county_crosswalk')}
   WHERE county IS NOT NULL AND county != ''
-  GROUP BY county)
+  GROUP BY county),
+h3 AS (
+  SELECT * FROM main
+  UNION ALL
+  SELECT county, h3_id FROM {tgt('_h3_county_supplement')}
+  WHERE county NOT IN (SELECT fipscounty FROM main))
 SELECT l.*, h3.h3_id
 FROM {src('location')} l
 LEFT JOIN ssa ON ssa.ssacounty = LPAD(l.county, 5, '0')

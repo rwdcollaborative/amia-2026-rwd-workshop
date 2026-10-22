@@ -1,0 +1,13 @@
+county,h3_id,note
+09001,832a10fffffffff,"Fairfield County, CT (pre-2022) -> Western CT / Greater Bridgeport planning regions"
+09003,832a14fffffffff,"Hartford County, CT (pre-2022) -> Capitol planning region"
+09005,832a14fffffffff,"Litchfield County, CT (pre-2022) -> Northwest Hills planning region"
+09007,832a14fffffffff,"Middlesex County, CT (pre-2022) -> Lower Connecticut River Valley planning region"
+09009,832a14fffffffff,"New Haven County, CT (pre-2022) -> South Central / Naugatuck Valley planning regions"
+09011,832a33fffffffff,"New London County, CT (pre-2022) -> Southeastern CT planning region"
+09013,832a14fffffffff,"Tolland County, CT (pre-2022) -> mostly Capitol planning region"
+09015,832a33fffffffff,"Windham County, CT (pre-2022) -> Northeastern CT planning region"
+02270,830c1efffffffff,"Wade Hampton Census Area, AK -> renamed Kusilvak Census Area (02158) in 2015"
+46113,832612fffffffff,"Shannon County, SD -> renamed Oglala Lakota County (46102) in 2015"
+51515,832a88fffffffff,"Bedford city, VA -> merged into Bedford County (51019) in 2013"
+15003,834648fffffffff,"Honolulu County, HI -> hexagon containing central Oahu (missing from the main crosswalk)"
