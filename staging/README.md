@@ -57,6 +57,26 @@ The script uses whichever already exists and only creates it when missing.
    script finds the `gs://` location from the mount and no `WORKSPACE_BUCKET` or
    `upload` step is required.
 
+### Which vocabularies
+
+The workshop build (Athena release `v5.0 29-AUG-26`) used a broad download. These
+are the vocabularies picked in Athena; Athena adds its small structural ones
+(Domain, Type Concept, Visit, Gender, ...) automatically:
+
+> ABMS, ATC, CMS Place of Service, CPT4, Currency, Episode, Ethnicity, HCPCS,
+> ICD10, ICD10CM, ICD10PCS, ICD9CM, ICD9Proc, ICDO3, LOINC, MeSH, Medicare
+> Specialty, NDC, NUCC, OMOP Extension, OSM, PPI, Race, Revenue Code, RxNorm,
+> RxNorm Extension, SNOMED, SOPT, SPL, UCUM, US Census
+
+**CPT4 needs Athena's reconstitution step** (`cpt4.jar` with a UMLS API key)
+before loading, or CPT4 concepts have no names. The exercises rely on CPT4
+(the A1C codes and their "Maps to" relationships), so `augment.py` will stop if
+it's missing.
+
+A different Athena release can shift concept counts and mappings slightly;
+compare `diagnostics.py` output with `docs/synpuf-data-findings.md` after a
+rebuild.
+
 ## ⚠️ One thing to verify before loading: do the clinical CSVs have a header?
 
 ```bash
