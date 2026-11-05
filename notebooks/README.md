@@ -26,8 +26,11 @@ This notebook runs both analyses against `synpuf_workshop`:
 
 Every query goes through a single `query(sql)` helper (`pandas_gbq.read_gbq`)
 and a `CDR` dataset variable, mirroring the All of Us convention
-(`os.environ["WORKSPACE_CDR"]`). The first cell applies the `bq_env.py` fix and
-installs `lifelines` if it's missing.
+(`os.environ["WORKSPACE_CDR"]`). The first cell applies the `bq_env.py` fix.
+Survival curves and the log-rank test use statsmodels.
+
+Both notebooks use only packages already on the Workbench image, so they run
+top to bottom on a fresh VM with no installs or kernel restarts.
 
 The diabetes concept sets in section 2.2 must match `DIABETES_SEEDS` in
 `staging/augment.py`, because the A1C values were generated from that definition.
