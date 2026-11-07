@@ -267,8 +267,9 @@ python3 augment.py --print-sql  # see exactly what it runs
 
 `notebooks/bq_env.py` works around a bug in the Workbench image: the image's `dsub`
 pins `google-api-core` too low for the bundled BigQuery client, so the client
-won't import. It reinstalls the image's intended `google-api-core` only when
-the import fails. Both `augment.py` and the notebooks use it.
+won't import. It stands in for the two version-check functions the client is
+missing, so the import works without installing anything. Both `augment.py` and
+the notebooks use it.
 
 **Provisional:** the diabetes definition (`DIABETES_SEEDS` in `augment.py`) is
 still pending the original "complicated" and "uncomplicated" concept sets. The

@@ -2,66 +2,39 @@
 bq_env.py -- make `from google.cloud import bigquery` work on the Workbench image.
 
 The Workbench JupyterLab image (as of 2026-10) ships google-cloud-bigquery 3.45,
-which needs google-api-core >= 2.28, but the image build then pip-installs dsub,
+which expects google-api-core >= 2.28, but the image build then pip-installs dsub,
 which pins google-api-core <= 2.25.1. The result: the BigQuery client fails to
 import on a fresh VM with
     AttributeError: module 'google.api_core' has no attribute 'check_python_version'
 
-ensure_bigquery() tries the import and, only if it fails, restores the
-google-api-core version the image was built with, then retries. It also hides
+The only things the BigQuery client needs from the newer google-api-core are
+check_python_version() and check_dependency_versions(), which just print
+warnings about outdated Python or dependencies. ensure_bigquery() adds do-nothing
+stand-ins for those two functions when they're missing, then imports the client.
+Nothing is installed, so there's no kernel restart. It also hides
 google-api-core's (harmless) grpcio post-quantum-crypto FutureWarning.
 
     from bq_env import ensure_bigquery
     bigquery = ensure_bigquery()
-"""
-import importlib
-import os
-import subprocess
-import sys
-import warnings
 
-API_CORE_PIN = "google-api-core[grpc]==2.38.0"
+If the import still fails, the older fix is to restore the image's intended
+version and restart the kernel:
+    pip install "google-api-core[grpc]==2.38.0"
+"""
+import warnings
 
 
 def _quiet():
     warnings.filterwarnings("ignore", message=".*Post-Quantum Cryptography.*", category=FutureWarning)
 
 
-def _import():
-    from google.cloud import bigquery
-    return bigquery
-
-
 def ensure_bigquery():
     _quiet()
-    try:
-        return _import()
-    except (ImportError, AttributeError) as e:
-        print(f"BigQuery client failed to import ({type(e).__name__}: {e}).\n"
-              f"Applying the known Workbench image fix: pip install {API_CORE_PIN}\n"
-              f"(pip will report dependency conflicts for dsub and others; that's expected.)",
-              flush=True)
-    if os.environ.get("BQ_ENV_FIXED"):
-        raise RuntimeError("The google-api-core fix is installed but the BigQuery client still "
-                           "fails to import; see the error above.")
+    import google.api_core as api_core
 
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", API_CORE_PIN])
+    for name in ("check_python_version", "check_dependency_versions"):
+        if not hasattr(api_core, name):
+            setattr(api_core, name, lambda *args, **kwargs: None)
 
-    # A script restarts itself so the fixed packages load cleanly from scratch.
-    if "ipykernel" not in sys.modules and sys.argv and sys.argv[0]:
-        print("Fix installed; restarting the script.", flush=True)
-        os.environ["BQ_ENV_FIXED"] = "1"
-        os.execv(sys.executable, [sys.executable] + sys.argv)
-
-    # In a notebook: drop the half-imported google.* modules and retry in place.
-    for name in [m for m in sys.modules if m == "google" or m.startswith("google.")]:
-        del sys.modules[name]
-    importlib.invalidate_caches()
-    _quiet()
-    try:
-        bigquery = _import()
-    except Exception as e:  # noqa: BLE001
-        raise RuntimeError("Fix installed, but this kernel still has the old version loaded. "
-                           "Restart the kernel (Kernel > Restart) and run again.") from e
-    print("BigQuery client OK.", flush=True)
+    from google.cloud import bigquery
     return bigquery

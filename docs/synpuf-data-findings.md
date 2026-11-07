@@ -73,8 +73,18 @@ on workspace project `wb-glossy-cherry-7026` (dataset `synpuf_omop`, 25 tables,
   `google-cloud-bigquery` 3.45, which needs `google-api-core` >= 2.28. The
   image build then pip-installs `dsub`, which pins `google-api-core` <= 2.25.1,
   so `from google.cloud import bigquery` fails out of the box.
-  `notebooks/bq_env.py` restores `google-api-core[grpc]==2.38.0` when the
-  import fails. That breaks only `dsub`.
+  The newer functions the client calls are just `check_python_version()` and
+  `check_dependency_versions()`, which only print warnings. `notebooks/bq_env.py`
+  adds do-nothing stand-ins for them before importing, so nothing is installed
+  and no kernel restart is needed. (The earlier fix, installing
+  `google-api-core[grpc]==2.38.0`, also works but needs a restart and breaks
+  `dsub`.)
+- **Preinstalled packages.** The image (Python 3.12) already has numpy, scipy,
+  pandas, matplotlib, seaborn, statsmodels, scikit-learn, geopandas, shapely,
+  pyproj, pyogrio, pyarrow, db-dtypes and google-cloud-bigquery-storage. It
+  lacks lifelines, fiona and h3. The notebooks use statsmodels for survival
+  analysis, so they install nothing. Reading the hexagon GeoPackage prints a
+  harmless `PROJ: proj_create_from_database` error; reprojection still works.
 
 ## Decisions
 
